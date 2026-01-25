@@ -1,0 +1,79 @@
+@import url(./layout/header.css);
+:root {
+    --primary-color: #3b82f6;
+    --bg-color: #ffffff; /* dark mode : #0F172A*/
+    --border-color: #e5e7eb; /* dark mode : #1E293B*/
+    --primary-text-color: #1e293b; /* dark mode : #E5E7EB*/
+    --secondary-text-color: #475569; /* dark mode : #94A3B8*/
+    --hover-color: #60a5fa;
+    --surface-color: #f8fafc;
+
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 62.5%;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --surface-color: #1e293b;
+    --primary-text-color: #e5e7eb;
+    --secondary-text-color: #94a3b8;
+    --border-color: #1e293b;
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 1.6rem;
+    color: var(--primary-text-color);
+    font-weight: 500;
+}
+
+input {
+    border: none;
+}
+input:focus {
+    outline: none;
+}
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+/* mobile */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 16px;
+}
+/* Tablet */
+@media (min-width: 740px) {
+    .grid {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 16px;
+    }
+    .container {
+        padding: 0 24px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+    }
+    .container {
+        padding: 0 32px;
+    }
+}

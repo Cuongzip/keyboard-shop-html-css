@@ -16,12 +16,11 @@
         />
 
         <link rel="stylesheet" href="./styles/main.css" />
-        <link rel="stylesheet" href="./styles/index.css" />
-        <link rel="stylesheet" href="./styles/responsive.css" />
+        <link rel="stylesheet" href="./styles/pages/index.css" />
     </head>
     <body>
         <div class="wrapper">
-            <header class="header container">
+            <header class="container header">
                 <a href="/">
                     <img
                         class="header__logo"
@@ -29,7 +28,7 @@
                         alt="logo"
                     />
                 </a>
-
+                <!-- nav : start -->
                 <nav class="header__nav">
                     <ul class="header__nav-list">
                         <li class="header__nav-item">
@@ -87,15 +86,18 @@
                         </li>
                     </ul>
                 </nav>
+                <!-- nav : end -->
+
                 <div class="header__search">
                     <i class="fi fi-br-search"></i>
                     <input name="search" placeholder="Tìm kiếm sản phẩm" />
                 </div>
+                <!-- action : start -->
                 <div class="header__actions">
                     <div class="action dropdown-wrap">
                         <div class="action__icon">
                             <span class="action__badge">2</span>
-                            <i class="fi fi-br-shopping-cart"></i>
+                            <i class="fi fi-rr-shopping-cart"></i>
                         </div>
                         <div class="dropdown cart-dropdown">
                             <h3 class="cart-dropdown__head">
@@ -187,20 +189,22 @@
                             </ul>
                             <div class="cart-dropdown__tail">
                                 <span>Tổng 3 sản phẩm</span>
-                                <a href="">
-                                    <button class="button">
+                                <a href="./cart.html">
+                                    <button class="cart-dropdown__btn">
                                         <span>Giỏ hàng</span>
-                                        <i class="fi fi-br-shopping-cart"></i>
+                                        <i
+                                            class="fi fi-rr-cart-shopping-fast"
+                                        ></i>
                                     </button>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="action dropdown-wrap">
-                        <i class="fi fi-br-circle-user"></i>
+                        <i class="fi fi-rr-circle-user"></i>
                         <ul class="dropdown user-dropdown">
                             <li class="user-dropdown__head">
-                                <i class="fi fi-br-circle-user"></i>
+                                <i class="fi fi-rr-circle-user"></i>
                                 <span>test123@gmail.com</span>
                             </li>
                             <div class="user-dropdown__line"></div>
@@ -220,17 +224,183 @@
                         </ul>
                     </div>
                 </div>
+                <!-- action : end -->
             </header>
-            <main class="container">
-                <section>carousel</section>
+            <main class="container main">
+                <!-- carousel : start -->
+                <section class="carousel">
+                    <div class="carousel__slide grid">
+                        <div class="carousel__content">
+                            <div class="carousel__text">
+                                <span class="carousel__label">
+                                    Gõ chuẩn từng phím
+                                </span>
+                                <h4 class="carousel__sub-title">
+                                    Gõ nhanh hơn, tập trung hơn
+                                </h4>
+                                <h3 class="carousel__title">AM RGB 65 R1.5</h3>
+                            </div>
 
+                            <div class="carousel__btns">
+                                <a class="carousel__link" href="">
+                                    <button
+                                        class="carousel__btn carousel__btn--fil"
+                                    >
+                                        <i
+                                            class="fi fi-rr-cart-shopping-fast"
+                                        ></i>
+                                        <span>Mua ngay</span>
+                                    </button>
+                                </a>
+                                <a class="carousel__link" href="">
+                                    <button
+                                        class="carousel__btn carousel__btn--outline"
+                                    >
+                                        <i class="fi fi-rs-eye"></i>
+                                        <span>Xem chi tiết</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel__img">
+                            <img src="./img/banners/AM-RGB-65-R1.5.png" />
+                        </div>
+                        <div class="carousel__actions">
+                            <button class="carousel__action carousel__prev">
+                                <i class="fi fi-br-angle-left"></i>
+                            </button>
+                            <button class="carousel__action carousel__next">
+                                <i class="fi fi-br-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- carousel : end -->
+                <!-- suggest product : start -->
+                <section class="featured-products">
+                    <div class="featured-products__head">
+                        <h2>Các sản phẩm nổi bật</h2>
+                    </div>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product__img">
+                                <img
+                                    src="./img/keyboards/AM-RGB-65-R1.5/8.webp"
+                                />
+                                <div class="product__badge">
+                                    <i class="fi fi-rs-heart"></i>
+                                </div>
+                            </div>
+                            <h3 class="product__title">Product Name</h3>
+                            <span class="product__subtitle">subtitle</span>
+                            <span class="product__price">123123đ</span>
+                            <a href="">
+                                <button class="product__button">
+                                    <i class="fi fi-rr-arrow-small-right"></i>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <div class="product__img">
+                                <img
+                                    src="./img/keyboards/AM-RGB-65-R1.5/8.webp"
+                                />
+                                <div class="product__badge">
+                                    <i class="fi fi-rs-heart"></i>
+                                </div>
+                            </div>
+                            <h3 class="product__title">Product Name</h3>
+                            <span class="product__subtitle">subtitle</span>
+                            <span class="product__price">123123đ</span>
+                            <a href="">
+                                <button class="product__button">
+                                    <i class="fi fi-rr-arrow-small-right"></i>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <div class="product__img">
+                                <img
+                                    src="./img/keyboards/AM-RGB-65-R1.5/8.webp"
+                                />
+                                <div class="product__badge">
+                                    <i class="fi fi-rs-heart"></i>
+                                </div>
+                            </div>
+                            <h3 class="product__title">Product Name</h3>
+                            <span class="product__subtitle">subtitle</span>
+                            <span class="product__price">123123đ</span>
+                            <a href="">
+                                <button class="product__button">
+                                    <i class="fi fi-rr-arrow-small-right"></i>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <div class="product__img">
+                                <img
+                                    src="./img/keyboards/AM-RGB-65-R1.5/8.webp"
+                                />
+                                <div class="product__badge">
+                                    <i class="fi fi-rs-heart"></i>
+                                </div>
+                            </div>
+                            <h3 class="product__title">Product Name</h3>
+                            <span class="product__subtitle">subtitle</span>
+                            <span class="product__price">123123đ</span>
+                            <a href="">
+                                <button class="product__button">
+                                    <i class="fi fi-rr-arrow-small-right"></i>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <div class="product__img">
+                                <img
+                                    src="./img/keyboards/AM-RGB-65-R1.5/8.webp"
+                                />
+                                <div class="product__badge">
+                                    <i class="fi fi-rs-heart"></i>
+                                </div>
+                            </div>
+                            <h3 class="product__title">Product Name</h3>
+                            <span class="product__subtitle">subtitle</span>
+                            <span class="product__price">123123đ</span>
+                            <a href="">
+                                <button class="product__button">
+                                    <i class="fi fi-rr-arrow-small-right"></i>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <div class="product__img">
+                                <img
+                                    src="./img/keyboards/AM-RGB-65-R1.5/8.webp"
+                                />
+                                <div class="product__badge">
+                                    <i class="fi fi-rs-heart"></i>
+                                </div>
+                            </div>
+                            <h3 class="product__title">Product Name</h3>
+                            <span class="product__subtitle">subtitle</span>
+                            <span class="product__price">123123đ</span>
+                            <a href="">
+                                <button class="product__button">
+                                    <i class="fi fi-rr-arrow-small-right"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- suggest product : end -->
                 <section>introduce mechanical keyboard</section>
                 <section>introduce switch</section>
                 <section>introduce keycap</section>
                 <section>introduce kit</section>
-                <section>suggest product</section>
             </main>
             <footer>footer</footer>
         </div>
+
+        <script src="./js/main.js"></script>
     </body>
 </html>

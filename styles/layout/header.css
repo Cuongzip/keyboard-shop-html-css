@@ -2,8 +2,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
-    border-bottom: 1px solid var(--border-color);
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    z-index: 10;
+}
+.header--box-shadow {
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.12);
 }
 .header__logo {
     width: 70px;
@@ -206,23 +214,22 @@
     justify-content: space-between;
     align-items: center;
 }
-.button {
+.cart-dropdown__btn {
     background-color: var(--primary-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 14px;
+    border-radius: 18px;
     color: var(--bg-color);
     padding: 8px 15px;
 }
-.button:hover {
+.cart-dropdown__btn:hover {
     background-color: var(--hover-color);
 }
-.button i {
-    color: var(--bg-color);
+.cart-dropdown__btn i {
     font-size: 1.9rem;
 }
-.button span {
+.cart-dropdown__btn span {
     font-size: 1.6rem;
     margin-right: 6px;
 }

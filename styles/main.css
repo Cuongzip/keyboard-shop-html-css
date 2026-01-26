@@ -8,6 +8,7 @@
     --hover-color: #60a5fa;
     --surface-color: #f8fafc;
 
+    --header-height: 75px;
     font-family: "Inter", system-ui, sans-serif;
     font-size: 62.5%;
 }
@@ -26,7 +27,7 @@
 body {
     font-size: 1.6rem;
     color: var(--primary-text-color);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 input {
@@ -56,6 +57,7 @@ a {
     margin: 0 auto;
     padding: 0 16px;
 }
+
 /* Tablet */
 @media (min-width: 740px) {
     .grid {
@@ -76,4 +78,7 @@ a {
     .container {
         padding: 0 32px;
     }
+}
+.main {
+    margin-top: calc(var(--header-height) + 20px);
 }

@@ -195,11 +195,11 @@
 
                 <!-- actions : start -->
                 <div class="header__actions">
-                    <a href="./cart.html" class="header__action dropdown-wrap">
-                        <div class="header__action-icon">
+                    <div class="header__action dropdown-wrap">
+                        <a href="./cart.html" class="header__action-icon">
                             <span class="header__action-badge">2</span>
                             <i class="fi fi-rr-shopping-cart"></i>
-                        </div>
+                        </a>
                         <div class="dropdown cart-dropdown">
                             <h3 class="cart-dropdown__head">
                                 Sản phẩm mới thêm
@@ -300,12 +300,13 @@
                                 </a>
                             </div>
                         </div>
-                    </a>
-                    <a
-                        href="./profile.html"
+                    </div>
+                    <div
                         class="header__action header__action--user dropdown-wrap"
                     >
-                        <i class="fi fi-rr-circle-user"></i>
+                        <a href="./profile.html">
+                            <i class="fi fi-rr-circle-user"></i>
+                        </a>
                         <ul class="dropdown user-dropdown">
                             <li class="user-dropdown__head">
                                 <i class="fi fi-rr-circle-user"></i>
@@ -326,7 +327,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </a>
+                    </div>
                 </div>
                 <!-- actions : end -->
             </header>
@@ -742,6 +743,44 @@
                     </div>
                 </div>
             </footer>
+
+            <div class="chat">
+                <label for="toggle-chat-box" class="chat__trigger">
+                    <i class="fi fi-rs-comment"></i>
+                    <span>Chat</span>
+                </label>
+                <input id="toggle-chat-box" type="checkbox" />
+                <div class="chat-box">
+                    <div class="chat-box__head">
+                        <img
+                            src="./assets/imgs/icons/chat-bot.avif"
+                            alt="avatar chatbot"
+                        />
+                        <span>Chatbot hỗ trợ</span>
+                        <label class="chat-box__close" for="toggle-chat-box">
+                            <i class="fi fi-br-cross-small"></i>
+                        </label>
+                    </div>
+                    <ul class="chat-box__messages">
+                        <li class="chat-box__message chat-box__message--bot">
+                            <span>Bạn cần tui giúp gì</span>
+                            <br />
+                            <span class="chat-box__time">7:24 PM</span>
+                        </li>
+                        <li class="chat-box__message chat-box__message--user">
+                            <span>Tui đang muốn build bàn phím cơ</span>
+                            <br />
+                            <span class="chat-box__time">7:24 PM</span>
+                        </li>
+                    </ul>
+                    <div class="chat-box__input">
+                        <input placeholder="Aa" name="chat-input" />
+                        <button class="chat-box__btn">
+                            <i class="fi fi-ss-paper-plane-top"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="./assets/js/index.js"></script>

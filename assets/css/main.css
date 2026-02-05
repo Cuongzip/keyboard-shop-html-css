@@ -1,6 +1,7 @@
 /* import layout */
 @import url(./layout/header.css);
 @import url(./layout/footer.css);
+@import url(./layout/chat.css);
 /* import font */
 @font-face {
     font-family: "Inter";
@@ -18,24 +19,24 @@
     font-display: swap;
 }
 :root {
-    --primary-color: #3b82f6;
-    --primary-hover: #2563eb;
+    --primary-color: #0d1223;
+    --primary-hover: #1a2140;
 
-    --primary-text-color: #1e293b;
+    --primary-text-color: #0d1223;
     --secondary-text-color: #475569;
+    --text-muted: #64748b;
 
     --bg-color: #ffffff;
+    --border-color: #e5e7eb;
     --surface-color: #f8fafc;
     --surface-hover: #f1f5f9;
-    --border-color: #e5e7eb;
 
-    --accent-color: #22d3ee;
-    --accent-hover: #06b6d4;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
 
-    --black: #020617;
     --white: #ffffff;
 
-    --header-height: 75px;
+    --header-height: 70px;
     font-family: "Inter", system-ui, sans-serif;
     font-size: 62.5%;
 }

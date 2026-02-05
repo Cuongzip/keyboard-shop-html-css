@@ -1,0 +1,210 @@
+@import url(../components/product.css);
+.carousel {
+    margin: 30px 15px;
+}
+
+.carousel__slide {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.carousel__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+.carousel__label {
+    font-size: 2.5rem;
+    font-size: 2.5rem;
+    color: var(--secondary-text-color);
+}
+.carousel__sub-title {
+    display: block;
+    font-size: 3.5rem;
+
+    font-weight: 500;
+    margin-top: 20px;
+}
+.carousel__title {
+    font-size: 5rem;
+
+    font-weight: 700;
+    margin: 30px 0;
+}
+.carousel__btns {
+    margin-top: 20px;
+}
+.carousel__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 23px;
+    padding: 9px 28px;
+    transform: scale(clamp(0.7, 1vw, 1));
+}
+.carousel__link ~ .carousel__link {
+    margin-left: 20px;
+}
+.carousel__btn--fil {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+.carousel__btn--fil:hover {
+    background-color: var(--hover-color);
+}
+.carousel__btn--outline {
+    border: 1px solid black;
+}
+.carousel__btn--outline:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+}
+
+.carousel__btn i {
+    font-size: 1.9rem;
+}
+.carousel__btn span {
+    margin-left: 13px;
+    font-weight: 700;
+}
+
+.carousel__img {
+    flex: 1.4;
+    height: 30vw;
+    overflow: hidden;
+}
+.carousel__img img {
+    width: 100%;
+}
+.carousel__actions {
+    position: absolute;
+    top: 100%;
+    left: 65%;
+    transform: translateX(35%);
+}
+.carousel__action {
+    padding: 5px 8px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.carousel__action:hover {
+    transform: scale(1.5);
+}
+.carousel__next {
+    margin-left: 40px;
+}
+.featured-products {
+    padding: 70px 0;
+}
+.featured-products__head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.featured-products__title {
+    font-size: 4.5rem;
+    margin-bottom: 30px;
+
+    font-weight: 700;
+}
+.featured-products__subtitle {
+    font-size: 2rem;
+    color: var(--secondary-text-color);
+}
+.products-carousel {
+    position: relative;
+    padding-bottom: 30px;
+}
+.products-carousel__viewport {
+    width: 100%;
+
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.products-carousel__track {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: all ease 0.6s;
+}
+
+.products-carousel__pagination {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.products-carousel__pagination-item {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: rgb(152, 150, 150);
+    transition: width ease 0.2s;
+    cursor: pointer;
+}
+.products-carousel__pagination-item ~ .products-carousel__pagination-item {
+    margin-left: 8px;
+}
+.products-carousel__pagination-item--active {
+    width: 40px;
+    border-radius: 20px;
+    background-color: black;
+}
+.split {
+    padding: 30px 0;
+}
+.split__content {
+    grid-column: span 5;
+}
+
+.split__title {
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+.split__desc {
+    margin: 20px 0;
+    line-height: 26px;
+    font-size: 1.8rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 130px;
+    color: var(--secondary-text-color);
+}
+.split__img {
+    position: relative;
+    grid-column: span 7;
+    overflow: hidden;
+    padding-top: 50%;
+    border-radius: 20px;
+}
+.split__img img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 990px) {
+    .carousel__slide {
+        flex-direction: column;
+    }
+    .carousel__content {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 630px) {
+    .carousel__btn {
+        padding: 9px 15px;
+    }
+    .carousel__link ~ .carousel__link {
+        margin-left: 10px;
+    }
+}

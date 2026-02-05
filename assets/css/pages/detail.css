@@ -1,0 +1,235 @@
+@import url(../components/product.css);
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.product-detail__gallery {
+    flex: 1.48;
+    margin-right: 20px;
+    min-width: 459px;
+}
+
+.product-detail__big-img {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    padding-top: 55%;
+    overflow: hidden;
+}
+.top-left-wrap-big-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.top-right {
+    flex: 1;
+    min-width: 459px;
+}
+.top-right-title {
+    font-size: 2.8rem;
+    line-height: 40px;
+}
+.top-right-brand {
+    display: block;
+    margin-top: 8px;
+}
+.top-right-evaluate {
+    display: flex;
+}
+.top-right-evaluate-stars {
+    color: #f59e0b;
+    margin-right: 8px;
+}
+.top-right-evaluate a {
+    color: #fee5e1;
+}
+.top-right-price {
+    display: block;
+    margin-top: 9px;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+.top-right-price-origin {
+    text-decoration: line-through;
+    margin-left: 8px;
+    opacity: 0.7;
+}
+.form-quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.form-quantity label {
+    margin-right: 6px;
+}
+.top-right-buttons {
+    margin-top: 40px;
+    display: flex;
+}
+.top-right-button {
+    width: 50%;
+}
+.top-right-button span {
+    min-width: 150px;
+    padding: 5px 20px;
+}
+/* carousel */
+.carousel {
+    position: relative;
+}
+.carousel-images {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.carousel-image {
+    position: relative;
+    width: 25%;
+    padding-top: 14%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.carousel-image img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2.5%;
+    right: 0;
+    border-radius: 10px;
+    width: 95%;
+    height: 100%;
+}
+.active-img {
+    border: 1px solid red;
+}
+/* product tabs */
+.product-tabs {
+    margin-top: 30px;
+    border-radius: 30px;
+    background-color: #fee5e1;
+    padding: 20px 25px;
+}
+.product-tabs-nav {
+    display: flex;
+    border: 0 solid rgba(0, 0, 0, 0.2);
+    border-bottom-width: 1px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.product-tabs-nav-item {
+    position: relative;
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.product-tabs-nav-item:hover::after {
+    width: 100%;
+}
+.product-tabs-nav-item::after {
+    content: "";
+    position: absolute;
+    top: 102%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background-color: #6a9cfc;
+    transition: width 0.4s ease-in-out;
+}
+.product-tabs-nav-item:hover {
+    background-color: #ffbfb3;
+}
+.product-tabs-nav-item-active {
+    background-color: #ffbfb3;
+}
+.product-tabs-nav-item-active::after {
+    width: 100%;
+}
+
+.tab-description table {
+    width: 100%;
+}
+.tab-description th {
+    text-align: start;
+}
+.tab-description tr {
+    border: 1px solid black;
+}
+th,
+td {
+    padding: 5px 0;
+}
+
+.tab-evaluate-main {
+    display: flex;
+}
+.tab-evaluate-main-left,
+.tab-evaluate-main-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 30px;
+}
+.tab-evaluate-main-left {
+    border: 0 solid rgba(0, 0, 0, 0.2);
+    border-right-width: 1px;
+}
+.tab-evaluate-main-right-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.tab-evaluate-main-right-row-horizontal {
+    flex: 1;
+    height: 8px;
+    border-radius: 20px;
+    background-color: red;
+    margin: 0 20px;
+}
+.tab-evaluate-main-right-row ~ .tab-evaluate-main-right-row {
+    margin-top: 6px;
+}
+.yellow-color {
+    color: #f59e0b;
+}
+.tab-evaluate-main-right-row-star {
+    display: block;
+    width: 35px;
+}
+
+.tab {
+    display: none;
+    animation: hideToShow 0.3s ease-in-out;
+}
+
+@keyframes hideToShow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* product suggest */
+.products-suggest {
+    margin-top: 40px;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.products-suggest-title {
+    text-align: center;
+}

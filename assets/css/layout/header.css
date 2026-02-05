@@ -252,12 +252,19 @@
     font-size: 1.4rem;
 }
 
-#toggle-sidebar {
+#toggle-sidebar,
+#toggle-dropdown {
     display: none;
 }
 #toggle-sidebar:checked ~ .modal {
     display: block;
 }
+#toggle-sidebar:checked ~ .sidebar {
+    visibility: visible;
+
+    transform: translateX(0);
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -266,20 +273,30 @@
     right: 0;
     height: 100vh;
     background-color: rgb(20, 20, 20, 0.5);
-    z-index: 10;
+    z-index: 9;
+}
+.modal__close {
+    position: absolute;
+    right: -20px;
+    top: 20px;
 }
 .sidebar {
-    height: 100%;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
     max-width: 400px;
-    min-width: 200px;
-    width: 50%;
+    min-width: 300px;
+    width: 60%;
+    height: 100vh;
     background-color: var(--black);
     padding: 20px;
     color: var(--white);
-    animation: go-in 0.8s ease forwards;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: all 0.7s ease;
 }
-.close {
-}
+
 .sidebar__head {
     display: flex;
     align-items: center;
@@ -310,20 +327,56 @@
     min-width: 100px;
     text-overflow: ellipsis;
 }
-.sidebar__close {
-    font-size: 3rem;
+
+.sidebar__nav {
+    margin-top: 20px;
+}
+.sidebar__nav-trigger,
+.sidebar__nav-link,
+.sidebar__dropdown-link {
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 9px 12px;
+    border-radius: 15px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+.sidebar__nav-trigger:hover,
+.sidebar__nav-link:hover,
+.sidebar__dropdown-link:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+.sidebar__nav-trigger {
     cursor: pointer;
 }
-/* animation */
-@keyframes go-in {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+.sidebar__dropdown-link {
+    padding: 9px 25px;
+    margin: 0;
 }
-
+.sidebar__dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.6s ease;
+}
+#toggle-dropdown:checked ~ .sidebar__dropdown {
+    max-height: 300px;
+}
+#toggle-dropdown:checked ~ .sidebar__nav-trigger .angle-up {
+    display: contents;
+}
+#toggle-dropdown:checked ~ .sidebar__nav-trigger .angle-down {
+    display: none;
+}
+.sidebar__nav-trigger .angle-up {
+    display: none;
+}
+.sidebar__nav-trigger i {
+    font-size: 1.8rem;
+}
 /* responsive */
 
 @media (max-width: 740px) {

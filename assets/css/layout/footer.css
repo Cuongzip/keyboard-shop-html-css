@@ -1,11 +1,3 @@
-.footer__column {
-    grid-column: span 2;
-}
-.footer__column--big {
-    grid-column: span 3;
-    text-align: center;
-}
-
 .footer {
     padding: 50px 0;
     background-color: var(--surface-color);
@@ -21,6 +13,7 @@
 }
 .footer__column--big {
     min-width: 300px;
+    text-align: center;
 }
 .footer__logo {
     width: 85%;
@@ -49,10 +42,10 @@
     color: var(--secondary-text-color);
 }
 .footer__link:hover span {
-    color: var(--primary-color);
+    color: var(--accent-hover);
 }
 .footer__link:hover i {
-    color: var(--primary-color);
+    color: var(--accent-hover);
 }
 
 .footer__logs-social-network {

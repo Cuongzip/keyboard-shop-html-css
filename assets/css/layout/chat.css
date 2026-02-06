@@ -59,7 +59,9 @@
 .chat-box__close {
     display: inline-block;
     margin-left: auto;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .chat-box__messages {

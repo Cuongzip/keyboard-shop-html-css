@@ -41,6 +41,9 @@
     left: 10px;
     cursor: pointer;
 }
+.product__badge:hover {
+    background-color: var(--primary-color);
+}
 .product__title {
     font-weight: 700;
     font-size: 2.6rem;

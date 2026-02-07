@@ -19,17 +19,18 @@
     font-display: swap;
 }
 :root {
-    --primary-color: #0d1223;
-    --primary-hover: #1a2140;
+    --primary-color: #05070f;
+    --primary-hover: #0b1020;
 
-    --primary-text-color: #0d1223;
-    --secondary-text-color: #475569;
-    --text-muted: #64748b;
+    --primary-text-color: #05070f;
+    --secondary-text-color: #374151;
+    --text-muted: #6b7280;
 
     --bg-color: #ffffff;
+    --surface-color: #eef2f7;
+    --surface-hover: #e5eaf2;
+
     --border-color: #e5e7eb;
-    --surface-color: #f8fafc;
-    --surface-hover: #f1f5f9;
 
     --accent-color: #2563eb;
     --accent-hover: #1d4ed8;

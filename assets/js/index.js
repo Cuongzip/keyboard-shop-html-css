@@ -1,12 +1,17 @@
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+// handle add box show for header
 window.addEventListener("scroll", () => {
-    const headerEl = document.querySelector(".header");
+    const headerEl = $(".header");
     if (window.scrollY === 0) headerEl.classList.remove("header--box-shadow");
     else headerEl.classList.add("header--box-shadow");
 });
 
-const nextBtnEl = document.querySelector(".carousel__next");
-const prevBtnEl = document.querySelector(".carousel__prev");
-const slideEl = document.querySelector(".carousel__slide");
+// handle carousel
+const nextBtnEl = $(".carousel__next");
+const prevBtnEl = $(".carousel__prev");
+const slideEl = $(".carousel__slide");
 let activeIndex = 0;
 const slides = [
     {
@@ -36,50 +41,76 @@ prevBtnEl.addEventListener("click", () => {
     loadSlide();
 });
 
-const getNum = (string) => {
+// handle product carousel
+function getNum(string) {
     return Number(string.slice(0, -2));
-};
-const productCarouselEl = document.querySelector(".products-carousel");
-const productEl = document.querySelector(".product");
-const viewportEl = document.querySelector(".products-carousel__viewport");
-const trackEl = document.querySelector(".products-carousel__track");
-const paginationEl = document.querySelector(".products-carousel__pagination");
+}
 
-const style = window.getComputedStyle(productEl);
+const productCarouselEls = $$(".products-carousel");
 
-const productWidth = getNum(style.getPropertyValue("--product-width"));
-
-const productSpace = getNum(style.getPropertyValue("--space")) * 2;
-
-let activePage = 0;
-
-const changePage = (page, viewportWidth) => {
-    trackEl.style.transform = `translateX(${-page * viewportWidth + "px"})`;
-
-    paginationEl.children[activePage].classList.remove(
-        "products-carousel__pagination-item--active",
+for (let productCarouselEl of productCarouselEls) {
+    const productEl = productCarouselEl.querySelector(".product");
+    const viewportEl = productCarouselEl.querySelector(
+        ".products-carousel__viewport",
     );
-    paginationEl.children[page].classList.add(
-        "products-carousel__pagination-item--active",
+    const trackEl = productCarouselEl.querySelector(
+        ".products-carousel__track",
+    );
+    const paginationEl = productCarouselEl.querySelector(
+        ".products-carousel__pagination",
     );
 
-    activePage = page;
-};
+    const style = window.getComputedStyle(productEl);
 
-const resizeObserver = new ResizeObserver((entries) => {
-    const countProduct = Math.floor(
-        productCarouselEl.clientWidth / (productWidth + productSpace),
-    );
-    const viewportWidth = countProduct * (productWidth + productSpace);
-    viewportEl.style.width = viewportWidth + "px";
+    const productWidth = getNum(style.getPropertyValue("--product-width"));
 
-    const countPage = Math.ceil(trackEl.childElementCount / countProduct);
+    const productSpace = getNum(style.getPropertyValue("--space"));
+    console.log(productSpace);
+    let activePage = 0;
+    let oldCardsPerPage = 0;
+    const resizeObserver = new ResizeObserver((entries) => {
+        const cardsPerPage = Math.floor(
+            productCarouselEl.clientWidth / (productWidth + productSpace),
+        );
 
-    let html = "";
-    for (let i = 0; i < countPage; i++) {
-        html += `<li onclick="changePage(${i}, ${viewportWidth})" class="products-carousel__pagination-item ${i === activePage && " products-carousel__pagination-item--active"}"></li>`;
-    }
-    paginationEl.innerHTML = html;
-});
+        const countPage = Math.ceil(trackEl.childElementCount / cardsPerPage);
 
-resizeObserver.observe(productCarouselEl);
+        if (oldCardsPerPage === cardsPerPage) return;
+
+        const viewportWidth = cardsPerPage * (productWidth + productSpace);
+        viewportEl.style.width = viewportWidth + "px";
+
+        const startIndex = oldCardsPerPage * activePage;
+
+        activePage = Math.floor(startIndex / cardsPerPage);
+
+        let html = "";
+        for (let i = 0; i < countPage; i++) {
+            html += `<li data-page="${i}" class="products-carousel__pagination-item ${i === activePage && " products-carousel__pagination-item--active"}"></li>`;
+        }
+        paginationEl.innerHTML = html;
+
+        trackEl.style.transform = `translateX(${-activePage * viewportWidth + "px"})`;
+
+        const changePage = (page) => {
+            trackEl.style.transform = `translateX(${-page * viewportWidth + "px"})`;
+            paginationEl.children[activePage].classList.remove(
+                "products-carousel__pagination-item--active",
+            );
+            paginationEl.children[page].classList.add(
+                "products-carousel__pagination-item--active",
+            );
+            activePage = page;
+        };
+
+        for (let dot of paginationEl.children) {
+            dot.addEventListener("click", () =>
+                changePage(dot.getAttribute("data-page")),
+            );
+        }
+
+        oldCardsPerPage = cardsPerPage;
+    });
+
+    resizeObserver.observe(productCarouselEl);
+}

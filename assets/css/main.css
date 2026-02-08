@@ -19,8 +19,8 @@
     font-display: swap;
 }
 :root {
-    --primary-color: #05070f;
-    --primary-hover: #0b1020;
+    --primary-color: rgba(5, 7, 15, 1);
+    --primary-hover: rgba(5, 7, 15, 0.7);
 
     --primary-text-color: #05070f;
     --secondary-text-color: #374151;
@@ -86,10 +86,116 @@ i {
     display: contents;
 }
 
-.button {
+.d-flex {
+    display: flex !important;
+}
+.flex-col {
+    flex-direction: column !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.justify-content-between {
+    justify-content: space-between !important;
+}
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+.justify-content-start {
+    justify-content: flex-start !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.align-items-between {
+    align-items: space-between !important;
+}
+.align-items-end {
+    align-items: flex-end !important;
+}
+.align-items-start {
+    align-items: flex-start !important;
+}
+/* gap */
+.gap-1 {
+    gap: 10px !important;
+}
+.gap-2 {
+    gap: 20px !important;
+}
+.gap-2 {
+    gap: 30px !important;
+}
+/* my */
+.my-1 {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.my-2 {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.my-3 {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+/* mx */
+.mx-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.mx-1 {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.mx-2 {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+.mx-3 {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+}
+/* mb */
+.mb-1 {
+    margin-bottom: 10px !important;
+}
+.mb-2 {
+    margin-bottom: 20px !important;
+}
+.mb-3 {
+    margin-bottom: 30px !important;
+}
+.mb-4 {
+    margin-bottom: 40px !important;
+}
+/* me */
+.me-1 {
+    margin-right: 10px !important;
+}
+.me-2 {
+    margin-right: 20px !important;
+}
+.me-3 {
+    margin-right: 30px !important;
+}
+/* ms */
+.ms-1 {
+    margin-left: 10px !important;
+}
+.ms-2 {
+    margin-left: 20px !important;
+}
+.ms-3 {
+    margin-left: 30px !important;
+}
+.button,
+.center {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.button {
     border-radius: 23px;
     padding: 9px 28px;
     background-color: var(--primary-color);

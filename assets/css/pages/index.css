@@ -2,23 +2,23 @@
 
 .title {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3.4rem;
 }
 /* carousel : start */
 .carousel {
-    margin: 30px 15px;
+    margin: 50px 0;
 }
 
 .carousel__slide {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
 }
 .carousel__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
+    zoom: 1.2;
 }
 .carousel__label {
     font-size: 2.5rem;
@@ -34,7 +34,6 @@
 }
 .carousel__title {
     font-size: 5rem;
-
     font-weight: 700;
     margin: 30px 0;
 }
@@ -78,17 +77,24 @@
 
 .carousel__img {
     flex: 1.4;
-    height: 30vw;
+    padding-top: 35%;
+    position: relative;
     overflow: hidden;
 }
 .carousel__img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
 }
 .carousel__actions {
+    display: flex;
     position: absolute;
     top: 100%;
-    left: 65%;
-    transform: translateX(35%);
+    left: 75%;
+    transform: translateX(-50%);
+    gap: 30px;
 }
 .carousel__action {
     padding: 5px 8px;
@@ -99,28 +105,31 @@
 .carousel__action:hover {
     transform: scale(1.5);
 }
-.carousel__next {
-    margin-left: 40px;
-}
 
+@media (max-width: 1150px) {
+    .carousel__content {
+        zoom: 1;
+    }
+}
 @media (max-width: 990px) {
     .carousel__slide {
         flex-direction: column;
+        gap: 40px;
+    }
+    .carousel__img {
+        padding-top: 60%;
     }
     .carousel__content {
-        padding-bottom: 40px;
+        zoom: 0.9;
     }
 }
 
-@media (max-width: 630px) {
-    .carousel__btn {
-        padding: 9px 15px;
-    }
-    .carousel__link ~ .carousel__link {
-        margin-left: 10px;
-    }
-}
 /* carousel : end */
+
+.switch__head a:hover,
+.keycap__head a:hover {
+    color: var(--accent-color);
+}
 
 /* featured products : start */
 .featured-products {
@@ -128,7 +137,6 @@
 }
 .featured-products__head {
     text-align: center;
-    margin-bottom: 20px;
 }
 .featured-products__title {
     font-size: 4.5rem;
@@ -161,7 +169,6 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
 }
 .products-carousel__pagination-item {
     width: 13px;

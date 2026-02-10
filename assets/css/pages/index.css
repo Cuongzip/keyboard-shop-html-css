@@ -126,14 +126,14 @@
 
 /* carousel : end */
 
-.switch__head a:hover,
-.keycap__head a:hover {
+.switches__head a:hover,
+.keycaps__head a:hover {
     color: var(--accent-color);
 }
 
 /* featured products : start */
 .featured-products {
-    padding: 70px 0;
+    margin: 80px 0;
 }
 .featured-products__head {
     text-align: center;
@@ -189,7 +189,9 @@
 /* featured products : end */
 
 /* benefits : start */
-
+.benefits {
+    margin: 80px 0;
+}
 .benefits__title {
     margin-bottom: 40px;
     font-size: 2.5rem;
@@ -264,7 +266,7 @@
 
 .articles__join h3 {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 2.7rem;
 }
 .articles__join p {
     margin: 15px 0;
@@ -281,14 +283,18 @@
 .articles__input input {
     background-color: transparent;
     flex: 1;
-    padding: 10px 15px;
+    padding: 12px 15px;
 }
 .articles__input button {
     background-color: var(--accent-color);
     border-radius: 20px;
-    padding: 6px 15px;
+    padding: 8px 20px;
     margin-right: 10px;
     color: var(--white);
+    font-size: 1.6rem;
+}
+.articles__input button:hover {
+    background-color: var(--accent-hover);
 }
 
 .article-featured {
@@ -304,18 +310,18 @@
 .article-featured__img {
     flex-shrink: 0;
     border-radius: 10px;
+    width: 190px;
+    height: 150px;
     overflow: hidden;
-    width: 170px;
-    height: 170px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .article__img img,
 .article-featured__img img {
     height: 100%;
+    width: 100%;
+    object-fit: cover;
     transition: all 0.3s ease;
 }
+
 .article__img img:hover,
 .article-featured__img img:hover {
     height: 120%;
@@ -376,7 +382,7 @@
     border-radius: 15px;
 }
 .articles__title button:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent-hover);
 }
 .articles__wrap {
     display: flex;
@@ -394,8 +400,8 @@
     margin: 0;
 }
 .article__img {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 100px;
 }
 .article__title {
     margin: 10px 0;
@@ -420,16 +426,14 @@
     }
     .article-featured__img {
         flex: 1;
+        height: 170px;
     }
-    .article-featured__img img {
-        width: 100%;
-        height: auto;
-    }
+
     .article-featured__img img:hover {
         width: 110%;
-        height: auto;
     }
-    .articles {
+
+    .articles__box {
         padding: 20px;
     }
 }
@@ -437,7 +441,7 @@
 
 /* gallery : start */
 .gallery {
-    margin: 40px 0;
+    margin: 80px 0;
 }
 .gallery__box {
     display: flex;
@@ -465,10 +469,12 @@
     transition: all ease 0.3s;
 }
 .gallery__item img {
-    height: 120%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .gallery__item img:hover {
-    height: 140%;
+    height: 120%;
 }
 
 .gallery__item--vertical {

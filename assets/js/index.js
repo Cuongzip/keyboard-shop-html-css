@@ -65,9 +65,11 @@ for (let productCarouselEl of productCarouselEls) {
     const productWidth = getNum(style.getPropertyValue("--product-width"));
 
     const productSpace = getNum(style.getPropertyValue("--space"));
-    console.log(productSpace);
+
     let activePage = 0;
     let oldCardsPerPage = 0;
+    let focusedIndex = 0;
+
     const resizeObserver = new ResizeObserver((entries) => {
         const cardsPerPage = Math.floor(
             productCarouselEl.clientWidth / (productWidth + productSpace),
@@ -78,11 +80,9 @@ for (let productCarouselEl of productCarouselEls) {
         if (oldCardsPerPage === cardsPerPage) return;
 
         const viewportWidth = cardsPerPage * (productWidth + productSpace);
-        viewportEl.style.width = viewportWidth + "px";
+        viewportEl.style.width = viewportWidth - 14 + "px";
 
-        const startIndex = oldCardsPerPage * activePage;
-
-        activePage = Math.floor(startIndex / cardsPerPage);
+        activePage = Math.floor(focusedIndex / cardsPerPage);
 
         let html = "";
         for (let i = 0; i < countPage; i++) {
@@ -101,6 +101,7 @@ for (let productCarouselEl of productCarouselEls) {
                 "products-carousel__pagination-item--active",
             );
             activePage = page;
+            focusedIndex = cardsPerPage * activePage;
         };
 
         for (let dot of paginationEl.children) {

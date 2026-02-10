@@ -4,13 +4,14 @@
     --padding: 8px;
     position: relative;
     box-shadow: 0 0 17px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 0 var(--padding);
     width: var(--product-width);
     flex-shrink: 0;
 }
 .product + .product {
-    margin-left: 14px;
+    margin-left: var(--space);
 }
 .product__imgs {
     display: flex;

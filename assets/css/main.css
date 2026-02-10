@@ -217,6 +217,7 @@ i {
     margin: 0 auto;
     padding: 0 16px;
     max-width: 1800px;
+    min-width: 375px;
 }
 
 /* Tablet */

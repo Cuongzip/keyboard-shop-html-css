@@ -2,6 +2,7 @@
 @import url(./layout/header.css);
 @import url(./layout/footer.css);
 @import url(./layout/chat.css);
+
 /* import font */
 @font-face {
     font-family: "Inter";
@@ -37,7 +38,7 @@
 
     --white: #ffffff;
 
-    --header-height: 70px;
+    --header-height: 65px;
     font-family: "Inter", system-ui, sans-serif;
     font-size: 62.5%;
 }
@@ -86,12 +87,17 @@ i {
     display: contents;
 }
 
+.text-center {
+    text-align: center;
+}
 .d-flex {
     display: flex !important;
 }
+
 .flex-col {
     flex-direction: column !important;
 }
+/* justify content */
 .justify-content-center {
     justify-content: center !important;
 }
@@ -104,6 +110,7 @@ i {
 .justify-content-start {
     justify-content: flex-start !important;
 }
+/* align items */
 .align-items-center {
     align-items: center !important;
 }
@@ -189,28 +196,47 @@ i {
 .ms-3 {
     margin-left: 30px !important;
 }
+/* ms */
+.mt-1 {
+    margin-top: 10px !important;
+}
+.mt-2 {
+    margin-top: 20px !important;
+}
+.mt-3 {
+    margin-top: 30px !important;
+}
 .button,
 .center {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 .button {
+    gap: 6px;
     border-radius: 23px;
     padding: 9px 28px;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: white;
 }
-
+.button--outline {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-text-color);
+    background-color: var(--white);
+}
+.button--outline:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
 .button:hover {
-    background-color: var(--hover-color);
+    background-color: var(--accent-hover);
 }
 .button i {
     font-size: 1.9rem;
 }
 .button span {
     font-size: 1.6rem;
-    margin-right: 6px;
 }
 
 .container {

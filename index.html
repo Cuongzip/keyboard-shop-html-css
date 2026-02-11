@@ -21,15 +21,20 @@
     <body>
         <div class="wrapper">
             <!-- header : start -->
-            <header class="container header">
+            <header
+                class="container header d-flex align-items-center justify-content-between"
+            >
                 <!-- sidebar : start -->
                 <input id="toggle-sidebar" type="checkbox" />
-                <label class="header__summary" for="toggle-sidebar">
+                <label
+                    class="header__summary justify-content-center align-items-center"
+                    for="toggle-sidebar"
+                >
                     <i class="fi fi-br-menu-burger"></i>
                 </label>
                 <label for="toggle-sidebar" class="modal"></label>
                 <aside class="sidebar">
-                    <div class="sidebar__search">
+                    <div class="sidebar__search d-flex align-items-center">
                         <label for="search">
                             <i class="fi fi-br-search"></i>
                         </label>
@@ -40,13 +45,13 @@
                         />
                     </div>
 
-                    <nav class="sidebar__nav">
+                    <nav class="sidebar__nav mt-2">
                         <ul class="sidebar__nav-list">
                             <li class="sidebar__nav-item">
                                 <input id="toggle-dropdown" type="checkbox" />
                                 <label
                                     for="toggle-dropdown"
-                                    class="sidebar__nav-trigger"
+                                    class="sidebar__nav-trigger d-flex justify-content-between align-items-center"
                                 >
                                     <span>Sản phẩm</span>
 
@@ -111,6 +116,7 @@
                 <!-- logo : start -->
                 <a href="/">
                     <img
+                        loading="lazy"
                         class="header__logo"
                         src="./assets/imgs/logos/light-mode-no-label.webp"
                         alt="logo"
@@ -119,18 +125,21 @@
                 <!-- logo : end -->
                 <!-- nav : start -->
                 <nav class="header__nav">
-                    <ul class="header__nav-list">
+                    <ul class="header__nav-list d-flex">
                         <li class="header__nav-item">
-                            <div class="header__nav-link dropdown-wrap">
+                            <div
+                                class="header__nav-link dropdown-wrap d-flex text-center"
+                            >
                                 <span>Sản phẩm</span>
                                 <i class="fi fi-br-angle-small-down"></i>
                                 <ul class="dropdown product-dropdown">
                                     <li>
                                         <a
-                                            class="product-dropdown__link"
+                                            class="product-dropdown__link d-flex align-items-center"
                                             href=""
                                         >
                                             <img
+                                                loading="lazy"
                                                 src="./assets/imgs/icons/keyboard.png"
                                             />
                                             <span>Bàn phím</span>
@@ -138,10 +147,11 @@
                                     </li>
                                     <li>
                                         <a
-                                            class="product-dropdown__link"
+                                            class="product-dropdown__link d-flex align-items-center"
                                             href=""
                                         >
                                             <img
+                                                loading="lazy"
                                                 src="./assets/imgs/icons/keycap.png"
                                             />
                                             <span>Keycap</span>
@@ -149,10 +159,11 @@
                                     </li>
                                     <li>
                                         <a
-                                            class="product-dropdown__link"
+                                            class="product-dropdown__link d-flex align-items-center"
                                             href=""
                                         >
                                             <img
+                                                loading="lazy"
                                                 src="./assets/imgs/icons/switch.png"
                                             />
                                             <span>Switch</span>
@@ -161,10 +172,11 @@
 
                                     <li>
                                         <a
-                                            class="product-dropdown__link"
+                                            class="product-dropdown__link d-flex align-items-center"
                                             href=""
                                         >
                                             <img
+                                                loading="lazy"
                                                 src="./assets/imgs/icons/tool.png"
                                             />
                                             <span>Dụng cụ hỗ trợ</span>
@@ -183,7 +195,7 @@
                 </nav>
                 <!-- nav : end -->
                 <!-- search : start -->
-                <div class="header__search">
+                <div class="header__search align-items-center">
                     <label for="search"><i class="fi fi-br-search"></i></label>
                     <input
                         id="search"
@@ -194,10 +206,10 @@
                 <!-- search : end -->
 
                 <!-- actions : start -->
-                <div class="header__actions">
+                <div class="header__actions d-flex">
                     <div class="header__action dropdown-wrap">
                         <a href="./cart.html" class="header__action-icon">
-                            <span class="header__action-badge">2</span>
+                            <span class="header__action-badge center">2</span>
                             <i class="fi fi-rr-shopping-cart"></i>
                         </a>
                         <div class="dropdown cart-dropdown">
@@ -207,10 +219,13 @@
                             <ul class="cart-dropdown__list">
                                 <li>
                                     <a class="cart-dropdown__link" href="">
-                                        <div class="product-small">
-                                            <div class="product-small__wrap">
+                                        <div
+                                            class="product-small d-flex justify-content-between"
+                                        >
+                                            <div class="d-flex">
                                                 <div class="product-small__img">
                                                     <img
+                                                        loading="lazy"
                                                         src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
                                                         alt="keyboard"
                                                     />
@@ -226,11 +241,16 @@
                                             </span>
                                         </div>
                                     </a>
+                                </li>
+                                <li>
                                     <a class="cart-dropdown__link" href="">
-                                        <div class="product-small">
-                                            <div class="product-small__wrap">
+                                        <div
+                                            class="product-small d-flex justify-content-between"
+                                        >
+                                            <div class="d-flex">
                                                 <div class="product-small__img">
                                                     <img
+                                                        loading="lazy"
                                                         src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
                                                         alt="keyboard"
                                                     />
@@ -246,11 +266,16 @@
                                             </span>
                                         </div>
                                     </a>
+                                </li>
+                                <li>
                                     <a class="cart-dropdown__link" href="">
-                                        <div class="product-small">
-                                            <div class="product-small__wrap">
+                                        <div
+                                            class="product-small d-flex justify-content-between"
+                                        >
+                                            <div class="d-flex">
                                                 <div class="product-small__img">
                                                     <img
+                                                        loading="lazy"
                                                         src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
                                                         alt="keyboard"
                                                     />
@@ -266,11 +291,16 @@
                                             </span>
                                         </div>
                                     </a>
+                                </li>
+                                <li>
                                     <a class="cart-dropdown__link" href="">
-                                        <div class="product-small">
-                                            <div class="product-small__wrap">
+                                        <div
+                                            class="product-small d-flex justify-content-between"
+                                        >
+                                            <div class="d-flex">
                                                 <div class="product-small__img">
                                                     <img
+                                                        loading="lazy"
                                                         src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
                                                         alt="keyboard"
                                                     />
@@ -288,10 +318,12 @@
                                     </a>
                                 </li>
                             </ul>
-                            <div class="cart-dropdown__tail">
+                            <div
+                                class="cart-dropdown__tail d-flex justify-content-between align-items-center"
+                            >
                                 <span>Tổng 3 sản phẩm</span>
                                 <a href="./cart.html">
-                                    <button class="cart-dropdown__btn">
+                                    <button class="button cart-dropdown__btn">
                                         <span>Giỏ hàng</span>
                                         <i
                                             class="fi fi-rr-cart-shopping-fast"
@@ -308,9 +340,11 @@
                             <i class="fi fi-rr-circle-user"></i>
                         </a>
                         <ul class="dropdown user-dropdown">
-                            <li class="user-dropdown__head">
+                            <li
+                                class="user-dropdown__head d-flex align-items-center"
+                            >
                                 <i class="fi fi-rr-circle-user"></i>
-                                <span>test123@gmail.com</span>
+                                <span class="ms-1">test123@gmail.com</span>
                             </li>
                             <div class="user-dropdown__line"></div>
                             <li>
@@ -336,8 +370,10 @@
             <main class="container main">
                 <!-- carousel : start -->
                 <section class="carousel">
-                    <div class="carousel__slide">
-                        <div class="carousel__content">
+                    <div class="carousel__slide d-flex">
+                        <div
+                            class="carousel__content d-flex justify-content-center flex-col"
+                        >
                             <div class="carousel__text">
                                 <span class="carousel__label">
                                     Gõ chuẩn từng phím
@@ -348,11 +384,9 @@
                                 <h3 class="carousel__title">AM RGB 65 R1.5</h3>
                             </div>
 
-                            <div class="carousel__btns">
+                            <div class="carousel__btns mt-2">
                                 <a class="carousel__link" href="">
-                                    <button
-                                        class="carousel__btn carousel__btn--fil"
-                                    >
+                                    <button class="button carousel__btn">
                                         <i
                                             class="fi fi-rr-cart-shopping-fast"
                                         ></i>
@@ -361,7 +395,7 @@
                                 </a>
                                 <a class="carousel__link" href="">
                                     <button
-                                        class="carousel__btn carousel__btn--outline"
+                                        class="button button--outline carousel__btn"
                                     >
                                         <i class="fi fi-rs-eye"></i>
                                         <span>Xem chi tiết</span>
@@ -369,12 +403,15 @@
                                 </a>
                             </div>
                         </div>
+
                         <div class="carousel__img">
                             <img
-                                src="./assets/imgs/banners/AM-RGB-65-R1.5.png"
+                                loading="lazy"
+                                src="./assets/imgs/banners/3.png"
                             />
                         </div>
-                        <div class="carousel__actions">
+
+                        <div class="carousel__actions reveal">
                             <button class="carousel__action carousel__prev">
                                 <i class="fi fi-br-angle-left"></i>
                             </button>
@@ -388,10 +425,12 @@
 
                 <!-- keycaps : start -->
                 <section class="keycaps">
-                    <div class="products-carousel">
+                    <div
+                        class="products-carousel d-flex flex-col align-items-center my-3"
+                    >
                         <div class="products-carousel__viewport">
                             <div
-                                class="keycaps__head mb-4 d-flex justify-content-between align-items-center"
+                                class="keycaps__head mb-4 d-flex justify-content-between align-items-center reveal"
                             >
                                 <h2 class="title">Keycaps</h2>
                                 <a class="center gap-1" href="">
@@ -399,13 +438,15 @@
                                     <i class="fi fi-rr-arrow-small-right"></i>
                                 </a>
                             </div>
-                            <div class="products-carousel__track">
+                            <div class="products-carousel__track d-flex">
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/S9000-Cherry-profile/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/S9000-Cherry-profile/2.webp"
                                         />
                                     </div>
@@ -439,9 +480,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/No-ducking-pressure/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/No-ducking-pressure/2.webp"
                                         />
                                     </div>
@@ -475,9 +518,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/Ichiraku-Ramen-R2/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/Ichiraku-Ramen-R2/2.webp"
                                         />
                                     </div>
@@ -511,9 +556,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/WS-Orchid-Strings/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/WS-Orchid-Strings/2.webp"
                                         />
                                     </div>
@@ -547,9 +594,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/WS-PBT-Mizu/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/WS-PBT-Mizu/2.webp"
                                         />
                                     </div>
@@ -581,9 +630,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/After-the-Rain-R2/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/After-the-Rain-R2/2.webp"
                                         />
                                     </div>
@@ -617,9 +668,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/WS-Kraken/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keycaps/WS-Kraken/2.webp"
                                         />
                                     </div>
@@ -650,17 +703,21 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="products-carousel__pagination d-flex"></ul>
+                        <ul
+                            class="products-carousel__pagination reveal d-flex"
+                        ></ul>
                     </div>
                 </section>
                 <!-- keycaps product : end -->
 
                 <!-- switches : start -->
                 <section class="switches">
-                    <div class="products-carousel">
+                    <div
+                        class="products-carousel d-flex flex-col align-items-center my-3"
+                    >
                         <div class="products-carousel__viewport">
                             <div
-                                class="switches__head mb-4 d-flex justify-content-between align-items-center"
+                                class="reveal switches__head mb-4 d-flex justify-content-between align-items-center"
                             >
                                 <h2 class="title">Switches</h2>
                                 <a class="center gap-1" href="">
@@ -668,13 +725,15 @@
                                     <i class="fi fi-rr-arrow-small-right"></i>
                                 </a>
                             </div>
-                            <div class="products-carousel__track">
+                            <div class="products-carousel__track d-flex">
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-Morandi-Switch/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-Morandi-Switch/2.webp"
                                         />
                                     </div>
@@ -708,9 +767,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-Jade-Switch/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-Jade-Switch/2.webp"
                                         />
                                     </div>
@@ -744,9 +805,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-Onion-Switch/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-Onion-Switch/2.webp"
                                         />
                                     </div>
@@ -780,9 +843,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-Pearl-Switch/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-Pearl-Switch/2.webp"
                                         />
                                     </div>
@@ -816,10 +881,12 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/switches/WS-POM-Switch/1.webp"
                                         />
                                         <img
-                                            src="./assets/imgs/switches/WS-POM-Switch/2.avif"
+                                            loading="lazy"
+                                            src="./assets/imgs/switches/WS-POM-Switch/2.webp"
                                         />
                                     </div>
                                     <div class="product__badge">
@@ -851,29 +918,35 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="products-carousel__pagination d-flex"></ul>
+                        <ul
+                            class="products-carousel__pagination reveal d-flex"
+                        ></ul>
                     </div>
                 </section>
                 <!-- switches products : end -->
                 <!-- featured products : start -->
                 <section class="featured-products">
-                    <div class="featured-products__head mb-2">
-                        <h2 class="featured-products__title">
+                    <div class="featured-products__head mb-3 text-center">
+                        <h2 class="featured-products__title mb-3 reveal">
                             Sản phẩm nổi bật
                         </h2>
-                        <span class="featured-products__subtitle">
+                        <span class="featured-products__subtitle reveal">
                             Tuyển chọn những sản phẩm được yêu thích nhất
                         </span>
                     </div>
-                    <div class="products-carousel">
+                    <div
+                        class="products-carousel d-flex flex-col align-items-center my-3"
+                    >
                         <div class="products-carousel__viewport">
-                            <div class="products-carousel__track">
+                            <div class="products-carousel__track d-flex">
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/rainy-75/1.avif"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/rainy-75/2.avif"
                                         />
                                     </div>
@@ -905,9 +978,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/Qwertykeys/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/Qwertykeys/2.webp"
                                         />
                                     </div>
@@ -941,9 +1016,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/YUNZII-B68/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/YUNZII-B68/2.webp"
                                         />
                                     </div>
@@ -975,9 +1052,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/80Retros-GB65/2.webp"
                                         />
                                     </div>
@@ -1011,9 +1090,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/AM-RGB-65-R1.5/7.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/AM-RGB-65-R1.5/2.webp"
                                         />
                                     </div>
@@ -1047,9 +1128,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/Freya-Ultra/2-1024x1024.jpg"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/Freya-Ultra/5-1024x1024.jpg"
                                         />
                                     </div>
@@ -1081,9 +1164,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/New-Wind-X80-Classic/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/New-Wind-X80-Classic/2.webp"
                                         />
                                     </div>
@@ -1117,9 +1202,11 @@
                                 <div class="product">
                                     <div class="product__imgs">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/boop-redux/1.webp"
                                         />
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/boop-redux/2.webp"
                                         />
                                     </div>
@@ -1150,21 +1237,23 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="products-carousel__pagination d-flex"></ul>
+                        <ul
+                            class="products-carousel__pagination reveal d-flex"
+                        ></ul>
                     </div>
                 </section>
                 <!-- featured products : end -->
                 <!-- benefits : start -->
                 <section class="benefits">
-                    <h2 class="benefits__title">
+                    <h2 class="benefits__title reveal">
                         <span>Vì sao chọn chúng tôi?</span>
                         <span>
                             Dưới đây là những lý do bạn nên mua sắm cùng chúng
                             tôi.
                         </span>
                     </h2>
-                    <div class="benefits__wrap">
-                        <div class="benefit">
+                    <div class="benefits__wrap d-flex justify-content-center">
+                        <div class="benefit reveal">
                             <i
                                 class="benefit__icon benefit__purple fi fi-rr-boxes"
                             ></i>
@@ -1177,7 +1266,7 @@
                                 <span class="benefit__purple">VN.</span>
                             </p>
                         </div>
-                        <div class="benefit">
+                        <div class="benefit reveal">
                             <i
                                 class="benefit__icon benefit__blue fi fi-rs-shipping-fast"
                             ></i>
@@ -1190,7 +1279,7 @@
                                 kể từ khi nhận hàng.
                             </p>
                         </div>
-                        <div class="benefit">
+                        <div class="benefit reveal">
                             <i
                                 class="benefit__icon benefit__pink fi fi-rs-assessment"
                             ></i>
@@ -1206,7 +1295,7 @@
                                 từ khách hàng.
                             </p>
                         </div>
-                        <div class="benefit">
+                        <div class="benefit reveal">
                             <i
                                 class="benefit__icon benefit__green fi fi-rs-wallet-arrow"
                             ></i>
@@ -1226,9 +1315,11 @@
 
                 <!-- articles : start -->
                 <section class="articles">
-                    <h2 class="title">Hướng dẫn & bài viết</h2>
+                    <h2 class="title reveal">Hướng dẫn & bài viết</h2>
                     <div class="articles__box">
-                        <div class="articles__top">
+                        <div
+                            class="articles__top d-flex justify-content-between reveal"
+                        >
                             <div class="articles__join">
                                 <h3>Đăng ký nhận bản tin!</h3>
                                 <p>
@@ -1236,14 +1327,17 @@
                                     và những thông tin hậu trường thú vị về các
                                     sản phẩm sắp ra mắt!
                                 </p>
-                                <div class="articles__input">
+                                <div
+                                    class="articles__input d-flex align-items-center"
+                                >
                                     <input placeholder="Email" type="text" />
                                     <button>Gửi</button>
                                 </div>
                             </div>
-                            <a href="" class="article-featured">
+                            <a href="" class="article-featured d-flex">
                                 <div class="article-featured__img">
                                     <img
+                                        loading="lazy"
                                         src="./assets/imgs/articles/1.webp"
                                         alt="keyboard"
                                     />
@@ -1258,8 +1352,11 @@
                                         nắm rõ mọi kiến thức cơ bản về bàn phím
                                         cơ tùy chỉnh.
                                     </p>
-                                    <div class="article-featured__user">
+                                    <div
+                                        class="article-featured__user d-flex align-items-center mt-2"
+                                    >
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/ice-ring-63-RT/10.webp"
                                             alt="avatar"
                                         />
@@ -1268,23 +1365,31 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="articles__title">
+                        <div
+                            class="articles__title d-flex justify-content-between align-items-center my-3 reveal"
+                        >
                             <h3>Bài viết nổi bật</h3>
-                            <a href="">
+                            <a href="./articles">
                                 <button>Tất cả</button>
                             </a>
                         </div>
-                        <div class="articles__wrap">
-                            <a href="" class="article">
+                        <div
+                            class="articles__wrap d-flex justify-content-between"
+                        >
+                            <a href="" class="article reveal d-flex">
                                 <div class="article__img">
                                     <img
+                                        loading="lazy"
                                         src="./assets/imgs/articles/2.webp"
                                         alt="keyboard"
                                     />
                                 </div>
                                 <div class="article__info">
-                                    <div class="article__user">
+                                    <div
+                                        class="article__user d-flex align-items-center"
+                                    >
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/New-Wind-X80-Classic/3.webp"
                                             alt="avatar"
                                         />
@@ -1299,9 +1404,10 @@
                                 </div>
                             </a>
 
-                            <a href="" class="article">
+                            <a href="" class="article reveal d-flex">
                                 <div class="article__img">
                                     <img
+                                        loading="lazy"
                                         src="./assets/imgs/articles/3.webp"
                                         alt="keyboard"
                                     />
@@ -1309,6 +1415,7 @@
                                 <div class="article__info">
                                     <div class="article__user">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/New-Wind-X80-Classic/3.webp"
                                             alt="avatar"
                                         />
@@ -1324,9 +1431,10 @@
                                 </div>
                             </a>
 
-                            <a href="" class="article">
+                            <a href="" class="article reveal d-flex">
                                 <div class="article__img">
                                     <img
+                                        loading="lazy"
                                         src="./assets/imgs/articles/4.webp"
                                         alt="keyboard"
                                     />
@@ -1334,6 +1442,7 @@
                                 <div class="article__info">
                                     <div class="article__user">
                                         <img
+                                            loading="lazy"
                                             src="./assets/imgs/keyboards/New-Wind-X80-Classic/3.webp"
                                             alt="avatar"
                                         />
@@ -1354,81 +1463,105 @@
                 <!-- articles : end -->
                 <!-- gallery : start -->
                 <section class="gallery">
-                    <h2 class="title">Thư viện thiết kế bàn phím</h2>
+                    <h2 class="title reveal">Thư viện thiết kế bàn phím</h2>
                     <div class="gallery__box">
                         <div class="gallery__col">
-                            <div class="gallery__item">
+                            <div class="gallery__item reveal">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item gallery__item--vertical">
+                            <div
+                                class="gallery__item gallery__item--vertical reveal"
+                            >
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/ice-ring-63-RT/3.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item">
+                            <div class="gallery__item reveal">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/AM-RGB-65-R1.5/4.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item gallery__item--vertical">
+                            <div
+                                class="gallery__item gallery__item--vertical reveal"
+                            >
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/New-Wind-X80-Classic/5.webp"
                                     alt=""
                                 />
                             </div>
                         </div>
                         <div class="gallery__col">
-                            <div class="gallery__item gallery__item--vertical">
+                            <div
+                                class="gallery__item gallery__item--vertical reveal"
+                            >
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/ice-ring-63-RT/8.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item">
+                            <div class="gallery__item reveal">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/Freya-Ultra/1-1024x1024.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item gallery__item--vertical">
+                            <div
+                                class="gallery__item gallery__item--vertical reveal"
+                            >
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/ice-ring-63-RT/10.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item">
+                            <div class="gallery__item reveal">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/Freya-Ultra/5-1024x1024.jpg"
                                     alt=""
                                 />
                             </div>
                         </div>
                         <div class="gallery__col">
-                            <div class="gallery__item">
+                            <div class="gallery__item reveal">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/AM-RGB-65-R1.5/7.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item gallery__item--vertical">
+                            <div
+                                class="gallery__item gallery__item--vertical reveal"
+                            >
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/AM-RGB-65-R1.5/6.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item">
+                            <div class="gallery__item reveal">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/AM-RGB-65-R1.5/9.webp"
                                     alt=""
                                 />
                             </div>
-                            <div class="gallery__item gallery__item--vertical">
+                            <div
+                                class="gallery__item gallery__item--vertical reveal"
+                            >
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/keyboards/Freya-Ultra/4-1024x1024.webp"
                                     alt=""
                                 />
@@ -1444,6 +1577,7 @@
                     <div class="footer__column footer__column--big">
                         <a href="index.html">
                             <img
+                                loading="lazy"
                                 class="footer__logo"
                                 src="./assets/imgs/logos/light-mode-no-label.webp"
                                 alt="logo"
@@ -1525,18 +1659,21 @@
                         <div class="footer__logos-social-network">
                             <a href="">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/logos/facebook.webp"
                                     alt="logo facebook"
                                 />
                             </a>
                             <a href="">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/logos/instagram.png"
                                     alt="logo instagram"
                                 />
                             </a>
                             <a href="">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/logos/twitter.png"
                                     alt="logo twitter"
                                 />
@@ -1546,12 +1683,14 @@
                         <div class="footer__download-btns">
                             <a href="">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/buttons/button-gg-play-dark.png"
                                     alt="button gg play"
                                 />
                             </a>
                             <a href="">
                                 <img
+                                    loading="lazy"
                                     src="./assets/imgs/buttons/button-apple-store-dark.png"
                                     alt="button apple store"
                                 />
@@ -1570,6 +1709,7 @@
                 <div class="chat-box">
                     <div class="chat-box__head">
                         <img
+                            loading="lazy"
                             src="./assets/imgs/icons/chat-bot.avif"
                             alt="avatar chatbot"
                         />

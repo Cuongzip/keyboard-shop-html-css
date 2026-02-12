@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sản phẩm</title>
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="./assets/imgs/logos/light-mode-no-label.webp"
+        />
+        <!-- reset css -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <!-- icon -->
+        <link rel="stylesheet" href="./assets/css/icons.css" />
+
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/components/product.css" />
+        <link rel="stylesheet" href="./assets/css/pages/detail.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- header : start -->
+            <header
+                class="container header d-flex align-items-center justify-content-between"
+            >
+                <!-- sidebar : start -->
+                <input id="toggle-sidebar" type="checkbox" />
+                <label
+                    class="header__summary justify-content-center align-items-center"
+                    for="toggle-sidebar"
+                >
+                    <i class="fi fi-br-menu-burger"></i>
+                </label>
+                <label for="toggle-sidebar" class="modal"></label>
+                <aside class="sidebar">
+                    <div class="sidebar__search d-flex align-items-center">
+                        <label for="search">
+                            <i class="fi fi-br-search"></i>
+                        </label>
+                        <input
+                            id="search"
+                            name="search"
+                            placeholder="Tìm kiếm sản phẩm"
+                        />
+                    </div>
+
+                    <nav class="sidebar__nav mt-2">
+                        <ul class="sidebar__nav-list">
+                            <li class="sidebar__nav-item">
+                                <input id="toggle-dropdown" type="checkbox" />
+                                <label
+                                    for="toggle-dropdown"
+                                    class="sidebar__nav-trigger d-flex justify-content-between align-items-center"
+                                >
+                                    <span>Sản phẩm</span>
+
+                                    <i
+                                        class="angle-down fi fi-br-angle-small-down"
+                                    ></i>
+                                    <i
+                                        class="angle-up fi fi-br-angle-small-up"
+                                    ></i>
+                                </label>
+
+                                <ul class="sidebar__dropdown">
+                                    <li>
+                                        <a
+                                            class="sidebar__dropdown-link"
+                                            href=""
+                                        >
+                                            Bàn phím
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="sidebar__dropdown-link"
+                                            href=""
+                                        >
+                                            Keycap
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="sidebar__dropdown-link"
+                                            href=""
+                                        >
+                                            Switch
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            class="sidebar__dropdown-link"
+                                            href=""
+                                        >
+                                            Dụng cụ hỗ trợ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar__nav-item">
+                                <a class="sidebar__nav-link" href="">
+                                    Bộ sưu tập
+                                </a>
+                            </li>
+                            <li class="sidebar__nav-item">
+                                <a class="sidebar__nav-link" href="">
+                                    Hướng dẫn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                <!-- sidebar : end -->
+                <!-- logo : start -->
+                <a href="/">
+                    <img
+                        loading="lazy"
+                        class="header__logo"
+                        src="./assets/imgs/logos/light-mode-no-label.webp"
+                        alt="logo"
+                    />
+                </a>
+                <!-- logo : end -->
+                <!-- nav : start -->
+                <nav class="header__nav">
+                    <ul class="header__nav-list d-flex">
+                        <li class="header__nav-item">
+                            <div
+                                class="header__nav-link dropdown-wrap d-flex text-center"
+                            >
+                                <span>Sản phẩm</span>
+                                <i class="fi fi-br-angle-small-down"></i>
+                                <ul class="dropdown product-dropdown">
+                                    <li>
+                                        <a
+                                            class="product-dropdown__link d-flex align-items-center"
+                                            href=""
+                                        >
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/icons/keyboard.png"
+                                            />
+                                            <span>Bàn phím</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="product-dropdown__link d-flex align-items-center"
+                                            href=""
+                                        >
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/icons/keycap.png"
+                                            />
+                                            <span>Keycap</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="product-dropdown__link d-flex align-items-center"
+                                            href=""
+                                        >
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/icons/switch.png"
+                                            />
+                                            <span>Switch</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            class="product-dropdown__link d-flex align-items-center"
+                                            href=""
+                                        >
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/icons/tool.png"
+                                            />
+                                            <span>Dụng cụ hỗ trợ</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="">Bộ sưu tập</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="">Hướng dẫn</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- nav : end -->
+                <!-- search : start -->
+                <div class="header__search align-items-center">
+                    <label for="search"><i class="fi fi-br-search"></i></label>
+                    <input
+                        id="search"
+                        name="search"
+                        placeholder="Tìm kiếm sản phẩm"
+                    />
+                </div>
+                <!-- search : end -->
+
+                <!-- actions : start -->
+                <div class="header__actions d-flex">
+                    <div class="header__action dropdown-wrap">
+                        <a href="./cart.html" class="header__action-icon">
+                            <span class="header__action-badge center">2</span>
+                            <i class="fi fi-rr-shopping-cart"></i>
+                        </a>
+                        <div class="dropdown cart-dropdown">
+                            <h3 class="cart-dropdown__head">
+                                Sản phẩm mới thêm
+                            </h3>
+                            <ul class="cart-dropdown__list">
+                                <li>
+                                    <a class="cart-dropdown__link" href="">
+                                        <div
+                                            class="product-small d-flex justify-content-between"
+                                        >
+                                            <div class="d-flex">
+                                                <div class="product-small__img">
+                                                    <img
+                                                        loading="lazy"
+                                                        src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
+                                                        alt="keyboard"
+                                                    />
+                                                </div>
+                                                <span
+                                                    class="product-small_name"
+                                                >
+                                                    AM RGB 65 R1.5
+                                                </span>
+                                            </div>
+                                            <span class="product-small_price">
+                                                1.000.000đ
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cart-dropdown__link" href="">
+                                        <div
+                                            class="product-small d-flex justify-content-between"
+                                        >
+                                            <div class="d-flex">
+                                                <div class="product-small__img">
+                                                    <img
+                                                        loading="lazy"
+                                                        src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
+                                                        alt="keyboard"
+                                                    />
+                                                </div>
+                                                <span
+                                                    class="product-small_name"
+                                                >
+                                                    AM RGB 65 R1.5
+                                                </span>
+                                            </div>
+                                            <span class="product-small_price">
+                                                1.000.000đ
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cart-dropdown__link" href="">
+                                        <div
+                                            class="product-small d-flex justify-content-between"
+                                        >
+                                            <div class="d-flex">
+                                                <div class="product-small__img">
+                                                    <img
+                                                        loading="lazy"
+                                                        src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
+                                                        alt="keyboard"
+                                                    />
+                                                </div>
+                                                <span
+                                                    class="product-small_name"
+                                                >
+                                                    AM RGB 65 R1.5
+                                                </span>
+                                            </div>
+                                            <span class="product-small_price">
+                                                1.000.000đ
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cart-dropdown__link" href="">
+                                        <div
+                                            class="product-small d-flex justify-content-between"
+                                        >
+                                            <div class="d-flex">
+                                                <div class="product-small__img">
+                                                    <img
+                                                        loading="lazy"
+                                                        src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
+                                                        alt="keyboard"
+                                                    />
+                                                </div>
+                                                <span
+                                                    class="product-small_name"
+                                                >
+                                                    AM RGB 65 R1.5
+                                                </span>
+                                            </div>
+                                            <span class="product-small_price">
+                                                1.000.000đ
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div
+                                class="cart-dropdown__tail d-flex justify-content-between align-items-center"
+                            >
+                                <span>Tổng 3 sản phẩm</span>
+                                <a href="./cart.html">
+                                    <button class="button cart-dropdown__btn">
+                                        <span>Giỏ hàng</span>
+                                        <i
+                                            class="fi fi-rr-cart-shopping-fast"
+                                        ></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="header__action header__action--user dropdown-wrap"
+                    >
+                        <a href="./profile.html">
+                            <i class="fi fi-rr-circle-user"></i>
+                        </a>
+                        <ul class="dropdown user-dropdown">
+                            <li
+                                class="user-dropdown__head d-flex align-items-center"
+                            >
+                                <i class="fi fi-rr-circle-user"></i>
+                                <span class="ms-1">test123@gmail.com</span>
+                            </li>
+                            <div class="user-dropdown__line"></div>
+                            <li>
+                                <a class="user-dropdown__link" href="">Hồ sơ</a>
+                            </li>
+                            <li>
+                                <a class="user-dropdown__link" href="">
+                                    Cài đặt
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-dropdown__link" href="">
+                                    Đăng xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- actions : end -->
+            </header>
+            <!-- header : end -->
+            <!-- main : start -->
+            <main class="main container">
+                <!-- breadcrumb : start -->
+                <section class="breadcrumb reveal">
+                    <a href="./index.html">Trang chủ</a>
+                    &nbsp /&nbsp
+                    <a href="./product.html">Bàn phím cơ</a>
+                    &nbsp /&nbsp
+                    <span>80Retros GB65</span>
+                </section>
+                <!-- breadcrumb : end -->
+                <!-- product detail : start -->
+                <section class="product-detail d-flex reveal">
+                    <div class="product-detail__gallery">
+                        <div class="product-detail__big-img">
+                            <img
+                                loading="lazy"
+                                src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
+                                alt="keyboard"
+                            />
+                        </div>
+                        <div class="gallery-carousel">
+                            <ul class="gallery-carousel__viewport d-flex mt-1">
+                                <li
+                                    class="gallery-carousel__item gallery-carousel__item--active"
+                                >
+                                    <div
+                                        class="gallery-carousel__img gallery-carousel__img--active"
+                                    >
+                                        <img
+                                            loading="lazy"
+                                            alt="keyboard"
+                                            draggable="false"
+                                            src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="gallery-carousel__item">
+                                    <div class="gallery-carousel__img">
+                                        <img
+                                            loading="lazy"
+                                            alt="keyboard"
+                                            draggable="false"
+                                            src="./assets/imgs/keyboards/80Retros-GB65/pink.webp"
+                                        />
+                                    </div>
+                                </li>
+
+                                <li class="gallery-carousel__item">
+                                    <div class="gallery-carousel__img">
+                                        <img
+                                            loading="lazy"
+                                            alt="keyboard"
+                                            draggable="false"
+                                            src="./assets/imgs/keyboards/80Retros-GB65/warm-gray.webp"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="gallery-carousel__item">
+                                    <div class="gallery-carousel__img">
+                                        <img
+                                            loading="lazy"
+                                            alt="keyboard"
+                                            draggable="false"
+                                            src="./assets/imgs/keyboards/80Retros-GB65/cool-grey.webp"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="gallery-carousel__item">
+                                    <div class="gallery-carousel__img">
+                                        <img
+                                            loading="lazy"
+                                            alt="keyboard"
+                                            draggable="false"
+                                            src="./assets/imgs/keyboards/80Retros-GB65/black.webp"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="gallery-carousel__item">
+                                    <div class="gallery-carousel__img">
+                                        <img
+                                            loading="lazy"
+                                            alt="keyboard"
+                                            draggable="false"
+                                            src="./assets/imgs/keyboards/80Retros-GB65/2.webp"
+                                        />
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <button
+                                class="gallery-carousel__btn center gallery-carousel__btn--prev"
+                            >
+                                <i class="fi fi-sr-angle-small-left"></i>
+                            </button>
+                            <button
+                                class="gallery-carousel__btn center gallery-carousel__btn--next"
+                            >
+                                <i class="fi fi-sr-angle-small-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <form class="product-detail__info">
+                        <h3 class="product__name">
+                            80Retros GB65 Mechanical Keyboard
+                        </h3>
+                        <div
+                            class="product__state-bar d-flex mt-1 mb-2 align-items-center"
+                        >
+                            <div class="product__evaluate d-flex">
+                                <div class="product__stars">
+                                    <i class="fi fi-rs-star"></i>
+                                    <i class="fi fi-ss-star"></i>
+                                    <i class="fi fi-ss-star"></i>
+                                    <i class="fi fi-ss-star"></i>
+                                    <i class="fi fi-ss-star"></i>
+                                </div>
+                                <span>4.0</span>
+                            </div>
+                            <span class="product__separate mx-1"></span>
+                            <span class="product__review">2 reviews</span>
+                        </div>
+
+                        <div class="product__price product__price--detail my-2">
+                            <span class="product__sale-price">$215.00</span>
+                            <span class="product__origin-price">$230.00</span>
+                        </div>
+                        <div class="product__group my-2">
+                            <div class="product__label mb-1">
+                                <span>Chế độ kết nối :</span>
+                                <span>3 mode</span>
+                            </div>
+                            <div
+                                class="product__options product__options--btn d-flex mt-1"
+                            >
+                                <div class="product__option center">
+                                    <input
+                                        id="3-mode"
+                                        name="connect-mode"
+                                        value="3-mode"
+                                        data-option="3 mode"
+                                        type="radio"
+                                        checked
+                                    />
+
+                                    <label for="3-mode">3 mode</label>
+                                </div>
+                                <div class="product__option center">
+                                    <input
+                                        id="1-mode"
+                                        name="connect-mode"
+                                        value="1-mode"
+                                        data-option="1 mode"
+                                        type="radio"
+                                    />
+
+                                    <label for="1-mode">1 mode</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__group my-2">
+                            <div class="product__label mb-1">
+                                <span>Màu :</span>
+                                <span>Hồng</span>
+                            </div>
+
+                            <div
+                                class="product__options product__options--color d-flex mt-1"
+                            >
+                                <div class="product__option center">
+                                    <input
+                                        id="pink-color"
+                                        name="color"
+                                        value="pink"
+                                        data-option="Hồng"
+                                        data-index="1"
+                                        type="radio"
+                                        checked
+                                    />
+
+                                    <label for="pink-color">
+                                        <img
+                                            src="./assets/imgs/keyboards/80Retros-GB65/pink.webp"
+                                            alt="80Retros-GB65 pink"
+                                        />
+                                    </label>
+                                </div>
+                                <div class="product__option center">
+                                    <input
+                                        id="warm-gray-color"
+                                        name="color"
+                                        value="warm-gray"
+                                        data-option="Warm gray"
+                                        data-index="0"
+                                        type="radio"
+                                    />
+                                    <label for="warm-gray-color">
+                                        <img
+                                            src="./assets/imgs/keyboards/80Retros-GB65/warm-gray.webp"
+                                            alt="80Retros-GB65 warm gray"
+                                        />
+                                    </label>
+                                </div>
+                                <div class="product__option center">
+                                    <input
+                                        id="cool-grey-color"
+                                        name="color"
+                                        value="cool-grey"
+                                        data-option="Cool grey"
+                                        data-index="3"
+                                        type="radio"
+                                    />
+                                    <label for="cool-grey-color">
+                                        <img
+                                            src="./assets/imgs/keyboards/80Retros-GB65/cool-grey.webp"
+                                            alt="80Retros-GB65 cool grey"
+                                        />
+                                    </label>
+                                </div>
+                                <div class="product__option center">
+                                    <input
+                                        id="black-color"
+                                        name="color"
+                                        value="black"
+                                        data-option="Đen"
+                                        data-index="4"
+                                        type="radio"
+                                    />
+                                    <label for="black-color">
+                                        <img
+                                            src="./assets/imgs/keyboards/80Retros-GB65/black.webp"
+                                            alt="80Retros-GB65 cool grey"
+                                        />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__group my-2">
+                            <div class="product__label mb-1">
+                                <span>Tình trạng giao hàng:</span>
+                                <span>In stock</span>
+                            </div>
+
+                            <div
+                                class="product__options product__options--btn d-flex mt-1"
+                            >
+                                <div class="product__option center">
+                                    <input
+                                        id="in-stock"
+                                        name="shipping-status"
+                                        value="in-stock"
+                                        data-option="In stock"
+                                        type="radio"
+                                        checked
+                                    />
+
+                                    <label for="in-stock">In stock</label>
+                                </div>
+                                <div class="product__option center">
+                                    <input
+                                        id="pre-order"
+                                        name="shipping-status"
+                                        value="pre-order"
+                                        data-option="Pre-order"
+                                        type="radio"
+                                    />
+
+                                    <label for="pre-order">Pre-order</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product__group d-flex align-items-center">
+                            <div class="quantity">
+                                <button
+                                    type="button"
+                                    class="quantity__btn quantity__btn--decrease"
+                                >
+                                    -
+                                </button>
+                                <input
+                                    class="quantity__input"
+                                    value="1"
+                                    type="text"
+                                    maxlength="3"
+                                />
+                                <button
+                                    type="button"
+                                    class="quantity__btn quantity__btn--increase"
+                                >
+                                    +
+                                </button>
+                            </div>
+                            <button
+                                class="button button--outline add-to-cart-btn"
+                                href=""
+                            >
+                                <span>Thêm vào giỏ hàng</span>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </div>
+
+                        <button class="button buy-now-btn mt-2">
+                            <span>Mua ngay</span>
+                            <i class="fa-solid fa-money-bill"></i>
+                        </button>
+                    </form>
+                </section>
+                <!-- product detail : end -->
+
+                <!-- tabs : start -->
+                <section class="tabs reveal">
+                    <nav class="tabs__nav">
+                        <ul
+                            class="tabs__nav-list d-flex justify-content-center"
+                        >
+                            <li
+                                data-tab="desc"
+                                class="tabs__nav-item tabs__nav-item--active"
+                            >
+                                Thông tin sản phẩm
+                            </li>
+                            <li data-tab="policy" class="tabs__nav-item">
+                                Chính sách
+                            </li>
+                            <li data-tab="evaluate" class="tabs__nav-item">
+                                Đánh giá
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="tab desc-tab tab--active">
+                        <p>
+                            <b>80Retros Game 1989 65 (GB65)</b>
+                            được lấy cảm hứng từ
+                            <b>GAMEBOY</b>
+                            – một trong những máy chơi game cầm tay nổi tiếng và
+                            có ảnh hưởng lớn nhất trong lịch sử trò chơi điện
+                            tử. Được phát triển và sản xuất bởi Nintendo, Game
+                            Boy ra mắt lần đầu tiên vào ngày 21 tháng 4 năm 1989
+                            tại Nhật Bản. Đây là một trong những thiết bị chơi
+                            game cầm tay đầu tiên sử dụng công nghệ cartridge,
+                            cho phép người dùng thay đổi các trò chơi dễ dàng.
+                        </p>
+                        <br />
+                        <p>
+                            Với layout 65% nhỏ gọn, GB65 là sự kết hợp hoàn hảo
+                            giữa tính di động và chức năng. Thiết kế lấy cảm
+                            hứng từ Game Boy với các chi tiết phối màu đặc trưng
+                            sẽ đưa bạn trở về tuổi thơ đầy kỷ niệm.
+                        </p>
+                        <h3 class="my-1">
+                            <b>🔖 Thông tin sản phẩm:</b>
+                        </h3>
+                        <ul class="ms-3">
+                            <li>Maker: 80Retros</li>
+                            <li>Layout: 65%</li>
+                            <li>Plate: Alu non-flex</li>
+                            <li>Mounting: Gasket mount (Silicon)</li>
+                            <li>
+                                PCB: Hotswap 1.6mm non-flex. Tương thích QMK /
+                                VIA
+                            </li>
+                            <li>
+                                Kết nối tùy chọn:&nbsp;
+                                <ul>
+                                    <li>1 mode: USB Type-C</li>
+                                    <li>
+                                        3 mode: USB Type-C / Bluetooth / 2.4GHz
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Chất liệu: Nhôm 6063 CNC</li>
+                            <li>
+                                Hoàn thiện bề mặt: Powder coating (Phun tĩnh
+                                điện)
+                            </li>
+                            <li>Góc nghiêng: 5°</li>
+                            <li>Chiều cao cạnh trước: 19mm</li>
+                            <li>Kích thước: 332*125*32mm</li>
+                            <li>
+                                Trọng lượng: ~1.4kg unbuild, ~1.8kg full build
+                            </li>
+                        </ul>
+                        <h3 class="my-3"><b>Cấu trúc bàn phím</b></h3>
+                        <img
+                            src="./assets/imgs/keyboards/80Retros-GB65/structure.webp"
+                            alt=""
+                        />
+                        <img
+                            src="./assets/imgs/keyboards/80Retros-GB65/size.webp"
+                            alt=""
+                        />
+
+                        <input type="checkbox" id="toggle-see-more" />
+                        <div class="center">
+                            <label
+                                class="button button--outline see-more-btn"
+                                for="toggle-see-more"
+                            >
+                                Xem thêm
+                            </label>
+                            <label
+                                class="button button--outline summary-btn"
+                                for="toggle-see-more"
+                            >
+                                Thu gọn
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tab policy-tab">policy tab</div>
+                    <div class="tab evaluate-tab">evaluate tab</div>
+                </section>
+                <!-- tabs : end -->
+                <!-- suggest product : start -->
+                <section class="suggest">
+                    <div
+                        class="products-carousel d-flex flex-col align-items-center my-3"
+                    >
+                        <div class="products-carousel__viewport">
+                            <h3 class="title mb-3 reveal">
+                                SẢN PHẨM LIÊN QUAN
+                            </h3>
+
+                            <div class="products-carousel__track d-flex">
+                                <div class="product">
+                                    <div class="product__imgs">
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/rainy-75/1.avif"
+                                        />
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/rainy-75/2.avif"
+                                        />
+                                    </div>
+                                    <div class="product__badge">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </div>
+                                    <h3 class="product__title">Rainy75</h3>
+                                    <span class="product__subtitle">
+                                        Gasket mount · Gõ chắc tay
+                                    </span>
+                                    <div class="product__price">
+                                        <span class="product__sale-price me-1">
+                                            $99.00
+                                        </span>
+                                        <span class="product__origin-price">
+                                            $120.00
+                                        </span>
+                                    </div>
+                                    <a href="">
+                                        <button class="product__btn">
+                                            <i
+                                                class="fi fi-rr-arrow-small-right"
+                                            ></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="product">
+                                    <div class="product__imgs">
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/Qwertykeys/1.webp"
+                                        />
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/Qwertykeys/2.webp"
+                                        />
+                                    </div>
+                                    <div class="product__badge">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </div>
+                                    <h3 class="product__title">
+                                        QwertykeysQK Alice Duo - Split Ergonomic
+                                    </h3>
+                                    <span class="product__subtitle">
+                                        Bàn phím cơ custom
+                                    </span>
+                                    <div class="product__price">
+                                        <span class="product__sale-price me-1">
+                                            $329.99
+                                        </span>
+                                        <span class="product__origin-price">
+                                            $399.99
+                                        </span>
+                                    </div>
+                                    <a href="">
+                                        <button class="product__btn">
+                                            <i
+                                                class="fi fi-rr-arrow-small-right"
+                                            ></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="product">
+                                    <div class="product__imgs">
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/YUNZII-B68/1.webp"
+                                        />
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/YUNZII-B68/2.webp"
+                                        />
+                                    </div>
+                                    <div class="product__badge">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </div>
+                                    <h3 class="product__title">YUNZII B68</h3>
+                                    <span class="product__subtitle">
+                                        CNC nguyên khối · Hoàn thiện cao
+                                    </span>
+                                    <div class="product__price">
+                                        <span class="product__sale-price me-1">
+                                            $89.99
+                                        </span>
+                                        <span class="product__origin-price">
+                                            $99.99
+                                        </span>
+                                    </div>
+                                    <a href="">
+                                        <button class="product__btn">
+                                            <i
+                                                class="fi fi-rr-arrow-small-right"
+                                            ></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="product">
+                                    <div class="product__imgs">
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
+                                        />
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/80Retros-GB65/2.webp"
+                                        />
+                                    </div>
+                                    <div class="product__badge">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </div>
+                                    <h3 class="product__title">
+                                        80Retros GB65
+                                    </h3>
+                                    <span class="product__subtitle">
+                                        Custom Keyboard
+                                    </span>
+                                    <div class="product__price">
+                                        <span class="product__sale-price me-1">
+                                            $200.99
+                                        </span>
+                                        <span class="product__origin-price">
+                                            $250.99
+                                        </span>
+                                    </div>
+                                    <a href="">
+                                        <button class="product__btn">
+                                            <i
+                                                class="fi fi-rr-arrow-small-right"
+                                            ></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="product">
+                                    <div class="product__imgs">
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/AM-RGB-65-R1.5/7.webp"
+                                        />
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/AM-RGB-65-R1.5/2.webp"
+                                        />
+                                    </div>
+                                    <div class="product__badge">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </div>
+                                    <h3 class="product__title">
+                                        AM RGB 65 R1.5
+                                    </h3>
+                                    <span class="product__subtitle">
+                                        Bàn phím cơ cao cấp
+                                    </span>
+                                    <div class="product__price">
+                                        <span class="product__sale-price me-1">
+                                            $565.00
+                                        </span>
+                                        <span class="product__origin-price">
+                                            $580.00
+                                        </span>
+                                    </div>
+                                    <a>
+                                        <button class="product__btn">
+                                            <i
+                                                class="fi fi-rr-arrow-small-right"
+                                            ></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="product">
+                                    <div class="product__imgs">
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/Freya-Ultra/2-1024x1024.jpg"
+                                        />
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/Freya-Ultra/5-1024x1024.jpg"
+                                        />
+                                    </div>
+                                    <div class="product__badge">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </div>
+                                    <h3 class="product__title">Freya Ultra</h3>
+                                    <span class="product__subtitle">
+                                        Độ trễ thấp · Phản hồi nhanh
+                                    </span>
+                                    <div class="product__price">
+                                        <span class="product__sale-price me-1">
+                                            $509.99
+                                        </span>
+                                        <span class="product__origin-price">
+                                            $540.99
+                                        </span>
+                                    </div>
+                                    <a href="">
+                                        <button class="product__btn">
+                                            <i
+                                                class="fi fi-rr-arrow-small-right"
+                                            ></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="product">
+                                    <div class="product__imgs">
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/New-Wind-X80-Classic/1.webp"
+                                        />
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/New-Wind-X80-Classic/2.webp"
+                                        />
+                                    </div>
+                                    <div class="product__badge">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </div>
+                                    <h3 class="product__title">
+                                        New Wind X80 Classic
+                                    </h3>
+                                    <span class="product__subtitle">
+                                        Bàn phím cơ layout 87%
+                                    </span>
+                                    <div class="product__price">
+                                        <span class="product__sale-price me-1">
+                                            $399.99
+                                        </span>
+                                        <span class="product__origin-price">
+                                            $429.99
+                                        </span>
+                                    </div>
+                                    <a href="">
+                                        <button class="product__btn">
+                                            <i
+                                                class="fi fi-rr-arrow-small-right"
+                                            ></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="product">
+                                    <div class="product__imgs">
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/boop-redux/1.webp"
+                                        />
+                                        <img
+                                            loading="lazy"
+                                            src="./assets/imgs/keyboards/boop-redux/2.webp"
+                                        />
+                                    </div>
+                                    <div class="product__badge">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </div>
+                                    <h3 class="product__title">Boop Redux</h3>
+                                    <span class="product__subtitle">
+                                        Bàn phím cơ gõ êm
+                                    </span>
+                                    <div class="product__price">
+                                        <span class="product__sale-price me-1">
+                                            $191.20
+                                        </span>
+                                        <span class="product__origin-price">
+                                            $191.20
+                                        </span>
+                                    </div>
+                                    <a href="">
+                                        <button class="product__btn">
+                                            <i
+                                                class="fi fi-rr-arrow-small-right"
+                                            ></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <ul
+                            class="products-carousel__pagination d-flex reveal"
+                        ></ul>
+                    </div>
+                </section>
+                <!-- product suggest : end -->
+            </main>
+            <!-- main : end -->
+            <!-- footer : start -->
+            <footer class="footer">
+                <div class="container footer__columns">
+                    <div class="footer__column footer__column--big">
+                        <a href="index.html">
+                            <img
+                                loading="lazy"
+                                class="footer__logo"
+                                src="./assets/imgs/logos/light-mode-no-label.webp"
+                                alt="logo"
+                            />
+                        </a>
+                        <h3 class="footer__slogan">
+                            Bàn Phím Hoàn Hảo Cho Mọi Cú Click
+                        </h3>
+                    </div>
+                    <div class="footer__column">
+                        <ul class="footer__list">
+                            <li><h3 class="footer__title">Menu</h3></li>
+                            <li>
+                                <a class="footer__link" href="./index.html">
+                                    <i class="fi fi-rr-house-chimney"></i>
+                                    <span>Trang chủ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="./cart.html">
+                                    <i class="fi fi-rr-shopping-cart"></i>
+                                    <span>Giỏ hàng</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <ul class="footer__list">
+                            <li><h3 class="footer__title">Mạng xã hội</h3></li>
+                            <li>
+                                <a class="footer__link" href="">
+                                    <i class="fi fi-brands-instagram"></i>
+                                    <span>Instagram.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="">
+                                    <i class="fi fi-brands-facebook"></i>
+                                    <span>Facebook.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="">
+                                    <i class="fi fi-brands-youtube"></i>
+                                    <span>youtobe.com</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <ul class="footer__list">
+                            <li>
+                                <h3 class="footer__title">Liên lạc</h3>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="tel: 000000">
+                                    <i class="fi fi-rr-phone-flip"></i>
+                                    <span>0349156614</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="footer__link"
+                                    href="mailto:test@gmail.com"
+                                >
+                                    <i class="fi fi-rr-envelope"></i>
+                                    <span>test@gmail.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="#">
+                                    <i class="fi fi-rr-postal-address"></i>
+                                    <span>Phước Thiền, Đồng Nai</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__column footer__column--big">
+                        <div class="footer__logos-social-network">
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/logos/facebook.webp"
+                                    alt="logo facebook"
+                                />
+                            </a>
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/logos/instagram.png"
+                                    alt="logo instagram"
+                                />
+                            </a>
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/logos/twitter.png"
+                                    alt="logo twitter"
+                                />
+                            </a>
+                        </div>
+                        <span class="footer__label">Dicover our app</span>
+                        <div class="footer__download-btns">
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/buttons/button-gg-play-dark.png"
+                                    alt="button gg play"
+                                />
+                            </a>
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/buttons/button-apple-store-dark.png"
+                                    alt="button apple store"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer : end -->
+        </div>
+
+        <script type="module" src="./assets/js/pages/detail.js"></script>
+        <script
+            type="module"
+            src="./assets/js/components/product-carousel.js"
+        ></script>
+        <script type="module" src="./assets/js/main.js"></script>
+        <script type="module" src="./assets/js/layout.js"></script>
+    </body>
+</html>

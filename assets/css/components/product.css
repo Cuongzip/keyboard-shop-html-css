@@ -66,7 +66,7 @@
     margin: 15px 0 20px 0;
     font-weight: 700;
 }
-.product__sale-price {
+.product__origin-price {
     text-decoration: line-through;
     color: var(--text-muted);
 }
@@ -95,4 +95,31 @@
 
 .product__btn:hover i::before {
     rotate: 90deg;
+}
+/* products carousel */
+.products-carousel__viewport {
+    width: 100%;
+    overflow: hidden;
+    margin: 25px auto;
+}
+.products-carousel__track {
+    flex-wrap: nowrap;
+    transition: all ease 0.6s;
+}
+
+.products-carousel__pagination-item {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: rgb(152, 150, 150);
+    transition: width ease 0.3s;
+    cursor: pointer;
+}
+.products-carousel__pagination-item + .products-carousel__pagination-item {
+    margin-left: 8px;
+}
+.products-carousel__pagination-item--active {
+    width: 40px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
 }

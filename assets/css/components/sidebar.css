@@ -1,0 +1,35 @@
+.toggle-sidebar,
+#toggle-dropdown {
+    display: none;
+}
+.toggle-sidebar:checked ~ .modal {
+    display: block;
+}
+.toggle-sidebar:checked ~ .sidebar {
+    visibility: visible;
+    transform: translateX(0);
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgb(20, 20, 20, 0.5);
+    z-index: 10;
+}
+.sidebar {
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    max-width: 500px;
+    min-width: 350px;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+}

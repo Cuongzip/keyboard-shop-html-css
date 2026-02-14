@@ -1,3 +1,4 @@
+@import url(../components/sidebar.css);
 .header {
     height: var(--header-height);
     position: fixed;
@@ -200,50 +201,9 @@
     background-color: var(--accent-color);
 }
 
-#toggle-sidebar,
-#toggle-dropdown {
-    display: none;
+.header__sidebar {
+    padding: 20px 15px;
 }
-#toggle-sidebar:checked ~ .modal {
-    display: block;
-}
-#toggle-sidebar:checked ~ .sidebar {
-    visibility: visible;
-    transform: translateX(0);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    background-color: rgb(20, 20, 20, 0.5);
-    z-index: 9;
-}
-.modal__close {
-    position: absolute;
-    right: -20px;
-    top: 20px;
-}
-.sidebar {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    top: 0;
-    max-width: 400px;
-    min-width: 300px;
-    width: 60%;
-    height: 100vh;
-    background-color: var(--primary-color);
-    padding: 20px;
-    color: var(--white);
-    z-index: 10;
-    transform: translateX(-100%);
-    transition: all 0.5s ease;
-}
-
 .sidebar__search {
     background-color: var(--surface-color);
     border-radius: 15px;
@@ -265,7 +225,6 @@
 .sidebar__nav-trigger,
 .sidebar__nav-link,
 .sidebar__dropdown-link {
-    color: var(--white);
     width: 100%;
     font-size: 1.8rem;
     padding: 9px 12px;
@@ -276,8 +235,7 @@
 .sidebar__nav-trigger:hover,
 .sidebar__nav-link:hover,
 .sidebar__dropdown-link:hover {
-    background-color: var(--white);
-    color: var(--primary-text-color);
+    background-color: var(--surface-color);
 }
 .sidebar__nav-trigger {
     cursor: pointer;
@@ -286,19 +244,12 @@
     padding: 9px 25px;
     margin: 0;
 }
-.sidebar__dropdown {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
-#toggle-dropdown:checked ~ .sidebar__dropdown {
-    max-height: 300px;
-}
-#toggle-dropdown:checked ~ .sidebar__nav-trigger .angle-up {
-    display: contents;
-}
-#toggle-dropdown:checked ~ .sidebar__nav-trigger .angle-down {
+
+.sidebar__nav-details[open] .angle-down {
     display: none;
+}
+.sidebar__nav-details[open] .angle-up {
+    display: contents;
 }
 .sidebar__nav-trigger .angle-up {
     display: none;

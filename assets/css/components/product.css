@@ -17,8 +17,8 @@
     display: flex;
     overflow: hidden;
     border-radius: 12px;
-    height: 200px;
     width: 100%;
+    aspect-ratio: 6/4;
 }
 .product__imgs img {
     flex-shrink: 0;
@@ -52,7 +52,7 @@
 }
 .product__title {
     font-weight: 700;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     margin: 15px 0 7px 0;
     text-wrap: nowrap;
     overflow: hidden;

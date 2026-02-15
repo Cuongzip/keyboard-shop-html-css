@@ -1,5 +1,4 @@
-.toggle-sidebar,
-#toggle-dropdown {
+.toggle-sidebar {
     display: none;
 }
 .toggle-sidebar:checked ~ .modal {

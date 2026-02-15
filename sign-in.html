@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Đăng Nhập</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="./assets/imgs/logos/light-mode-no-label.webp"
+        />
+        <!-- reset css -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <!-- icon -->
+        <link rel="stylesheet" href="./assets/css/icons.css" />
+
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <link
+            rel="stylesheet"
+            href="./assets/css/pages/sign-in-&-sign-up.css"
+        />
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- header : start -->
+            <header class="container header">
+                <!-- sidebar : start -->
+                <input
+                    class="toggle-sidebar"
+                    id="toggle-sidebar"
+                    type="checkbox"
+                />
+                <label class="header__trigger-sidebar" for="toggle-sidebar">
+                    <i class="fi fi-br-menu-burger"></i>
+                </label>
+                <label for="toggle-sidebar" class="modal"></label>
+                <aside class="sidebar">
+                    <div class="header-sidebar">
+                        <div class="header-sidebar__search">
+                            <label for="search">
+                                <i class="fi fi-br-search"></i>
+                            </label>
+                            <input
+                                id="search"
+                                name="search"
+                                placeholder="Tìm kiếm sản phẩm"
+                            />
+                        </div>
+
+                        <nav class="header-sidebar__nav mt-2">
+                            <ul class="header-sidebar__nav-list">
+                                <li>
+                                    <details class="header-sidebar__details">
+                                        <summary
+                                            class="header-sidebar__details-trigger"
+                                        >
+                                            <span>Sản phẩm</span>
+
+                                            <i
+                                                class="angle-down fi fi-br-angle-small-down"
+                                            ></i>
+                                            <i
+                                                class="angle-up fi fi-br-angle-small-up"
+                                            ></i>
+                                        </summary>
+                                        <ul
+                                            class="header-sidebar__details-content"
+                                        >
+                                            <li>
+                                                <a
+                                                    class="header-sidebar__link"
+                                                    href="./products.html"
+                                                >
+                                                    Bàn phím
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    class="header-sidebar__link"
+                                                    href="./products.html"
+                                                >
+                                                    Keycap
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    class="header-sidebar__link"
+                                                    href="./products.html"
+                                                >
+                                                    Switch
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a
+                                                    class="header-sidebar__link"
+                                                    href="./products.html"
+                                                >
+                                                    Dụng cụ hỗ trợ
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                                <li>
+                                    <a class="header-sidebar__link" href="">
+                                        Bộ sưu tập
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="header-sidebar__link" href="">
+                                        Hướng dẫn
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <a class="header-sidebar__tail" href="./sign-up.html">
+                            <div class="header-sidebar__user">
+                                <i class="fi fi-rr-circle-user"></i>
+                                <span>Đăng ký / Đăng nhập</span>
+                            </div>
+
+                            <i
+                                class="header-sidebar__setting fi fi-sr-settings"
+                            ></i>
+                        </a>
+                    </div>
+                </aside>
+                <!-- sidebar : end -->
+                <!-- logo : start -->
+                <a href="/">
+                    <img
+                        loading="lazy"
+                        class="header__logo"
+                        src="./assets/imgs/logos/light-mode-no-label.webp"
+                        alt="logo"
+                    />
+                </a>
+                <!-- logo : end -->
+                <!-- nav : start -->
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <div class="header__nav-link dropdown-wrap">
+                                <span>Sản phẩm</span>
+                                <i class="fi fi-br-angle-small-down"></i>
+                                <ul class="dropdown product-dropdown">
+                                    <li>
+                                        <a
+                                            class="product-dropdown__link"
+                                            href="./products.html"
+                                        >
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/icons/keyboard.png"
+                                            />
+                                            <span>Bàn phím</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="product-dropdown__link"
+                                            href="./products.html"
+                                        >
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/icons/keycap.png"
+                                            />
+                                            <span>Keycap</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="product-dropdown__link"
+                                            href="./products.html"
+                                        >
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/icons/switch.png"
+                                            />
+                                            <span>Switch</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            class="product-dropdown__link"
+                                            href="./products.html"
+                                        >
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/icons/tool.png"
+                                            />
+                                            <span>Dụng cụ hỗ trợ</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="">Bộ sưu tập</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="">Hướng dẫn</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- nav : end -->
+                <!-- search : start -->
+                <form class="header__search">
+                    <label for="search"><i class="fi fi-br-search"></i></label>
+                    <input
+                        id="search"
+                        name="search"
+                        placeholder="Tìm kiếm sản phẩm"
+                    />
+                </form>
+                <!-- search : end -->
+
+                <!-- actions : start -->
+                <div class="header__actions">
+                    <div class="header__action dropdown-wrap">
+                        <a href="./cart.html" class="header__action-icon">
+                            <span class="header__action-badge center">2</span>
+                            <i class="fi fi-rr-shopping-cart"></i>
+                        </a>
+                        <div class="dropdown cart-dropdown">
+                            <h3 class="cart-dropdown__head">
+                                Sản phẩm mới thêm
+                            </h3>
+                            <ul class="cart-dropdown__list">
+                                <li>
+                                    <a class="cart-dropdown__link" href="">
+                                        <div class="product-small">
+                                            <div class="product-small__left">
+                                                <div class="product-small__img">
+                                                    <img
+                                                        loading="lazy"
+                                                        src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
+                                                        alt="keyboard"
+                                                    />
+                                                </div>
+                                                <span
+                                                    class="product-small_name"
+                                                >
+                                                    AM RGB 65 R1.5
+                                                </span>
+                                            </div>
+                                            <span class="product-small_price">
+                                                1.000.000đ
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cart-dropdown__link" href="">
+                                        <div class="product-small">
+                                            <div class="product-small__left">
+                                                <div class="product-small__img">
+                                                    <img
+                                                        loading="lazy"
+                                                        src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
+                                                        alt="keyboard"
+                                                    />
+                                                </div>
+                                                <span
+                                                    class="product-small_name"
+                                                >
+                                                    80Retros GB65
+                                                </span>
+                                            </div>
+                                            <span class="product-small_price">
+                                                2.000.000đ
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cart-dropdown__link" href="">
+                                        <div class="product-small">
+                                            <div class="product-small__left">
+                                                <div class="product-small__img">
+                                                    <img
+                                                        loading="lazy"
+                                                        src="./assets/imgs/keyboards/boop-redux/1.webp"
+                                                        alt="keyboard"
+                                                    />
+                                                </div>
+                                                <span
+                                                    class="product-small_name"
+                                                >
+                                                    boop redux
+                                                </span>
+                                            </div>
+                                            <span class="product-small_price">
+                                                1.500.000đ
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cart-dropdown__link" href="">
+                                        <div class="product-small">
+                                            <div class="product-small__left">
+                                                <div class="product-small__img">
+                                                    <img
+                                                        loading="lazy"
+                                                        src="./assets/imgs/keyboards/Qwertykeys/1.webp"
+                                                        alt="keyboard"
+                                                    />
+                                                </div>
+                                                <span
+                                                    class="product-small_name"
+                                                >
+                                                    Qwertykeys
+                                                </span>
+                                            </div>
+                                            <span class="product-small_price">
+                                                3.000.000đ
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="cart-dropdown__tail">
+                                <span>Tổng 4 sản phẩm</span>
+                                <a href="./cart.html">
+                                    <button class="button cart-dropdown__btn">
+                                        <span>Giỏ hàng</span>
+                                        <i
+                                            class="fi fi-rr-cart-shopping-fast"
+                                        ></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="header__action header__action--user dropdown-wrap"
+                    >
+                        <a href="./sign-up.html">
+                            <i class="fi fi-rr-circle-user"></i>
+                        </a>
+                        <ul class="dropdown user-dropdown">
+                            <li class="user-dropdown__head">
+                                <i class="fi fi-rr-circle-user"></i>
+                                <span class="ms-1">user@gmail.com</span>
+                            </li>
+                            <div class="user-dropdown__line"></div>
+                            <li>
+                                <a class="user-dropdown__link" href="">Hồ sơ</a>
+                            </li>
+                            <li>
+                                <a class="user-dropdown__link" href="">
+                                    Cài đặt
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-dropdown__link" href="">
+                                    Đăng xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- actions : end -->
+            </header>
+            <!-- header : end -->
+            <!-- main : start -->
+            <main class="main container">
+                <div class="main__box">
+                    <form class="form" id="form-sign-in">
+                        <div class="form__head">
+                            <h1 class="form__title mb-2">Đăng nhập</h1>
+                            <span class="form__subtitle">
+                                Chào mừng trở lại, tận hưởng hành trình!
+                            </span>
+                        </div>
+                        <div class="form__btns my-3">
+                            <a class="form__link" href="">
+                                <button class="form__btn center">
+                                    <span>Đăng nhập với</span>
+                                    <img src="./assets/imgs/icons/gg.webp" />
+                                </button>
+                            </a>
+                            <a class="form__link" href="">
+                                <button class="form__btn center">
+                                    <span>Đăng nhập với</span>
+                                    <img src="./assets/imgs/icons/fb.jpg" />
+                                </button>
+                            </a>
+                        </div>
+                        <div class="form__separate my-2">
+                            <span class="separate__text">hoặc</span>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="email">Email</label>
+                            <input
+                                name="email"
+                                id="email"
+                                placeholder="Nhập email của bạn"
+                            />
+                            <span class="form__message-error"></span>
+                        </div>
+                        <div class="form__group">
+                            <label for="password">Mật khẩu</label>
+                            <input
+                                name="password"
+                                id="password"
+                                placeholder="Nhập mật khẩu email của bạn"
+                                type="password"
+                                autocomplete="true"
+                            />
+                            <span class="form__message-error"></span>
+                        </div>
+
+                        <button type="submit" class="form__submit-btn">
+                            Đăng nhập
+                        </button>
+
+                        <div class="form__tail mt-2">
+                            <span>Bạn chưa có tài khoản,&nbsp</span>
+
+                            <a href="./sign-up.html">đăng ký</a>
+                        </div>
+                    </form>
+                    <div class="banner center">
+                        <img
+                            class="banner__img"
+                            src="./assets/imgs/banners/sign-in-banner.webp"
+                        />
+                        <span class="banner__text text-center">
+                            Gõ từng phím, cảm nhận từng khoảnh khắc.
+                        </span>
+                    </div>
+                </div>
+            </main>
+            <!-- main : end -->
+            <!-- footer : start -->
+            <footer class="footer">
+                <div class="container footer__columns">
+                    <div class="footer__column footer__column--big">
+                        <a class="footer__logo center" href="index.html">
+                            <img
+                                loading="lazy"
+                                src="./assets/imgs/logos/light-mode-no-label.webp"
+                                alt="logo"
+                            />
+                        </a>
+                        <h3 class="footer__slogan mt-3">
+                            Bàn Phím Hoàn Hảo Cho Mọi Cú Click
+                        </h3>
+                    </div>
+                    <div class="footer__column">
+                        <ul class="footer__list">
+                            <li><h3 class="footer__title">Menu</h3></li>
+                            <li>
+                                <a class="footer__link" href="./index.html">
+                                    <i class="fi fi-rr-house-chimney"></i>
+                                    <span>Trang chủ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="./products.html">
+                                    <i class="fi fi-rr-keyboard"></i>
+                                    <span>Sản phẩm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="./cart.html">
+                                    <i class="fi fi-rr-shopping-cart"></i>
+                                    <span>Giỏ hàng</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <ul class="footer__list">
+                            <li>
+                                <h3 class="footer__title">Hỗ trợ</h3>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="">
+                                    <i class="fi fi-rr-book-open-cover"></i>
+                                    <span>Hướng dẫn mua hàng</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="">
+                                    <i class="fi fi-rr-credit-card"></i>
+                                    <span>Hướng dẫn thanh toán</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="">
+                                    <i
+                                        class="fi fi-rr-person-circle-question"
+                                    ></i>
+                                    <span>Câu hỏi thường gặp</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <ul class="footer__list">
+                            <li>
+                                <h3 class="footer__title">Liên lạc</h3>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="tel: 000000">
+                                    <i class="fi fi-rr-phone-flip"></i>
+                                    <span>0349156614</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="footer__link"
+                                    href="mailto:user@gmail.com"
+                                >
+                                    <i class="fi fi-rr-envelope"></i>
+                                    <span>user@gmail.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link" href="#">
+                                    <i class="fi fi-rr-postal-address"></i>
+                                    <span>Phước Thiền, Đồng Nai</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__column footer__column--big">
+                        <div class="footer__logos-social-network">
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/logos/facebook.webp"
+                                    alt="logo facebook"
+                                />
+                            </a>
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/logos/instagram.png"
+                                    alt="logo instagram"
+                                />
+                            </a>
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/logos/twitter.png"
+                                    alt="logo twitter"
+                                />
+                            </a>
+                        </div>
+                        <span class="footer__label">Khám phá ứng dụng</span>
+                        <div class="footer__download-btns">
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/buttons/button-gg-play-dark.png"
+                                    alt="button gg play"
+                                />
+                            </a>
+                            <a href="">
+                                <img
+                                    loading="lazy"
+                                    src="./assets/imgs/buttons/button-apple-store-dark.png"
+                                    alt="button apple store"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer : end -->
+            <!-- chat : start -->
+            <div class="chat">
+                <label for="toggle-chat-box" class="chat__trigger center">
+                    <i class="fi fi-sr-comment"></i>
+                </label>
+                <input id="toggle-chat-box" type="checkbox" />
+                <div class="chat-box">
+                    <div class="chat-box__head">
+                        <img
+                            loading="lazy"
+                            src="./assets/imgs/icons/chat-bot.avif"
+                            alt="avatar chatbot"
+                        />
+                        <span>Chatbot hỗ trợ</span>
+                        <label class="chat-box__close" for="toggle-chat-box">
+                            <i class="fi fi-br-cross-small"></i>
+                        </label>
+                    </div>
+                    <ul class="chat-box__messages">
+                        <li class="chat-box__message">
+                            <img
+                                loading="lazy"
+                                src="./assets/imgs/icons/chat-bot.avif"
+                                alt="avatar chatbot"
+                            />
+                            <p class="chat-box__text chat-box__text--bot">
+                                <span>Bạn cần tui giúp gì</span>
+                                <br />
+                                <span class="chat-box__time">7:24 PM</span>
+                            </p>
+                        </li>
+                        <li class="chat-box__message">
+                            <p class="chat-box__text chat-box__text--user">
+                                <span>Tui đang muốn build bàn phím cơ</span>
+                                <br />
+                                <span class="chat-box__time">7:24 PM</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <form class="chat-box__input">
+                        <input placeholder="Aa" name="chat-input" />
+                        <button type="submit" class="chat-box__btn">
+                            <i class="fi fi-ss-paper-plane-top"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- chat : end -->
+        </div>
+        <script type="module" src="./assets/js/layout.js"></script>
+    </body>
+</html>

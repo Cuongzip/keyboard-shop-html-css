@@ -21,96 +21,108 @@
     <body>
         <div class="wrapper">
             <!-- header : start -->
-            <header
-                class="container header d-flex align-items-center justify-content-between"
-            >
+            <header class="container header">
                 <!-- sidebar : start -->
-                <input id="toggle-sidebar" type="checkbox" />
-                <label
-                    class="header__summary justify-content-center align-items-center"
-                    for="toggle-sidebar"
-                >
+                <input
+                    class="toggle-sidebar"
+                    id="toggle-sidebar"
+                    type="checkbox"
+                />
+                <label class="header__trigger-sidebar" for="toggle-sidebar">
                     <i class="fi fi-br-menu-burger"></i>
                 </label>
                 <label for="toggle-sidebar" class="modal"></label>
                 <aside class="sidebar">
-                    <div class="sidebar__search d-flex align-items-center">
-                        <label for="search">
-                            <i class="fi fi-br-search"></i>
-                        </label>
-                        <input
-                            id="search"
-                            name="search"
-                            placeholder="Tìm kiếm sản phẩm"
-                        />
+                    <div class="header-sidebar">
+                        <div class="header-sidebar__search">
+                            <label for="search">
+                                <i class="fi fi-br-search"></i>
+                            </label>
+                            <input
+                                id="search"
+                                name="search"
+                                placeholder="Tìm kiếm sản phẩm"
+                            />
+                        </div>
+
+                        <nav class="header-sidebar__nav mt-2">
+                            <ul class="header-sidebar__nav-list">
+                                <li>
+                                    <details class="header-sidebar__details">
+                                        <summary
+                                            class="header-sidebar__details-trigger"
+                                        >
+                                            <span>Sản phẩm</span>
+
+                                            <i
+                                                class="angle-down fi fi-br-angle-small-down"
+                                            ></i>
+                                            <i
+                                                class="angle-up fi fi-br-angle-small-up"
+                                            ></i>
+                                        </summary>
+                                        <ul
+                                            class="header-sidebar__details-content"
+                                        >
+                                            <li>
+                                                <a
+                                                    class="header-sidebar__link"
+                                                    href="./products.html"
+                                                >
+                                                    Bàn phím
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    class="header-sidebar__link"
+                                                    href="./products.html"
+                                                >
+                                                    Keycap
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    class="header-sidebar__link"
+                                                    href="./products.html"
+                                                >
+                                                    Switch
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a
+                                                    class="header-sidebar__link"
+                                                    href="./products.html"
+                                                >
+                                                    Dụng cụ hỗ trợ
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                                <li>
+                                    <a class="header-sidebar__link" href="">
+                                        Bộ sưu tập
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="header-sidebar__link" href="">
+                                        Hướng dẫn
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <a class="header-sidebar__tail" href="./sign-up.html">
+                            <div class="header-sidebar__user">
+                                <i class="fi fi-rr-circle-user"></i>
+                                <span>Đăng ký / Đăng nhập</span>
+                            </div>
+
+                            <i
+                                class="header-sidebar__setting fi fi-sr-settings"
+                            ></i>
+                        </a>
                     </div>
-
-                    <nav class="sidebar__nav mt-2">
-                        <ul class="sidebar__nav-list">
-                            <li class="sidebar__nav-item">
-                                <input id="toggle-dropdown" type="checkbox" />
-                                <label
-                                    for="toggle-dropdown"
-                                    class="sidebar__nav-trigger d-flex justify-content-between align-items-center"
-                                >
-                                    <span>Sản phẩm</span>
-
-                                    <i
-                                        class="angle-down fi fi-br-angle-small-down"
-                                    ></i>
-                                    <i
-                                        class="angle-up fi fi-br-angle-small-up"
-                                    ></i>
-                                </label>
-
-                                <ul class="sidebar__dropdown">
-                                    <li>
-                                        <a
-                                            class="sidebar__dropdown-link"
-                                            href=""
-                                        >
-                                            Bàn phím
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="sidebar__dropdown-link"
-                                            href=""
-                                        >
-                                            Keycap
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="sidebar__dropdown-link"
-                                            href=""
-                                        >
-                                            Switch
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a
-                                            class="sidebar__dropdown-link"
-                                            href=""
-                                        >
-                                            Dụng cụ hỗ trợ
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="sidebar__nav-item">
-                                <a class="sidebar__nav-link" href="">
-                                    Bộ sưu tập
-                                </a>
-                            </li>
-                            <li class="sidebar__nav-item">
-                                <a class="sidebar__nav-link" href="">
-                                    Hướng dẫn
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                 </aside>
                 <!-- sidebar : end -->
                 <!-- logo : start -->
@@ -125,18 +137,16 @@
                 <!-- logo : end -->
                 <!-- nav : start -->
                 <nav class="header__nav">
-                    <ul class="header__nav-list d-flex">
+                    <ul class="header__nav-list">
                         <li class="header__nav-item">
-                            <div
-                                class="header__nav-link dropdown-wrap d-flex text-center"
-                            >
+                            <div class="header__nav-link dropdown-wrap">
                                 <span>Sản phẩm</span>
                                 <i class="fi fi-br-angle-small-down"></i>
                                 <ul class="dropdown product-dropdown">
                                     <li>
                                         <a
-                                            class="product-dropdown__link d-flex align-items-center"
-                                            href=""
+                                            class="product-dropdown__link"
+                                            href="./products.html"
                                         >
                                             <img
                                                 loading="lazy"
@@ -147,8 +157,8 @@
                                     </li>
                                     <li>
                                         <a
-                                            class="product-dropdown__link d-flex align-items-center"
-                                            href=""
+                                            class="product-dropdown__link"
+                                            href="./products.html"
                                         >
                                             <img
                                                 loading="lazy"
@@ -159,8 +169,8 @@
                                     </li>
                                     <li>
                                         <a
-                                            class="product-dropdown__link d-flex align-items-center"
-                                            href=""
+                                            class="product-dropdown__link"
+                                            href="./products.html"
                                         >
                                             <img
                                                 loading="lazy"
@@ -172,8 +182,8 @@
 
                                     <li>
                                         <a
-                                            class="product-dropdown__link d-flex align-items-center"
-                                            href=""
+                                            class="product-dropdown__link"
+                                            href="./products.html"
                                         >
                                             <img
                                                 loading="lazy"
@@ -195,18 +205,18 @@
                 </nav>
                 <!-- nav : end -->
                 <!-- search : start -->
-                <div class="header__search align-items-center">
+                <form class="header__search">
                     <label for="search"><i class="fi fi-br-search"></i></label>
                     <input
                         id="search"
                         name="search"
                         placeholder="Tìm kiếm sản phẩm"
                     />
-                </div>
+                </form>
                 <!-- search : end -->
 
                 <!-- actions : start -->
-                <div class="header__actions d-flex">
+                <div class="header__actions">
                     <div class="header__action dropdown-wrap">
                         <a href="./cart.html" class="header__action-icon">
                             <span class="header__action-badge center">2</span>
@@ -219,10 +229,8 @@
                             <ul class="cart-dropdown__list">
                                 <li>
                                     <a class="cart-dropdown__link" href="">
-                                        <div
-                                            class="product-small d-flex justify-content-between"
-                                        >
-                                            <div class="d-flex">
+                                        <div class="product-small">
+                                            <div class="product-small__left">
                                                 <div class="product-small__img">
                                                     <img
                                                         loading="lazy"
@@ -244,84 +252,76 @@
                                 </li>
                                 <li>
                                     <a class="cart-dropdown__link" href="">
-                                        <div
-                                            class="product-small d-flex justify-content-between"
-                                        >
-                                            <div class="d-flex">
+                                        <div class="product-small">
+                                            <div class="product-small__left">
                                                 <div class="product-small__img">
                                                     <img
                                                         loading="lazy"
-                                                        src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
+                                                        src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
                                                         alt="keyboard"
                                                     />
                                                 </div>
                                                 <span
                                                     class="product-small_name"
                                                 >
-                                                    AM RGB 65 R1.5
+                                                    80Retros GB65
                                                 </span>
                                             </div>
                                             <span class="product-small_price">
-                                                1.000.000đ
+                                                2.000.000đ
                                             </span>
                                         </div>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="cart-dropdown__link" href="">
-                                        <div
-                                            class="product-small d-flex justify-content-between"
-                                        >
-                                            <div class="d-flex">
+                                        <div class="product-small">
+                                            <div class="product-small__left">
                                                 <div class="product-small__img">
                                                     <img
                                                         loading="lazy"
-                                                        src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
+                                                        src="./assets/imgs/keyboards/boop-redux/1.webp"
                                                         alt="keyboard"
                                                     />
                                                 </div>
                                                 <span
                                                     class="product-small_name"
                                                 >
-                                                    AM RGB 65 R1.5
+                                                    boop redux
                                                 </span>
                                             </div>
                                             <span class="product-small_price">
-                                                1.000.000đ
+                                                1.500.000đ
                                             </span>
                                         </div>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="cart-dropdown__link" href="">
-                                        <div
-                                            class="product-small d-flex justify-content-between"
-                                        >
-                                            <div class="d-flex">
+                                        <div class="product-small">
+                                            <div class="product-small__left">
                                                 <div class="product-small__img">
                                                     <img
                                                         loading="lazy"
-                                                        src="./assets/imgs/keyboards/AM-RGB-65-R1.5/1.webp"
+                                                        src="./assets/imgs/keyboards/Qwertykeys/1.webp"
                                                         alt="keyboard"
                                                     />
                                                 </div>
                                                 <span
                                                     class="product-small_name"
                                                 >
-                                                    AM RGB 65 R1.5
+                                                    Qwertykeys
                                                 </span>
                                             </div>
                                             <span class="product-small_price">
-                                                1.000.000đ
+                                                3.000.000đ
                                             </span>
                                         </div>
                                     </a>
                                 </li>
                             </ul>
-                            <div
-                                class="cart-dropdown__tail d-flex justify-content-between align-items-center"
-                            >
-                                <span>Tổng 3 sản phẩm</span>
+                            <div class="cart-dropdown__tail">
+                                <span>Tổng 4 sản phẩm</span>
                                 <a href="./cart.html">
                                     <button class="button cart-dropdown__btn">
                                         <span>Giỏ hàng</span>
@@ -336,15 +336,13 @@
                     <div
                         class="header__action header__action--user dropdown-wrap"
                     >
-                        <a href="./profile.html">
+                        <a href="./sign-up.html">
                             <i class="fi fi-rr-circle-user"></i>
                         </a>
                         <ul class="dropdown user-dropdown">
-                            <li
-                                class="user-dropdown__head d-flex align-items-center"
-                            >
+                            <li class="user-dropdown__head">
                                 <i class="fi fi-rr-circle-user"></i>
-                                <span class="ms-1">test123@gmail.com</span>
+                                <span class="ms-1">user@gmail.com</span>
                             </li>
                             <div class="user-dropdown__line"></div>
                             <li>
@@ -370,10 +368,8 @@
             <main class="container main">
                 <!-- carousel : start -->
                 <section class="carousel">
-                    <div class="carousel__slide d-flex">
-                        <div
-                            class="carousel__content d-flex justify-content-center flex-col"
-                        >
+                    <div class="carousel__slide">
+                        <div class="carousel__content">
                             <div class="carousel__text">
                                 <span class="carousel__label">
                                     Gõ chuẩn từng phím
@@ -385,7 +381,7 @@
                             </div>
 
                             <div class="carousel__btns mt-2">
-                                <a class="carousel__link" href="">
+                                <a href="">
                                     <button class="button carousel__btn">
                                         <i
                                             class="fi fi-rr-cart-shopping-fast"
@@ -393,7 +389,7 @@
                                         <span>Mua ngay</span>
                                     </button>
                                 </a>
-                                <a class="carousel__link" href="">
+                                <a href="">
                                     <button
                                         class="button button--outline carousel__btn"
                                     >
@@ -407,7 +403,7 @@
                         <div class="carousel__img">
                             <img
                                 loading="lazy"
-                                src="./assets/imgs/banners/3.png"
+                                src="./assets/imgs/banners/AM-RGB-65-R1.5.png"
                             />
                         </div>
 
@@ -425,48 +421,44 @@
 
                 <!-- keycaps : start -->
                 <section class="keycaps">
-                    <div
-                        class="products-carousel d-flex flex-col align-items-center my-3"
-                    >
+                    <div class="products-carousel my-3">
                         <div class="products-carousel__viewport">
-                            <div
-                                class="keycaps__head mb-4 d-flex justify-content-between align-items-center reveal"
-                            >
+                            <div class="keycaps__head mb-4 reveal">
                                 <h2 class="title">Keycaps</h2>
-                                <a class="center gap-1" href="">
+                                <a class="center" href="./products.html">
                                     <span>Xem thêm</span>
                                     <i class="fi fi-rr-arrow-small-right"></i>
                                 </a>
                             </div>
-                            <div class="products-carousel__track d-flex">
+                            <div class="products-carousel__track">
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/S9000-Cherry-profile/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/S9000-Cherry-profile/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        S9000 Cherry profile
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/S9000-Cherry-profile/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/S9000-Cherry-profile/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            S9000 Cherry profile
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Cherry profile Keycaps
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $36.00
+                                        <span class="product__sale-price me-1">
+                                            900.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $39.00
+                                        <span class="product__origin-price">
+                                            940.000₫
                                         </span>
                                     </div>
                                     <a>
@@ -478,33 +470,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/No-ducking-pressure/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/No-ducking-pressure/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        No ducking pressure
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/No-ducking-pressure/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/No-ducking-pressure/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            No ducking pressure
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Cherry profile Keycaps
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $35.00
+                                        <span class="product__sale-price me-1">
+                                            999.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $38.00
+                                        <span class="product__origin-price">
+                                            1.200.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -516,33 +508,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/Ichiraku-Ramen-R2/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/Ichiraku-Ramen-R2/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        Ichiraku Ramen R2
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/Ichiraku-Ramen-R2/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/Ichiraku-Ramen-R2/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            Ichiraku Ramen R2
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Cherry profile Keycaps
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $35.00
+                                        <span class="product__sale-price me-1">
+                                            899.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $39.00
+                                        <span class="product__origin-price">
+                                            999.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -554,33 +546,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/WS-Orchid-Strings/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/WS-Orchid-Strings/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        WS Orchid Strings
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/WS-Orchid-Strings/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/WS-Orchid-Strings/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            WS Orchid Strings
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Cherry profile Keycaps
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $54.00
+                                        <span class="product__sale-price me-1">
+                                            1.500.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $59.00
+                                        <span class="product__origin-price">
+                                            1.800.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -592,31 +584,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/WS-PBT-Mizu/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/WS-PBT-Mizu/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">WS PBT Mizu</h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/WS-PBT-Mizu/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/WS-PBT-Mizu/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            WS PBT Mizu
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Cherry profile Keycaps
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $14.00
+                                        <span class="product__sale-price me-1">
+                                            400.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $16.00
+                                        <span class="product__origin-price">
+                                            450.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -628,33 +622,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/After-the-Rain-R2/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/After-the-Rain-R2/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        After the Rain R2
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/After-the-Rain-R2/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/After-the-Rain-R2/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            After the Rain R2
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Cherry profile Keycaps
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $30.00
+                                        <span class="product__sale-price me-1">
+                                            820.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $32.00
+                                        <span class="product__origin-price">
+                                            840.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -666,31 +660,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/WS-Kraken/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keycaps/WS-Kraken/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">WS Kraken</h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/WS-Kraken/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keycaps/WS-Kraken/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            WS Kraken
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Cherry profile Keycaps
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $29.00
+                                        <span class="product__sale-price me-1">
+                                            720.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $32.00
+                                        <span class="product__origin-price">
+                                            780.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -703,57 +699,51 @@
                                 </div>
                             </div>
                         </div>
-                        <ul
-                            class="products-carousel__pagination reveal d-flex"
-                        ></ul>
+                        <ul class="products-carousel__pagination reveal"></ul>
                     </div>
                 </section>
-                <!-- keycaps product : end -->
+                <!-- keycaps : end -->
 
                 <!-- switches : start -->
                 <section class="switches">
-                    <div
-                        class="products-carousel d-flex flex-col align-items-center my-3"
-                    >
+                    <div class="products-carousel my-3">
                         <div class="products-carousel__viewport">
-                            <div
-                                class="reveal switches__head mb-4 d-flex justify-content-between align-items-center"
-                            >
+                            <div class="reveal switches__head mb-4">
                                 <h2 class="title">Switches</h2>
-                                <a class="center gap-1" href="">
+                                <a class="center" href="./products.html">
                                     <span>Xem thêm</span>
                                     <i class="fi fi-rr-arrow-small-right"></i>
                                 </a>
                             </div>
-                            <div class="products-carousel__track d-flex">
+                            <div class="products-carousel__track">
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-Morandi-Switch/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-Morandi-Switch/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        WS Morandi Switch
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-Morandi-Switch/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-Morandi-Switch/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            WS Morandi Switch
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Linear · Êm · Không khấc
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $15.05
+                                        <span class="product__sale-price me-1">
+                                            21.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $17.05
+                                        <span class="product__origin-price">
+                                            23.000₫
                                         </span>
                                     </div>
                                     <a>
@@ -765,33 +755,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-Jade-Switch/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-Jade-Switch/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        WS Jade Switch
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-Jade-Switch/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-Jade-Switch/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            WS Jade Switch
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Gõ mượt · Ít ồn
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $19.99
+                                        <span class="product__sale-price me-1">
+                                            27.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $21.99
+                                        <span class="product__origin-price">
+                                            29.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -803,33 +793,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-Onion-Switch/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-Onion-Switch/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        WS Onion Switch
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-Onion-Switch/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-Onion-Switch/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            WS Onion Switch
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Linear · Actuation nhẹ
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $24.50
+                                        <span class="product__sale-price me-1">
+                                            35.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $27.50
+                                        <span class="product__origin-price">
+                                            39.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -841,33 +831,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-Pearl-Switch/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-Pearl-Switch/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        WS Pearl Switch
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-Pearl-Switch/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-Pearl-Switch/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            WS Pearl Switch
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Linear cao cấp · Gõ mượt sâu
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $30.20
+                                        <span class="product__sale-price me-1">
+                                            32.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $32.20
+                                        <span class="product__origin-price">
+                                            33.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -879,33 +869,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-POM-Switch/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/switches/WS-POM-Switch/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        WS POM+ Switch
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-POM-Switch/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/switches/WS-POM-Switch/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            WS POM+ Switch
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Linear cao cấp · Gõ mượt sâu
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $34.20
+                                        <span class="product__sale-price me-1">
+                                            42.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $40.00
+                                        <span class="product__origin-price">
+                                            45.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -918,9 +908,7 @@
                                 </div>
                             </div>
                         </div>
-                        <ul
-                            class="products-carousel__pagination reveal d-flex"
-                        ></ul>
+                        <ul class="products-carousel__pagination reveal"></ul>
                     </div>
                 </section>
                 <!-- switches products : end -->
@@ -934,37 +922,35 @@
                             Tuyển chọn những sản phẩm được yêu thích nhất
                         </span>
                     </div>
-                    <div
-                        class="products-carousel d-flex flex-col align-items-center my-3"
-                    >
+                    <div class="products-carousel my-3">
                         <div class="products-carousel__viewport">
-                            <div class="products-carousel__track d-flex">
+                            <div class="products-carousel__track">
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/rainy-75/1.avif"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/rainy-75/2.avif"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">Rainy75</h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/rainy-75/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/rainy-75/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">Rainy75</h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Gasket mount · Gõ chắc tay
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $99.00
+                                        <span class="product__sale-price me-1">
+                                            2.222.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $120.00
+                                        <span class="product__origin-price">
+                                            2.300.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -976,33 +962,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/Qwertykeys/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/Qwertykeys/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        QwertykeysQK Alice Duo - Split Ergonomic
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/Qwertykeys/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/Qwertykeys/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            QK Alice Duo - Split Ergonomic
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Bàn phím cơ custom
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $329.99
+                                        <span class="product__sale-price me-1">
+                                            3.200.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $399.99
+                                        <span class="product__origin-price">
+                                            3.300.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -1014,31 +1000,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/YUNZII-B68/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/YUNZII-B68/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">YUNZII B68</h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/YUNZII-B68/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/YUNZII-B68/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            YUNZII B68
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
-                                        CNC nguyên khối · Hoàn thiện cao
+                                        CNC nguyên khối
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $89.99
+                                        <span class="product__sale-price me-1">
+                                            1.800.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $99.99
+                                        <span class="product__origin-price">
+                                            1.900.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -1050,33 +1038,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/80Retros-GB65/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        80Retros GB65
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/80Retros-GB65/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            80Retros GB65
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Custom Keyboard
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $200.99
+                                        <span class="product__sale-price me-1">
+                                            2.300.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $250.99
+                                        <span class="product__origin-price">
+                                            2.400.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -1088,33 +1076,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/AM-RGB-65-R1.5/7.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/AM-RGB-65-R1.5/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        AM RGB 65 R1.5
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/AM-RGB-65-R1.5/7.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/AM-RGB-65-R1.5/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            AM RGB 65 R1.5
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Bàn phím cơ cao cấp
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $565.00
+                                        <span class="product__sale-price me-1">
+                                            6.300.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $580.00
+                                        <span class="product__origin-price">
+                                            6.400.000₫
                                         </span>
                                     </div>
                                     <a>
@@ -1126,31 +1114,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/Freya-Ultra/2-1024x1024.jpg"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/Freya-Ultra/5-1024x1024.jpg"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">Freya Ultra</h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/Freya-Ultra/2-1024x1024.jpg"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/Freya-Ultra/5-1024x1024.jpg"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            Freya Ultra
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Độ trễ thấp · Phản hồi nhanh
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $509.99
+                                        <span class="product__sale-price me-1">
+                                            5.999.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $540.99
+                                        <span class="product__origin-price">
+                                            6.299.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -1162,33 +1152,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/New-Wind-X80-Classic/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/New-Wind-X80-Classic/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">
-                                        New Wind X80 Classic
-                                    </h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/New-Wind-X80-Classic/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/New-Wind-X80-Classic/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            New Wind X80 Classic
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Bàn phím cơ layout 87%
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $399.99
+                                        <span class="product__sale-price me-1">
+                                            3.999.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $429.99
+                                        <span class="product__origin-price">
+                                            4.239.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -1200,31 +1190,33 @@
                                     </a>
                                 </div>
                                 <div class="product">
-                                    <div class="product__imgs">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/boop-redux/1.webp"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/imgs/keyboards/boop-redux/2.webp"
-                                        />
-                                    </div>
-                                    <div class="product__badge">
-                                        <i class="fi fi-rs-heart"></i>
-                                    </div>
-                                    <h3 class="product__title">Boop Redux</h3>
+                                    <a href="./detail.html">
+                                        <div class="product__imgs">
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/boop-redux/1.webp"
+                                            />
+                                            <img
+                                                loading="lazy"
+                                                src="./assets/imgs/keyboards/boop-redux/2.webp"
+                                            />
+                                        </div>
+                                        <div class="product__badge">
+                                            <i class="fi fi-rs-heart"></i>
+                                        </div>
+                                        <h3 class="product__title">
+                                            Boop Redux
+                                        </h3>
+                                    </a>
                                     <span class="product__subtitle">
                                         Bàn phím cơ gõ êm
                                     </span>
                                     <div class="product__price">
-                                        <span
-                                            class="product__origin-price me-1"
-                                        >
-                                            $191.20
+                                        <span class="product__sale-price me-1">
+                                            1.922.000₫
                                         </span>
-                                        <span class="product__sale-price">
-                                            $191.20
+                                        <span class="product__origin-price">
+                                            2.322.000₫
                                         </span>
                                     </div>
                                     <a href="">
@@ -1237,9 +1229,7 @@
                                 </div>
                             </div>
                         </div>
-                        <ul
-                            class="products-carousel__pagination reveal d-flex"
-                        ></ul>
+                        <ul class="products-carousel__pagination reveal"></ul>
                     </div>
                 </section>
                 <!-- featured products : end -->
@@ -1252,7 +1242,7 @@
                             tôi.
                         </span>
                     </h2>
-                    <div class="benefits__wrap d-flex justify-content-center">
+                    <div class="benefits__wrap">
                         <div class="benefit reveal">
                             <i
                                 class="benefit__icon benefit__purple fi fi-rr-boxes"
@@ -1266,7 +1256,7 @@
                                 <span class="benefit__purple">VN.</span>
                             </p>
                         </div>
-                        <div class="benefit reveal">
+                        <div class="benefit reveal" data-delay="150">
                             <i
                                 class="benefit__icon benefit__blue fi fi-rs-shipping-fast"
                             ></i>
@@ -1279,7 +1269,7 @@
                                 kể từ khi nhận hàng.
                             </p>
                         </div>
-                        <div class="benefit reveal">
+                        <div class="benefit reveal" data-delay="250">
                             <i
                                 class="benefit__icon benefit__pink fi fi-rs-assessment"
                             ></i>
@@ -1295,7 +1285,7 @@
                                 từ khách hàng.
                             </p>
                         </div>
-                        <div class="benefit reveal">
+                        <div class="benefit reveal" data-delay="350">
                             <i
                                 class="benefit__icon benefit__green fi fi-rs-wallet-arrow"
                             ></i>
@@ -1317,9 +1307,7 @@
                 <section class="articles">
                     <h2 class="title reveal">Hướng dẫn & bài viết</h2>
                     <div class="articles__box">
-                        <div
-                            class="articles__top d-flex justify-content-between reveal"
-                        >
+                        <div class="articles__top reveal">
                             <div class="articles__join">
                                 <h3>Đăng ký nhận bản tin!</h3>
                                 <p>
@@ -1327,14 +1315,12 @@
                                     và những thông tin hậu trường thú vị về các
                                     sản phẩm sắp ra mắt!
                                 </p>
-                                <div
-                                    class="articles__input d-flex align-items-center"
-                                >
+                                <div class="articles__input">
                                     <input placeholder="Email" type="text" />
                                     <button>Gửi</button>
                                 </div>
                             </div>
-                            <a href="" class="article-featured d-flex">
+                            <a href="" class="article-featured">
                                 <div class="article-featured__img">
                                     <img
                                         loading="lazy"
@@ -1352,9 +1338,7 @@
                                         nắm rõ mọi kiến thức cơ bản về bàn phím
                                         cơ tùy chỉnh.
                                     </p>
-                                    <div
-                                        class="article-featured__user d-flex align-items-center mt-2"
-                                    >
+                                    <div class="article-featured__user mt-2">
                                         <img
                                             loading="lazy"
                                             src="./assets/imgs/keyboards/ice-ring-63-RT/10.webp"
@@ -1365,18 +1349,14 @@
                                 </div>
                             </a>
                         </div>
-                        <div
-                            class="articles__title d-flex justify-content-between align-items-center my-3 reveal"
-                        >
+                        <div class="articles__title my-3 reveal">
                             <h3>Bài viết nổi bật</h3>
                             <a href="./articles">
                                 <button>Tất cả</button>
                             </a>
                         </div>
-                        <div
-                            class="articles__wrap d-flex justify-content-between"
-                        >
-                            <a href="" class="article reveal d-flex">
+                        <div class="articles__wrap">
+                            <a href="" class="article reveal">
                                 <div class="article__img">
                                     <img
                                         loading="lazy"
@@ -1385,9 +1365,7 @@
                                     />
                                 </div>
                                 <div class="article__info">
-                                    <div
-                                        class="article__user d-flex align-items-center"
-                                    >
+                                    <div class="article__user">
                                         <img
                                             loading="lazy"
                                             src="./assets/imgs/keyboards/New-Wind-X80-Classic/3.webp"
@@ -1404,7 +1382,7 @@
                                 </div>
                             </a>
 
-                            <a href="" class="article reveal d-flex">
+                            <a href="" class="article reveal" data-delay="100">
                                 <div class="article__img">
                                     <img
                                         loading="lazy"
@@ -1431,7 +1409,7 @@
                                 </div>
                             </a>
 
-                            <a href="" class="article reveal d-flex">
+                            <a href="" class="article reveal" data-delay="200">
                                 <div class="article__img">
                                     <img
                                         loading="lazy"
@@ -1571,19 +1549,19 @@
                 </section>
                 <!-- gallery : end -->
             </main>
+            <!-- main : end -->
             <!-- footer : start -->
             <footer class="footer">
                 <div class="container footer__columns">
                     <div class="footer__column footer__column--big">
-                        <a href="index.html">
+                        <a class="footer__logo center" href="index.html">
                             <img
                                 loading="lazy"
-                                class="footer__logo"
                                 src="./assets/imgs/logos/light-mode-no-label.webp"
                                 alt="logo"
                             />
                         </a>
-                        <h3 class="footer__slogan">
+                        <h3 class="footer__slogan mt-3">
                             Bàn Phím Hoàn Hảo Cho Mọi Cú Click
                         </h3>
                     </div>
@@ -1597,6 +1575,12 @@
                                 </a>
                             </li>
                             <li>
+                                <a class="footer__link" href="./products.html">
+                                    <i class="fi fi-rr-keyboard"></i>
+                                    <span>Sản phẩm</span>
+                                </a>
+                            </li>
+                            <li>
                                 <a class="footer__link" href="./cart.html">
                                     <i class="fi fi-rr-shopping-cart"></i>
                                     <span>Giỏ hàng</span>
@@ -1606,23 +1590,27 @@
                     </div>
                     <div class="footer__column">
                         <ul class="footer__list">
-                            <li><h3 class="footer__title">Mạng xã hội</h3></li>
+                            <li>
+                                <h3 class="footer__title">Hỗ trợ</h3>
+                            </li>
                             <li>
                                 <a class="footer__link" href="">
-                                    <i class="fi fi-brands-instagram"></i>
-                                    <span>Instagram.com</span>
+                                    <i class="fi fi-rr-book-open-cover"></i>
+                                    <span>Hướng dẫn mua hàng</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="footer__link" href="">
-                                    <i class="fi fi-brands-facebook"></i>
-                                    <span>Facebook.com</span>
+                                    <i class="fi fi-rr-credit-card"></i>
+                                    <span>Hướng dẫn thanh toán</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="footer__link" href="">
-                                    <i class="fi fi-brands-youtube"></i>
-                                    <span>youtobe.com</span>
+                                    <i
+                                        class="fi fi-rr-person-circle-question"
+                                    ></i>
+                                    <span>Câu hỏi thường gặp</span>
                                 </a>
                             </li>
                         </ul>
@@ -1641,10 +1629,10 @@
                             <li>
                                 <a
                                     class="footer__link"
-                                    href="mailto:test@gmail.com"
+                                    href="mailto:user@gmail.com"
                                 >
                                     <i class="fi fi-rr-envelope"></i>
-                                    <span>test@gmail.com</span>
+                                    <span>user@gmail.com</span>
                                 </a>
                             </li>
                             <li>
@@ -1679,7 +1667,7 @@
                                 />
                             </a>
                         </div>
-                        <span class="footer__label">Dicover our app</span>
+                        <span class="footer__label">Khám phá ứng dụng</span>
                         <div class="footer__download-btns">
                             <a href="">
                                 <img
@@ -1702,7 +1690,7 @@
             <!-- footer : end -->
             <!-- chat : start -->
             <div class="chat">
-                <label for="toggle-chat-box" class="chat__trigger">
+                <label for="toggle-chat-box" class="chat__trigger center">
                     <i class="fi fi-sr-comment"></i>
                 </label>
                 <input id="toggle-chat-box" type="checkbox" />
@@ -1719,28 +1707,43 @@
                         </label>
                     </div>
                     <ul class="chat-box__messages">
-                        <li class="chat-box__message chat-box__message--bot">
-                            <span>Bạn cần tui giúp gì</span>
-                            <br />
-                            <span class="chat-box__time">7:24 PM</span>
+                        <li class="chat-box__message">
+                            <img
+                                loading="lazy"
+                                src="./assets/imgs/icons/chat-bot.avif"
+                                alt="avatar chatbot"
+                            />
+                            <p class="chat-box__text chat-box__text--bot">
+                                <span>Bạn cần tui giúp gì</span>
+                                <br />
+                                <span class="chat-box__time">7:24 PM</span>
+                            </p>
                         </li>
-                        <li class="chat-box__message chat-box__message--user">
-                            <span>Tui đang muốn build bàn phím cơ</span>
-                            <br />
-                            <span class="chat-box__time">7:24 PM</span>
+                        <li class="chat-box__message">
+                            <p class="chat-box__text chat-box__text--user">
+                                <span>Tui đang muốn build bàn phím cơ</span>
+                                <br />
+                                <span class="chat-box__time">7:24 PM</span>
+                            </p>
                         </li>
                     </ul>
-                    <div class="chat-box__input">
+                    <form class="chat-box__input">
                         <input placeholder="Aa" name="chat-input" />
-                        <button class="chat-box__btn">
+                        <button type="submit" class="chat-box__btn">
                             <i class="fi fi-ss-paper-plane-top"></i>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
+            <!-- chat : end -->
         </div>
-        <!-- chat : end -->
 
-        <script type="module" src="./assets/js/index.js"></script>
+        <script type="module" src="./assets/js/pages/index.js"></script>
+        <script
+            type="module"
+            src="./assets/js/components/product-carousel.js"
+        ></script>
+        <script type="module" src="./assets/js/layout.js"></script>
+        <script type="module" src="./assets/js/main.js"></script>
     </body>
 </html>

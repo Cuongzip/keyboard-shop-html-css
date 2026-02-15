@@ -8,82 +8,89 @@ const slideEl = $(".carousel__slide");
 let activeIndex = 0;
 const slides = [
     {
-        name: "AM RGB 65 R1.5 ",
+        name: "80Retros GB65",
         label: "Tối giản nhưng đầy nội lực",
         subTitle: "Gasket mount êm mượt",
-        src: "./assets/imgs/banners/3.png",
+        src: "./assets/imgs/banners/80Retros-GB65.webp",
     },
     {
-        name: "GINKGO65 PRO",
+        name: "QK Alice Duo",
         label: "Chuẩn custom, đúng chất chơi",
         subTitle: "Âm gõ trầm ấm, ổn định",
-        src: "./assets/imgs/banners/2.png",
+        src: "./assets/imgs/banners/QK-Alice-Duo.webp",
     },
     {
-        name: "AM RGB 65 R1.5 ",
+        name: "rainy 75",
+        label: "Trải nghiệm gõ đỉnh cao",
+        subTitle: "Tối giản-Chính xác-Đã tai",
+        src: "./assets/imgs/banners/rainy-75.webp",
+    },
+    {
+        name: "AM RGB 65 R1.5",
         label: "Gõ chuẩn từng phím",
         subTitle: "Gõ nhanh hơn, tập trung hơn",
-        src: "./assets/imgs/banners/3.png",
+        src: "./assets/imgs/banners/AM-RGB-65-R1.5.webp",
     },
 ];
-const loadSlide = () => {
-    const imgEl = slideEl.querySelector("img");
-    const titleEl = slideEl.querySelector(".carousel__title");
-    const subTitleEl = slideEl.querySelector(".carousel__sub-title");
-    const labelEl = slideEl.querySelector(".carousel__label");
-    const btnEls = slideEl.querySelectorAll(".carousel__btn");
+const imgEl = slideEl.querySelector("img");
+const titleEl = slideEl.querySelector(".carousel__title");
+const subTitleEl = slideEl.querySelector(".carousel__sub-title");
+const labelEl = slideEl.querySelector(".carousel__label");
+const btnEls = slideEl.querySelectorAll(".carousel__btn");
 
+let animations = [];
+const loadSlide = () => {
+    animations.forEach((animation) => animation.cancel());
+    animations = [];
     imgEl.src = slides[activeIndex].src;
     titleEl.innerText = slides[activeIndex].name;
     subTitleEl.innerText = slides[activeIndex].subTitle;
     labelEl.innerText = slides[activeIndex].label;
 
     // animation
-    const scaleKeyframe = [
-        {
-            opacity: 0,
-            transform: "scale(1.6)",
-        },
-        {
-            opacity: 1,
-            transform: " scale(1)",
-        },
-    ];
-    const scaleTiming = {
-        duration: 800,
-        iterations: 1,
+    const baseTiming = {
+        duration: 550,
         fill: "forwards",
     };
-    labelEl.animate(scaleKeyframe, { ...scaleTiming });
-    subTitleEl.animate(scaleKeyframe, { ...scaleTiming });
-    titleEl.animate(scaleKeyframe, { ...scaleTiming });
 
-    const imgElKeyframe = [
-        {
-            opacity: 0,
-            transform: "scale(0.5)",
-        },
-        {
-            opacity: 1,
-            transform: " scale(1)",
-        },
+    const textKeyframes = [
+        { opacity: 0, transform: "scale(1.5) translateY(20px)" },
+        { opacity: 1, transform: "scale(1) translateY(0)" },
     ];
-    imgEl.animate(imgElKeyframe, { ...scaleTiming });
+
+    animations.push(labelEl.animate(textKeyframes, { ...baseTiming }));
+    animations.push(
+        subTitleEl.animate(textKeyframes, { ...baseTiming, delay: 150 }),
+    );
+    animations.push(
+        titleEl.animate(textKeyframes, { ...baseTiming, delay: 300 }),
+    );
+
+    const imgKeyframes = [
+        { opacity: 0, transform: "scale(0.7)" },
+        { opacity: 1, transform: "scale(1)" },
+    ];
+    animations.push(
+        imgEl.animate(imgKeyframes, {
+            ...baseTiming,
+            duration: 500,
+            delay: 600,
+        }),
+    );
 
     btnEls.forEach((btnEl, index) => {
-        const btnElKeyframe = [
-            { opacity: 0 },
-            {
-                opacity: 0,
-                offset: 0.4 + index / 10,
-            },
-            {
-                opacity: 1,
-            },
-        ];
-        btnEl.animate(btnElKeyframe, {
-            ...scaleTiming,
-        });
+        animations.push(
+            btnEl.animate(
+                [
+                    { opacity: 0, transform: "translateY(20px)" },
+                    { opacity: 1, transform: "translateY(0)" },
+                ],
+                {
+                    ...baseTiming,
+                    delay: 800 + index * 100,
+                },
+            ),
+        );
     });
 };
 
@@ -114,5 +121,3 @@ const resizeObserverCarousel = new ResizeObserver((entries) => {
 });
 
 resizeObserverCarousel.observe(carouselEl);
-
-

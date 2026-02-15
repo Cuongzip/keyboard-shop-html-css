@@ -101,6 +101,9 @@ decreaseEl.addEventListener("click", () => {
     if (value < 1) value = 1;
     quantityInputEl.value = value;
 });
+quantityInputEl.addEventListener("input", () => {
+    quantityInputEl.value = quantityInputEl.value.replace(/\D/g, "");
+});
 
 // tab
 const navItemEls = $$(".tabs__nav-item ");

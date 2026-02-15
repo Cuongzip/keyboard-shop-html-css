@@ -31,6 +31,7 @@ for (let productCarouselEl of productCarouselEls) {
     );
     for (let i = 0; i < cardsPerPage; i++) {
         trackEl.children[i].classList.add("reveal");
+        trackEl.children[i].dataset.delay = i * 150;
     }
 
     // handle event resize

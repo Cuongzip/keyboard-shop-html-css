@@ -373,12 +373,6 @@
                 <h1 class="title my-3 reveal">Keyboard</h1>
                 <section class="products">
                     <div class="products__head reveal">
-                        <!-- sidebar : start -->
-                        <input
-                            class="toggle-sidebar"
-                            type="checkbox"
-                            id="toggle-filter-sidebar"
-                        />
                         <label
                             for="toggle-filter-sidebar"
                             class="products__filter-trigger"
@@ -386,423 +380,6 @@
                             <i class="fi fi-rr-settings-sliders"></i>
                             <span>Bộ lọc</span>
                         </label>
-                        <label
-                            for="toggle-filter-sidebar"
-                            class="modal"
-                        ></label>
-                        <aside class="sidebar">
-                            <form class="products-filter">
-                                <div class="products-filter__head">
-                                    <h3 class="products-filter__title">
-                                        Bộ lọc
-                                    </h3>
-                                </div>
-                                <div class="products-filter__body">
-                                    <details
-                                        class="products-filter__details"
-                                        open
-                                    >
-                                        <summary
-                                            class="products-filter__trigger"
-                                        >
-                                            <span>Khoảng giá</span>
-                                            <i class="fi fi-rr-plus-small"></i>
-                                        </summary>
-                                        <div class="products-filter__content">
-                                            <div
-                                                class="products-filter__price-inputs"
-                                            >
-                                                <div
-                                                    class="products-filter__price-input"
-                                                >
-                                                    <input
-                                                        id="min-price"
-                                                        name="min-price"
-                                                        type="text"
-                                                        data-max="1300"
-                                                        data-min="0"
-                                                        placeholder="0"
-                                                    />
-                                                    <span>.000đ</span>
-                                                </div>
-                                                <div class="mx-1">-</div>
-                                                <div
-                                                    class="products-filter__price-input"
-                                                >
-                                                    <input
-                                                        id="max-price"
-                                                        name="max-price"
-                                                        type="text"
-                                                        value="1.300"
-                                                        data-max="1300"
-                                                        data-min="0"
-                                                        placeholder="0"
-                                                    />
-                                                    <span>.000đ</span>
-                                                </div>
-                                            </div>
-                                            <div class="range my-2">
-                                                <div
-                                                    style="left: 0%"
-                                                    class="range__dot range__dot--start"
-                                                ></div>
-                                                <div
-                                                    class="range__process"
-                                                ></div>
-                                                <div
-                                                    style="left: 100%"
-                                                    class="range__dot range__dot--end"
-                                                ></div>
-                                            </div>
-                                        </div>
-                                    </details>
-                                    <details
-                                        class="products-filter__details"
-                                        open
-                                    >
-                                        <summary
-                                            class="products-filter__trigger"
-                                        >
-                                            <span>Tình trạng</span>
-                                            <i class="fi fi-rr-plus-small"></i>
-                                        </summary>
-                                        <div class="products-filter__content">
-                                            <ul class="products-filter__items">
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="availability[]"
-                                                            value="in-stock"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>
-                                                                Còn hàng
-                                                            </span>
-                                                            <span>(13)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="availability[]"
-                                                            value="out-of-stock"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>
-                                                                Hết hàng
-                                                            </span>
-                                                            <span>(2)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="availability[]"
-                                                            value="pre-order"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>
-                                                                Đặt trước
-                                                            </span>
-                                                            <span>(12)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </details>
-                                    <details
-                                        class="products-filter__details"
-                                        open
-                                    >
-                                        <summary
-                                            class="products-filter__trigger"
-                                        >
-                                            <span>Kích thước (Layout)</span>
-                                            <i class="fi fi-rr-plus-small"></i>
-                                        </summary>
-                                        <div class="products-filter__content">
-                                            <ul class="products-filter__items">
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="layout[]"
-                                                            value="100"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>
-                                                                Fullsize (100%)
-                                                            </span>
-                                                            <span>(20)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="layout[]"
-                                                            value="80"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>
-                                                                TKL (80%)
-                                                            </span>
-                                                            <span>(2)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="layout[]"
-                                                            value="65"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>65%</span>
-                                                            <span>(30)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="layout[]"
-                                                            value="40"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>40%</span>
-                                                            <span>(15)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </details>
-                                    <details
-                                        class="products-filter__details"
-                                        open
-                                    >
-                                        <summary
-                                            class="products-filter__trigger"
-                                        >
-                                            <span>Kết nối</span>
-                                            <i class="fi fi-rr-plus-small"></i>
-                                        </summary>
-                                        <div class="products-filter__content">
-                                            <ul class="products-filter__items">
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="connection[]"
-                                                            value="wired"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>Có dây</span>
-                                                            <span>(50)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="connection[]"
-                                                            value="wireless-24g"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>
-                                                                Không dây 2.4G
-                                                            </span>
-                                                            <span>(20)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="connection[]"
-                                                            value="bluetooth"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>
-                                                                bluetooth
-                                                            </span>
-                                                            <span>(30)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                                <li
-                                                    class="products-filter__item"
-                                                >
-                                                    <label
-                                                        class="checkbox-wrapper"
-                                                    >
-                                                        <input
-                                                            name="connection[]"
-                                                            value="tri-mode"
-                                                            type="checkbox"
-                                                            class="checkbox-input"
-                                                        />
-                                                        <span
-                                                            class="checkbox-tile"
-                                                        >
-                                                            <span
-                                                                class="checkmark"
-                                                            ></span>
-                                                        </span>
-                                                        <div class="label-text">
-                                                            <span>
-                                                                3 chế độ
-                                                                (Tri-Mode)
-                                                            </span>
-                                                            <span>(15)</span>
-                                                        </div>
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </details>
-                                </div>
-                                <div class="products-filter__tail">
-                                    <button class="button button--outline">
-                                        Xóa hết
-                                    </button>
-                                    <button class="button">Xem kết quả</button>
-                                </div>
-                            </form>
-                        </aside>
-                        <!-- sidebar : end -->
 
                         <div class="products__sorts">
                             <button
@@ -1521,6 +1098,290 @@
                 </div>
             </footer>
             <!-- footer : end -->
+            <!-- filter sidebar : start -->
+            <input
+                class="toggle-sidebar"
+                type="checkbox"
+                id="toggle-filter-sidebar"
+            />
+
+            <label for="toggle-filter-sidebar" class="modal"></label>
+            <aside class="sidebar">
+                <form class="products-filter">
+                    <div class="products-filter__head">
+                        <h3 class="products-filter__title">Bộ lọc</h3>
+                    </div>
+                    <div class="products-filter__body">
+                        <details class="products-filter__details" open>
+                            <summary class="products-filter__trigger">
+                                <span>Khoảng giá</span>
+                                <i class="fi fi-rr-plus-small"></i>
+                            </summary>
+                            <div class="products-filter__content">
+                                <div class="products-filter__price-inputs">
+                                    <div class="products-filter__price-input">
+                                        <input
+                                            id="min-price"
+                                            name="min-price"
+                                            type="text"
+                                            data-max="1300"
+                                            data-min="0"
+                                            placeholder="0"
+                                        />
+                                        <span>.000đ</span>
+                                    </div>
+                                    <div class="mx-1">-</div>
+                                    <div class="products-filter__price-input">
+                                        <input
+                                            id="max-price"
+                                            name="max-price"
+                                            type="text"
+                                            value="1.300"
+                                            data-max="1300"
+                                            data-min="0"
+                                            placeholder="0"
+                                        />
+                                        <span>.000đ</span>
+                                    </div>
+                                </div>
+                                <div class="range my-2">
+                                    <div
+                                        style="left: 0%"
+                                        class="range__dot range__dot--start"
+                                    ></div>
+                                    <div class="range__process"></div>
+                                    <div
+                                        style="left: 100%"
+                                        class="range__dot range__dot--end"
+                                    ></div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="products-filter__details" open>
+                            <summary class="products-filter__trigger">
+                                <span>Tình trạng</span>
+                                <i class="fi fi-rr-plus-small"></i>
+                            </summary>
+                            <div class="products-filter__content">
+                                <ul class="products-filter__items">
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="availability[]"
+                                                value="in-stock"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>Còn hàng</span>
+                                                <span>(13)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="availability[]"
+                                                value="out-of-stock"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>Hết hàng</span>
+                                                <span>(2)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="availability[]"
+                                                value="pre-order"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>Đặt trước</span>
+                                                <span>(12)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details class="products-filter__details" open>
+                            <summary class="products-filter__trigger">
+                                <span>Kích thước (Layout)</span>
+                                <i class="fi fi-rr-plus-small"></i>
+                            </summary>
+                            <div class="products-filter__content">
+                                <ul class="products-filter__items">
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="layout[]"
+                                                value="100"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>Fullsize (100%)</span>
+                                                <span>(20)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="layout[]"
+                                                value="80"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>TKL (80%)</span>
+                                                <span>(2)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="layout[]"
+                                                value="65"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>65%</span>
+                                                <span>(30)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="layout[]"
+                                                value="40"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>40%</span>
+                                                <span>(15)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details class="products-filter__details" open>
+                            <summary class="products-filter__trigger">
+                                <span>Kết nối</span>
+                                <i class="fi fi-rr-plus-small"></i>
+                            </summary>
+                            <div class="products-filter__content">
+                                <ul class="products-filter__items">
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="connection[]"
+                                                value="wired"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>Có dây</span>
+                                                <span>(50)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="connection[]"
+                                                value="wireless-24g"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>Không dây 2.4G</span>
+                                                <span>(20)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="connection[]"
+                                                value="bluetooth"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>bluetooth</span>
+                                                <span>(30)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="products-filter__item">
+                                        <label class="checkbox-wrapper">
+                                            <input
+                                                name="connection[]"
+                                                value="tri-mode"
+                                                type="checkbox"
+                                                class="checkbox-input"
+                                            />
+                                            <span class="checkbox-tile">
+                                                <span class="checkmark"></span>
+                                            </span>
+                                            <div class="label-text">
+                                                <span>3 chế độ (Tri-Mode)</span>
+                                                <span>(15)</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="products-filter__tail">
+                        <button class="button button--outline">Xóa hết</button>
+                        <button class="button">Xem kết quả</button>
+                    </div>
+                </form>
+            </aside>
+            <!-- filter sidebar : end -->
             <!-- chat : start -->
             <div class="chat">
                 <label for="toggle-chat-box" class="chat__trigger center">

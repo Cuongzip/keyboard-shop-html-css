@@ -47,6 +47,7 @@
 }
 
 .carousel__img {
+    touch-action: pan-y;
     overflow: hidden;
     flex: 1.9;
     aspect-ratio: 5/ 3;
@@ -88,6 +89,14 @@
     }
     .carousel__actions {
         display: none;
+    }
+    .carousel__img img {
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
     }
 }
 

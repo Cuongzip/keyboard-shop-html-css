@@ -38,6 +38,19 @@ for (let productCarouselEl of productCarouselEls) {
     let activePage = 0;
     let oldCardsPerPage = 0;
     let focusedIndex = 0;
+    let viewportWidth = 0;
+
+    const changePage = (page) => {
+        trackEl.style.transform = `translateX(${-page * viewportWidth + "px"})`;
+        paginationEl.children[activePage].classList.remove(
+            "products-carousel__pagination-item--active",
+        );
+        paginationEl.children[page].classList.add(
+            "products-carousel__pagination-item--active",
+        );
+        activePage = page;
+        focusedIndex = cardsPerPage * activePage;
+    };
 
     const resizeObserver = new ResizeObserver((entries) => {
         const cardsPerPage = Math.floor(
@@ -48,7 +61,7 @@ for (let productCarouselEl of productCarouselEls) {
 
         if (oldCardsPerPage === cardsPerPage) return;
 
-        const viewportWidth = cardsPerPage * (productWidth + productSpace);
+        viewportWidth = cardsPerPage * (productWidth + productSpace);
         viewportEl.style.width = viewportWidth - 14 + "px";
 
         activePage = Math.floor(focusedIndex / cardsPerPage);
@@ -61,18 +74,6 @@ for (let productCarouselEl of productCarouselEls) {
 
         trackEl.style.transform = `translateX(${-activePage * viewportWidth + "px"})`;
 
-        const changePage = (page) => {
-            trackEl.style.transform = `translateX(${-page * viewportWidth + "px"})`;
-            paginationEl.children[activePage].classList.remove(
-                "products-carousel__pagination-item--active",
-            );
-            paginationEl.children[page].classList.add(
-                "products-carousel__pagination-item--active",
-            );
-            activePage = page;
-            focusedIndex = cardsPerPage * activePage;
-        };
-
         for (let dot of paginationEl.children) {
             dot.addEventListener("click", () =>
                 changePage(dot.getAttribute("data-page")),
@@ -83,4 +84,49 @@ for (let productCarouselEl of productCarouselEls) {
     });
 
     resizeObserver.observe(productCarouselEl);
+
+    // mobile
+
+    let startX = 0;
+    let isPress = false;
+    let isDrag = 0;
+    let translateX = 0;
+
+    viewportEl.addEventListener("pointerdown", (e) => {
+        startX = e.clientX;
+        isPress = true;
+        translateX = Number(
+            window.getComputedStyle(trackEl).transform.split(",")[4],
+        );
+        viewportEl.setPointerCapture(e.pointerId);
+    });
+
+    viewportEl.addEventListener("pointermove", (e) => {
+        if (!isPress) return;
+        const diff = e.clientX - startX;
+        if (Math.abs(diff) > 8) isDrag = diff > 0 ? -1 : 1;
+
+        trackEl.style.transition = "none";
+        trackEl.style.transform = `translateX(${translateX + diff + "px"})`;
+    });
+
+    viewportEl.addEventListener("pointerup", (e) => {
+        isPress = false;
+
+        if (!isDrag) return;
+        trackEl.style.transition = "all ease 0.6s";
+
+        const countPage = Math.ceil(
+            trackEl.childElementCount / oldCardsPerPage,
+        );
+
+        let newActivePage = activePage + isDrag;
+        if (newActivePage >= countPage) newActivePage = 0;
+        if (newActivePage < 0) newActivePage = countPage - 1;
+
+        changePage(newActivePage);
+
+        isDrag = 0;
+        viewportEl.releasePointerCapture(e.pointerId);
+    });
 }

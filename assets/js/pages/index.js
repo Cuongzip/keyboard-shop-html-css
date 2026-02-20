@@ -121,3 +121,38 @@ const resizeObserverCarousel = new ResizeObserver((entries) => {
 });
 
 resizeObserverCarousel.observe(carouselEl);
+
+// mobile
+
+const carouselImgEl = $(".carousel__img");
+let startX = 0;
+let isPress = false;
+let isDrag = 0;
+
+carouselImgEl.addEventListener("pointerdown", (e) => {
+    startX = e.clientX;
+    isPress = true;
+    carouselImgEl.setPointerCapture(e.pointerId);
+});
+
+carouselImgEl.addEventListener("pointermove", (e) => {
+    if (!isPress) return;
+    const diff = e.clientX - startX;
+    if (Math.abs(diff) > 8) isDrag = diff > 0 ? -1 : 1;
+});
+
+carouselImgEl.addEventListener("pointerup", () => {
+    isPress = false;
+
+    if (isDrag) {
+        activeIndex += isDrag;
+        if (activeIndex > slides.length - 1) activeIndex = 0;
+        if (activeIndex < 0) activeIndex = slides.length - 1;
+
+        loadSlide();
+
+        isDrag = 0;
+    }
+
+    carouselImgEl.releasePointerCapture(e.pointerId);
+});

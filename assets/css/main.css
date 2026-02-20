@@ -55,6 +55,7 @@ body {
     overflow-x: hidden;
     font-family: "Inter", sans-serif;
 }
+
 .center {
     display: flex;
     justify-content: center;

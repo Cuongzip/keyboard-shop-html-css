@@ -1,10 +1,4 @@
 .product {
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
     --product-width: 300px;
     --space: 14px;
     --padding: 8px;
@@ -15,6 +9,16 @@
     padding: 0 var(--padding);
     width: var(--product-width);
     flex-shrink: 0;
+}
+.product,
+.product a,
+.product img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 .product + .product {
     margin-left: var(--space);
@@ -118,7 +122,7 @@
 .products-carousel__track {
     display: flex;
     flex-wrap: nowrap;
-    transition: all ease 0.6s;
+    transition: all ease 0.8s;
 }
 /* pagination */
 .products-carousel__pagination {

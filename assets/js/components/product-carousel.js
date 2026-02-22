@@ -39,7 +39,7 @@ for (let productCarouselEl of productCarouselEls) {
     let oldCardsPerPage = 0;
     let focusedIndex = 0;
     let viewportWidth = 0;
-
+    let countPage = 0;
     const changePage = (page) => {
         trackEl.style.transform = `translateX(${-page * viewportWidth + "px"})`;
         paginationEl.children[activePage].classList.remove(
@@ -57,7 +57,7 @@ for (let productCarouselEl of productCarouselEls) {
             productCarouselEl.clientWidth / (productWidth + productSpace),
         );
 
-        const countPage = Math.ceil(trackEl.childElementCount / cardsPerPage);
+        countPage = Math.ceil(trackEl.childElementCount / cardsPerPage);
 
         if (oldCardsPerPage === cardsPerPage) return;
 
@@ -72,29 +72,32 @@ for (let productCarouselEl of productCarouselEls) {
         }
         paginationEl.innerHTML = html;
 
-        trackEl.style.transform = `translateX(${-activePage * viewportWidth + "px"})`;
-
         for (let dot of paginationEl.children) {
             dot.addEventListener("click", () =>
-                changePage(dot.getAttribute("data-page")),
+                changePage(Number(dot.getAttribute("data-page"))),
             );
         }
+
+        trackEl.style.transform = `translateX(${-activePage * viewportWidth + "px"})`;
 
         oldCardsPerPage = cardsPerPage;
     });
 
     resizeObserver.observe(productCarouselEl);
 
-    // mobile
+    // handle drag
 
     let startX = 0;
     let isPress = false;
     let isDrag = 0;
     let translateX = 0;
+    let downTarget = null;
 
     viewportEl.addEventListener("pointerdown", (e) => {
+        downTarget = e.target;
         startX = e.clientX;
         isPress = true;
+        trackEl.style.transition = "none";
         translateX = Number(
             window.getComputedStyle(trackEl).transform.split(",")[4],
         );
@@ -106,27 +109,32 @@ for (let productCarouselEl of productCarouselEls) {
         const diff = e.clientX - startX;
         if (Math.abs(diff) > 8) isDrag = diff > 0 ? -1 : 1;
 
-        trackEl.style.transition = "none";
         trackEl.style.transform = `translateX(${translateX + diff + "px"})`;
     });
 
     viewportEl.addEventListener("pointerup", (e) => {
         isPress = false;
-
-        if (!isDrag) return;
+        viewportEl.releasePointerCapture(e.pointerId);
         trackEl.style.transition = "all ease 0.6s";
 
-        const countPage = Math.ceil(
-            trackEl.childElementCount / oldCardsPerPage,
-        );
+        if (!isDrag) {
+            const link = downTarget.closest("a");
+            if (link) {
+                link.click();
+            }
 
-        let newActivePage = activePage + isDrag;
-        if (newActivePage >= countPage) newActivePage = 0;
-        if (newActivePage < 0) newActivePage = countPage - 1;
-
-        changePage(newActivePage);
-
+            trackEl.style.transform = `translateX(${translateX + "px"})`;
+            return;
+        }
+        if (
+            (activePage >= countPage - 1 && isDrag === 1) ||
+            (activePage <= 0 && isDrag === -1)
+        ) {
+            trackEl.style.transform = `translateX(${translateX + "px"})`;
+        } else {
+            let newActivePage = activePage + isDrag;
+            changePage(newActivePage);
+        }
         isDrag = 0;
-        viewportEl.releasePointerCapture(e.pointerId);
     });
 }

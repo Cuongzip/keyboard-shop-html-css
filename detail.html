@@ -290,16 +290,13 @@
                         </div>
                         <div class="gallery-carousel">
                             <ul class="gallery-carousel__viewport mt-1">
-                                <li
-                                    class="gallery-carousel__item gallery-carousel__item--active"
-                                >
+                                <li class="gallery-carousel__item">
                                     <div
                                         class="gallery-carousel__img gallery-carousel__img--active"
                                     >
                                         <img
                                             loading="lazy"
                                             alt="keyboard"
-                                            draggable="false"
                                             src="./assets/imgs/keyboards/80Retros-GB65/1.webp"
                                         />
                                     </div>
@@ -309,7 +306,6 @@
                                         <img
                                             loading="lazy"
                                             alt="keyboard"
-                                            draggable="false"
                                             src="./assets/imgs/keyboards/80Retros-GB65/pink.webp"
                                         />
                                     </div>
@@ -320,7 +316,6 @@
                                         <img
                                             loading="lazy"
                                             alt="keyboard"
-                                            draggable="false"
                                             src="./assets/imgs/keyboards/80Retros-GB65/warm-gray.webp"
                                         />
                                     </div>
@@ -330,7 +325,6 @@
                                         <img
                                             loading="lazy"
                                             alt="keyboard"
-                                            draggable="false"
                                             src="./assets/imgs/keyboards/80Retros-GB65/cool-grey.webp"
                                         />
                                     </div>
@@ -340,7 +334,6 @@
                                         <img
                                             loading="lazy"
                                             alt="keyboard"
-                                            draggable="false"
                                             src="./assets/imgs/keyboards/80Retros-GB65/black.webp"
                                         />
                                     </div>
@@ -350,7 +343,6 @@
                                         <img
                                             loading="lazy"
                                             alt="keyboard"
-                                            draggable="false"
                                             src="./assets/imgs/keyboards/80Retros-GB65/2.webp"
                                         />
                                     </div>
@@ -358,7 +350,7 @@
                             </ul>
 
                             <button
-                                class="gallery-carousel__btn center gallery-carousel__btn--prev"
+                                class="gallery-carousel__btn center gallery-carousel__btn--prev gallery-carousel__btn--disable"
                             >
                                 <i class="fi fi-sr-angle-small-left"></i>
                             </button>
@@ -370,7 +362,7 @@
                         </div>
                     </div>
                     <form class="product-detail__info">
-                        <h3 class="product__name">
+                        <h3 class="product__name mb-1">
                             80Retros GB65 Mechanical Keyboard
                         </h3>
                         <div class="product__state-bar mb-2">
@@ -389,8 +381,12 @@
                         </div>
 
                         <div class="product__price product__price--detail my-2">
-                            <span class="product__sale-price">$215.00</span>
-                            <span class="product__origin-price">$230.00</span>
+                            <span class="product__sale-price me-1">
+                                2.300.000₫
+                            </span>
+                            <span class="product__origin-price">
+                                2.400.000₫
+                            </span>
                         </div>
                         <div class="product__group my-2">
                             <div class="product__label">
@@ -572,7 +568,7 @@
                 <!-- product detail : end -->
 
                 <!-- tabs : start -->
-                <section class="tabs reveal">
+                <section id="tabs" class="tabs reveal">
                     <nav class="tabs__nav">
                         <ul class="tabs__nav-list">
                             <li

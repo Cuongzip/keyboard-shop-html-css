@@ -122,7 +122,7 @@ const resizeObserverCarousel = new ResizeObserver((entries) => {
 
 resizeObserverCarousel.observe(carouselEl);
 
-// mobile
+// handle drag on mobile and tablet
 
 const carouselImgEl = $(".carousel__img");
 let startX = 0;
@@ -141,18 +141,17 @@ carouselImgEl.addEventListener("pointermove", (e) => {
     if (Math.abs(diff) > 8) isDrag = diff > 0 ? -1 : 1;
 });
 
-carouselImgEl.addEventListener("pointerup", () => {
+carouselImgEl.addEventListener("pointerup", (e) => {
     isPress = false;
-
-    if (isDrag) {
-        activeIndex += isDrag;
-        if (activeIndex > slides.length - 1) activeIndex = 0;
-        if (activeIndex < 0) activeIndex = slides.length - 1;
-
-        loadSlide();
-
-        isDrag = 0;
-    }
-
     carouselImgEl.releasePointerCapture(e.pointerId);
+
+    if (isDrag) return;
+
+    activeIndex += isDrag;
+    if (activeIndex > slides.length - 1) activeIndex = 0;
+    if (activeIndex < 0) activeIndex = slides.length - 1;
+
+    loadSlide();
+
+    isDrag = 0;
 });

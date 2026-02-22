@@ -30,25 +30,31 @@ const nextBtnEl = $(".gallery-carousel__btn--next");
 
 let activeIndex = 0;
 let imgWidth = firstItemEl.clientWidth;
+let marginLeft = Number(firstItemEl.style.marginLeft.slice(0, -2));
 let imgPerPage = Number((viewportEl.clientWidth / imgWidth).toFixed());
+
 const handleChangeImg = () => {
     bigImgEl.src = imgEls[activeIndex].querySelector("img").src;
     const activeImgEls = $(".gallery-carousel__img--active");
     activeImgEls.classList.remove("gallery-carousel__img--active");
     imgEls[activeIndex].classList.add("gallery-carousel__img--active");
 
-    const marginLeft = Number(firstItemEl.style.marginLeft.slice(0, -2));
     const start = Math.abs(marginLeft / imgWidth);
     const end = start + imgPerPage - 1;
-    if (activeIndex < start) {
-        firstItemEl.style.marginLeft =
-            marginLeft + (start - activeIndex) * imgWidth + "px";
-    }
 
-    if (activeIndex > end) {
-        firstItemEl.style.marginLeft =
-            marginLeft + (end - activeIndex) * imgWidth + "px";
-    }
+    if (activeIndex < start) marginLeft += (start - activeIndex) * imgWidth;
+
+    if (activeIndex > end) marginLeft += (end - activeIndex) * imgWidth;
+
+    firstItemEl.style.marginLeft = marginLeft + "px";
+
+    if (activeIndex === 0)
+        prevBtnEl.classList.add("gallery-carousel__btn--disable");
+    else prevBtnEl.classList.remove("gallery-carousel__btn--disable");
+
+    if (activeIndex === imgEls.length - 1)
+        nextBtnEl.classList.add("gallery-carousel__btn--disable");
+    else nextBtnEl.classList.remove("gallery-carousel__btn--disable");
 };
 
 imgEls.forEach((imgEl, index) => {
@@ -59,33 +65,115 @@ imgEls.forEach((imgEl, index) => {
 });
 
 prevBtnEl.addEventListener("click", () => {
+    if (activeIndex === 0) return;
     activeIndex--;
-    if (activeIndex < 0) activeIndex = imgEls.length - 1;
     handleChangeImg();
 });
 
 nextBtnEl.addEventListener("click", () => {
+    if (activeIndex === imgEls.length - 1) return;
     activeIndex++;
-    if (activeIndex >= imgEls.length) activeIndex = 0;
     handleChangeImg();
 });
 
 const observe = new ResizeObserver((entries) => {
-    const marginLeft = Number(firstItemEl.style.marginLeft.slice(0, -2));
     const newImgWidth = firstItemEl.clientWidth;
-    const newImgPerPage = Number(
+    const NewImgPerPage = Number(
         (viewportEl.clientWidth / newImgWidth).toFixed(),
     );
-    if (marginLeft != 0)
-        firstItemEl.style.marginLeft =
-            (marginLeft / imgWidth + (newImgPerPage - imgPerPage)) *
-                newImgWidth +
-            "px";
 
+    const value =
+        Math.abs(marginLeft / imgWidth) + imgPerPage - 1 == activeIndex &&
+        NewImgPerPage != imgPerPage
+            ? NewImgPerPage - imgPerPage
+            : 0;
+
+    marginLeft = (marginLeft / imgWidth + value) * newImgWidth;
+    firstItemEl.style.marginLeft = marginLeft + "px";
+
+    imgPerPage = NewImgPerPage;
     imgWidth = newImgWidth;
-    imgPerPage = newImgPerPage;
 });
 observe.observe(firstItemEl);
+
+// handle drag for big img
+
+let bigImgStartX = 0;
+let bigImgIsPress = false;
+let bigImgSsDrag = 0;
+
+bigImgEl.addEventListener("pointerdown", (e) => {
+    bigImgStartX = e.clientX;
+    bigImgIsPress = true;
+    bigImgEl.setPointerCapture(e.pointerId);
+});
+
+bigImgEl.addEventListener("pointermove", (e) => {
+    if (!bigImgIsPress) return;
+    const diff = e.clientX - bigImgStartX;
+    if (Math.abs(diff) > 8) bigImgSsDrag = diff > 0 ? -1 : 1;
+});
+
+bigImgEl.addEventListener("pointerup", (e) => {
+    bigImgIsPress = false;
+    if (
+        (activeIndex > 0 && bigImgSsDrag === -1) ||
+        (activeIndex < imgEls.length - 1 && bigImgSsDrag === 1)
+    ) {
+        activeIndex += bigImgSsDrag;
+        handleChangeImg();
+        bigImgSsDrag = 0;
+    }
+
+    bigImgEl.releasePointerCapture(e.pointerId);
+});
+
+// handle drag for gallery
+
+let startX = 0;
+let isPress = false;
+let isDrag = 0;
+let downTarget = null;
+
+viewportEl.addEventListener("pointerdown", (e) => {
+    downTarget = e.target;
+    startX = e.clientX;
+    isPress = true;
+    viewportEl.setPointerCapture(e.pointerId);
+});
+
+viewportEl.addEventListener("pointermove", (e) => {
+    if (!isPress) return;
+    const diff = e.clientX - startX;
+    if (Math.abs(diff) > 8) isDrag = diff > 0 ? -1 : 1;
+
+    firstItemEl.style.transition = "none";
+    firstItemEl.style.marginLeft = marginLeft + diff + "px";
+});
+
+viewportEl.addEventListener("pointerup", (e) => {
+    isPress = false;
+    viewportEl.releasePointerCapture(e.pointerId);
+
+    if (!isDrag) {
+        const imgEL = downTarget.closest(".gallery-carousel__img");
+        if (imgEL) imgEL.dispatchEvent(new Event("click"));
+        return;
+    }
+
+    firstItemEl.style.transition = "all ease 0.6s";
+
+    if (
+        (activeIndex > 0 && isDrag === -1) ||
+        (activeIndex < imgEls.length - 1 && isDrag === 1)
+    ) {
+        activeIndex += isDrag;
+        handleChangeImg();
+    } else {
+        firstItemEl.style.marginLeft = marginLeft + "px";
+    }
+    isDrag = 0;
+});
 // quantity
 const increaseEl = $(".quantity__btn--increase");
 const decreaseEl = $(".quantity__btn--decrease");
@@ -105,7 +193,7 @@ quantityInputEl.addEventListener("input", () => {
     quantityInputEl.value = quantityInputEl.value.replace(/\D/g, "");
 });
 
-// tab
+// tabs
 const navItemEls = $$(".tabs__nav-item ");
 navItemEls.forEach((navItemEl) => {
     navItemEl.addEventListener("click", () => {

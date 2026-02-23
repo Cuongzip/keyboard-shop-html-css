@@ -145,7 +145,7 @@ carouselImgEl.addEventListener("pointerup", (e) => {
     isPress = false;
     carouselImgEl.releasePointerCapture(e.pointerId);
 
-    if (isDrag) return;
+    if (!isDrag) return;
 
     activeIndex += isDrag;
     if (activeIndex > slides.length - 1) activeIndex = 0;

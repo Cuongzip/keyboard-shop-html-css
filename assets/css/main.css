@@ -201,7 +201,9 @@ b {
     display: block;
     opacity: 0;
     transform: translateY(40px);
-    transition: all ease 0.6s;
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease;
 }
 
 .reveal--show {

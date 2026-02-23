@@ -8,7 +8,6 @@ function getNum(string) {
 const productCarouselEls = $$(".products-carousel");
 
 for (let productCarouselEl of productCarouselEls) {
-    const productEl = productCarouselEl.querySelector(".product");
     const viewportEl = productCarouselEl.querySelector(
         ".products-carousel__viewport",
     );
@@ -19,29 +18,20 @@ for (let productCarouselEl of productCarouselEls) {
         ".products-carousel__pagination",
     );
 
-    const style = window.getComputedStyle(productEl);
+    const style = window.getComputedStyle(productCarouselEl);
 
-    const productWidth = getNum(style.getPropertyValue("--product-width"));
-
-    const productSpace = getNum(style.getPropertyValue("--space"));
-
-    // add reveal class for visible products
-    const cardsPerPage = Math.floor(
-        productCarouselEl.clientWidth / (productWidth + productSpace),
-    );
-    for (let i = 0; i < cardsPerPage; i++) {
-        trackEl.children[i].classList.add("reveal");
-        trackEl.children[i].dataset.delay = i * 150;
-    }
+    const gap = getNum(style.getPropertyValue("--gap"));
+    const minWidth = getNum(style.getPropertyValue("--product-width"));
 
     // handle event resize
     let activePage = 0;
-    let oldCardsPerPage = 0;
     let focusedIndex = 0;
-    let viewportWidth = 0;
     let countPage = 0;
+    let viewportWidth = 0;
+    let cardsPerPage = 0;
+
     const changePage = (page) => {
-        trackEl.style.transform = `translateX(${-page * viewportWidth + "px"})`;
+        trackEl.style.transform = `translateX(${-page * (viewportWidth + gap) + "px"})`;
         paginationEl.children[activePage].classList.remove(
             "products-carousel__pagination-item--active",
         );
@@ -53,18 +43,26 @@ for (let productCarouselEl of productCarouselEls) {
     };
 
     const resizeObserver = new ResizeObserver((entries) => {
-        const cardsPerPage = Math.floor(
-            productCarouselEl.clientWidth / (productWidth + productSpace),
+        viewportWidth = viewportEl.clientWidth;
+
+        const newCardsPerPage = Math.floor(
+            (viewportWidth + gap) / (minWidth + gap),
+        );
+        const totalGap = (newCardsPerPage - 1) * gap;
+
+        const productWidth = (1 / newCardsPerPage) * (viewportWidth - totalGap);
+
+        productCarouselEl.style.setProperty(
+            "--product-width",
+            productWidth + "px",
         );
 
-        countPage = Math.ceil(trackEl.childElementCount / cardsPerPage);
+        countPage = Math.ceil(trackEl.childElementCount / newCardsPerPage);
+        trackEl.style.transform = `translateX(${-activePage * (viewportWidth + gap) + "px"})`;
 
-        if (oldCardsPerPage === cardsPerPage) return;
+        if (cardsPerPage === newCardsPerPage) return;
 
-        viewportWidth = cardsPerPage * (productWidth + productSpace);
-        viewportEl.style.width = viewportWidth - 14 + "px";
-
-        activePage = Math.floor(focusedIndex / cardsPerPage);
+        activePage = Math.floor(focusedIndex / newCardsPerPage);
 
         let html = "";
         for (let i = 0; i < countPage; i++) {
@@ -78,12 +76,19 @@ for (let productCarouselEl of productCarouselEls) {
             );
         }
 
-        trackEl.style.transform = `translateX(${-activePage * viewportWidth + "px"})`;
-
-        oldCardsPerPage = cardsPerPage;
+        cardsPerPage = newCardsPerPage;
     });
 
     resizeObserver.observe(productCarouselEl);
+    // add reveal class for visible products
+    const cardsPerPage_ = Math.floor(
+        (viewportEl.clientWidth + gap) / (minWidth + gap),
+    );
+
+    for (let i = 0; i < cardsPerPage_; i++) {
+        trackEl.children[i].classList.add("reveal");
+        trackEl.children[i].dataset.delay = i * 150;
+    }
 
     // handle drag
 
@@ -98,6 +103,7 @@ for (let productCarouselEl of productCarouselEls) {
         startX = e.clientX;
         isPress = true;
         trackEl.style.transition = "none";
+
         translateX = Number(
             window.getComputedStyle(trackEl).transform.split(",")[4],
         );
@@ -115,12 +121,14 @@ for (let productCarouselEl of productCarouselEls) {
     viewportEl.addEventListener("pointerup", (e) => {
         isPress = false;
         viewportEl.releasePointerCapture(e.pointerId);
-        trackEl.style.transition = "all ease 0.6s";
+        trackEl.style.transition = "transform ease 0.6s";
 
         if (!isDrag) {
-            const link = downTarget.closest("a");
-            if (link) {
-                link.click();
+            if (e.which === 1) {
+                const link = downTarget.closest("a");
+                if (link) {
+                    link.click();
+                }
             }
 
             trackEl.style.transform = `translateX(${translateX + "px"})`;
@@ -132,8 +140,7 @@ for (let productCarouselEl of productCarouselEls) {
         ) {
             trackEl.style.transform = `translateX(${translateX + "px"})`;
         } else {
-            let newActivePage = activePage + isDrag;
-            changePage(newActivePage);
+            changePage(activePage + isDrag);
         }
         isDrag = 0;
     });

@@ -1,14 +1,12 @@
 .product {
-    --product-width: 300px;
-    --space: 14px;
     --padding: 8px;
     position: relative;
     box-shadow: 0 0 17px rgba(0, 0, 0, 0.12);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 0 var(--padding);
+    padding: 0 8px;
     width: var(--product-width);
-    flex-shrink: 0;
+    flex: 0 0 auto;
 }
 .product,
 .product a,
@@ -20,9 +18,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-.product + .product {
-    margin-left: var(--space);
-}
+
 .product__imgs {
     display: flex;
     overflow: hidden;
@@ -37,7 +33,7 @@
     object-fit: cover;
 }
 .product__imgs img:first-child {
-    transition: all ease 0.5s;
+    transition: margin-left ease 0.5s;
 }
 .product__imgs:hover img:first-child {
     margin-left: -100%;
@@ -63,6 +59,7 @@
 .product__title {
     font-weight: 700;
     font-size: 2.4rem;
+    line-height: 30px;
     margin: 15px 0 7px 0;
     text-wrap: nowrap;
     overflow: hidden;
@@ -100,7 +97,7 @@
     font-size: 2rem;
 }
 .product__btn i::before {
-    transition: all 0.3s ease;
+    transition: rotate 0.3s ease;
 }
 
 .product__btn:hover i::before {
@@ -109,24 +106,27 @@
 
 /* products carousel */
 .products-carousel {
+    --product-width: 300px;
+    --gap: 20px;
     touch-action: pan-y;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 .products-carousel__viewport {
     width: 100%;
-    overflow: hidden;
     margin: 25px auto;
+    overflow: hidden;
 }
 .products-carousel__track {
     display: flex;
     flex-wrap: nowrap;
-    transition: all ease 0.8s;
+    transition: transform ease 0.8s;
+    gap: var(--gap);
 }
 /* pagination */
 .products-carousel__pagination {
     display: flex;
+    width: fit-content;
+    gap: 8px;
+    margin: 0 auto;
 }
 .products-carousel__pagination-item {
     width: 13px;
@@ -136,9 +136,7 @@
     transition: width ease 0.3s;
     cursor: pointer;
 }
-.products-carousel__pagination-item + .products-carousel__pagination-item {
-    margin-left: 8px;
-}
+
 .products-carousel__pagination-item--active {
     width: 40px;
     border-radius: 20px;

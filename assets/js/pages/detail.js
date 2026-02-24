@@ -21,44 +21,54 @@ radioEls.forEach((radioEl) => {
 // gallery carousel
 const bigImgEl = $(".product-detail__big-img img");
 const viewportEl = $(".gallery-carousel__viewport");
+const trackEl = $(".gallery-carousel__track");
 
-const imgEls = $$(".gallery-carousel__img");
-const firstItemEl = $(".gallery-carousel__item:first-child");
+const itemEls = $$(".gallery-carousel__item");
 
 const prevBtnEl = $(".gallery-carousel__btn--prev");
 const nextBtnEl = $(".gallery-carousel__btn--next");
 
+const getNum = (string) => {
+    return Number(string.slice(0, -2));
+};
+const style = window.getComputedStyle(viewportEl);
+
+const minWidth = getNum(style.getPropertyValue("--item-width"));
+const gap = getNum(style.getPropertyValue("--gap"));
+
 let activeIndex = 0;
-let imgWidth = firstItemEl.clientWidth;
-let marginLeft = Number(firstItemEl.style.marginLeft.slice(0, -2));
-let imgPerPage = Number((viewportEl.clientWidth / imgWidth).toFixed());
+
+let itemWidth = minWidth;
+let startIndex = 0;
+let viewportWidth = viewportEl.clientWidth;
+let itemsPerPage = Math.floor((viewportWidth + gap) / (minWidth + gap));
 
 const handleChangeImg = () => {
-    bigImgEl.src = imgEls[activeIndex].querySelector("img").src;
-    const activeImgEls = $(".gallery-carousel__img--active");
-    activeImgEls.classList.remove("gallery-carousel__img--active");
-    imgEls[activeIndex].classList.add("gallery-carousel__img--active");
+    bigImgEl.src = itemEls[activeIndex].querySelector("img").src;
 
-    const start = Math.abs(marginLeft / imgWidth);
-    const end = start + imgPerPage - 1;
+    $(".gallery-carousel__item--active").classList.remove(
+        "gallery-carousel__item--active",
+    );
 
-    if (activeIndex < start) marginLeft += (start - activeIndex) * imgWidth;
+    itemEls[activeIndex].classList.add("gallery-carousel__item--active");
 
-    if (activeIndex > end) marginLeft += (end - activeIndex) * imgWidth;
+    if (activeIndex < startIndex) startIndex -= 1;
 
-    firstItemEl.style.marginLeft = marginLeft + "px";
+    if (activeIndex > startIndex + itemsPerPage - 1) startIndex += 1;
+
+    trackEl.style.transform = `translateX(${-startIndex * (itemWidth + gap) + "px"})`;
 
     if (activeIndex === 0)
         prevBtnEl.classList.add("gallery-carousel__btn--disable");
     else prevBtnEl.classList.remove("gallery-carousel__btn--disable");
 
-    if (activeIndex === imgEls.length - 1)
+    if (activeIndex === itemEls.length - 1)
         nextBtnEl.classList.add("gallery-carousel__btn--disable");
     else nextBtnEl.classList.remove("gallery-carousel__btn--disable");
 };
 
-imgEls.forEach((imgEl, index) => {
-    imgEl.addEventListener("click", () => {
+itemEls.forEach((itemEl, index) => {
+    itemEl.addEventListener("click", () => {
         activeIndex = index;
         handleChangeImg();
     });
@@ -71,36 +81,40 @@ prevBtnEl.addEventListener("click", () => {
 });
 
 nextBtnEl.addEventListener("click", () => {
-    if (activeIndex === imgEls.length - 1) return;
+    if (activeIndex === itemEls.length - 1) return;
     activeIndex++;
     handleChangeImg();
 });
 
 const observe = new ResizeObserver((entries) => {
-    const newImgWidth = firstItemEl.clientWidth;
-    const NewImgPerPage = Number(
-        (viewportEl.clientWidth / newImgWidth).toFixed(),
+    viewportWidth = viewportEl.clientWidth;
+    const newItemsPerPage = Math.floor(
+        (viewportWidth + gap) / (minWidth + gap),
     );
+    const totalGap = (newItemsPerPage - 1) * gap;
 
-    const value =
-        Math.abs(marginLeft / imgWidth) + imgPerPage - 1 == activeIndex &&
-        NewImgPerPage != imgPerPage
-            ? NewImgPerPage - imgPerPage
-            : 0;
+    itemWidth = (1 / newItemsPerPage) * (viewportWidth - totalGap);
+    viewportEl.style.setProperty("--item-width", itemWidth + "px");
 
-    marginLeft = (marginLeft / imgWidth + value) * newImgWidth;
-    firstItemEl.style.marginLeft = marginLeft + "px";
+    if (
+        startIndex != 0 &&
+        itemsPerPage != newItemsPerPage &&
+        activeIndex === startIndex + itemsPerPage - 1
+    ) {
+        startIndex += itemsPerPage - newItemsPerPage;
+    }
 
-    imgPerPage = NewImgPerPage;
-    imgWidth = newImgWidth;
+    trackEl.style.transform = `translateX(${-startIndex * (itemWidth + gap) + "px"})`;
+
+    itemsPerPage = newItemsPerPage;
 });
-observe.observe(firstItemEl);
+observe.observe(viewportEl);
 
 // handle drag for big img
 
 let bigImgStartX = 0;
 let bigImgIsPress = false;
-let bigImgSsDrag = 0;
+let bigImgIsDrag = 0;
 
 bigImgEl.addEventListener("pointerdown", (e) => {
     bigImgStartX = e.clientX;
@@ -111,18 +125,18 @@ bigImgEl.addEventListener("pointerdown", (e) => {
 bigImgEl.addEventListener("pointermove", (e) => {
     if (!bigImgIsPress) return;
     const diff = e.clientX - bigImgStartX;
-    if (Math.abs(diff) > 8) bigImgSsDrag = diff > 0 ? -1 : 1;
+    if (Math.abs(diff) > 8) bigImgIsDrag = diff > 0 ? -1 : 1;
 });
 
 bigImgEl.addEventListener("pointerup", (e) => {
     bigImgIsPress = false;
     if (
-        (activeIndex > 0 && bigImgSsDrag === -1) ||
-        (activeIndex < imgEls.length - 1 && bigImgSsDrag === 1)
+        (activeIndex > 0 && bigImgIsDrag === -1) ||
+        (activeIndex < itemEls.length - 1 && bigImgIsDrag === 1)
     ) {
-        activeIndex += bigImgSsDrag;
+        activeIndex += bigImgIsDrag;
         handleChangeImg();
-        bigImgSsDrag = 0;
+        bigImgIsDrag = 0;
     }
 
     bigImgEl.releasePointerCapture(e.pointerId);
@@ -139,6 +153,8 @@ viewportEl.addEventListener("pointerdown", (e) => {
     downTarget = e.target;
     startX = e.clientX;
     isPress = true;
+
+    trackEl.style.transition = "none";
     viewportEl.setPointerCapture(e.pointerId);
 });
 
@@ -147,8 +163,7 @@ viewportEl.addEventListener("pointermove", (e) => {
     const diff = e.clientX - startX;
     if (Math.abs(diff) > 8) isDrag = diff > 0 ? -1 : 1;
 
-    firstItemEl.style.transition = "none";
-    firstItemEl.style.marginLeft = marginLeft + diff + "px";
+    trackEl.style.transform = `translateX(${-startIndex * (itemWidth + gap) + diff + "px"})`;
 });
 
 viewportEl.addEventListener("pointerup", (e) => {
@@ -156,21 +171,21 @@ viewportEl.addEventListener("pointerup", (e) => {
     viewportEl.releasePointerCapture(e.pointerId);
 
     if (!isDrag) {
-        const imgEL = downTarget.closest(".gallery-carousel__img");
-        if (imgEL) imgEL.dispatchEvent(new Event("click"));
+        const itemEl = downTarget.closest(".gallery-carousel__item");
+        if (itemEl) itemEl.dispatchEvent(new Event("click"));
         return;
     }
 
-    firstItemEl.style.transition = "all ease 0.6s";
+    trackEl.style.transition = "all ease 0.6s";
 
     if (
         (activeIndex > 0 && isDrag === -1) ||
-        (activeIndex < imgEls.length - 1 && isDrag === 1)
+        (activeIndex < itemEls.length - 1 && isDrag === 1)
     ) {
         activeIndex += isDrag;
         handleChangeImg();
     } else {
-        firstItemEl.style.marginLeft = marginLeft + "px";
+        trackEl.style.transform = `translateX(${-startIndex * (itemWidth + gap) + "px"})`;
     }
     isDrag = 0;
 });
@@ -205,4 +220,10 @@ navItemEls.forEach((navItemEl) => {
         tabEl.classList.add("tab--active");
         navItemEl.classList.add("tabs__nav-item--active");
     });
+});
+
+const summaryBtnEl = $(".summary-btn");
+
+summaryBtnEl.addEventListener("click", () => {
+    location.href = "#tabs";
 });

@@ -94,7 +94,7 @@
         font-size: 1.5rem;
     }
 }
-/* products filter */
+/* products filter sidebar*/
 .products-filter {
     display: flex;
     flex-direction: column;
@@ -234,4 +234,34 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+}
+
+.pagination {
+    display: flex;
+    width: fit-content;
+    margin: 40px auto 0;
+}
+.pagination__list {
+    display: flex;
+    align-items: center;
+}
+.pagination__link {
+    padding: 6px 15px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    font-size: 2.3rem;
+    border-radius: 5px;
+    color: var(--text-muted);
+}
+
+.pagination__link--active {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+.pagination__btn {
+    padding: 10px;
+    font-size: 2.5rem;
+    margin: 0 10px;
+    color: var(--text-muted);
 }

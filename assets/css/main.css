@@ -52,15 +52,12 @@ body {
     font-size: 1.6rem;
     color: var(--primary-text-color);
     font-weight: 400;
-    overflow-x: hidden;
     font-family: "Inter", sans-serif;
 }
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html {
+    scroll-behavior: smooth;
 }
+
 input {
     border: none;
 }
@@ -76,6 +73,7 @@ a {
     display: block;
     text-decoration: none;
     color: var(--primary-color);
+    cursor: pointer;
 }
 i {
     display: flex;

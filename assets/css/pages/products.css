@@ -201,7 +201,7 @@
     touch-action: pan-y;
 }
 .range__dot:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 .products-filter__item {
     display: flex;
@@ -211,10 +211,8 @@
 .products-filter__item + .products-filter__item {
     margin-top: 10px;
 }
-.checkbox-wrapper {
-    width: 100%;
-}
-.label-text {
+
+.checkbox__label {
     display: flex;
     justify-content: space-between;
     flex: 1;

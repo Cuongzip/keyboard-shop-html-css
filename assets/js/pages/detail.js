@@ -189,24 +189,6 @@ viewportEl.addEventListener("pointerup", (e) => {
     }
     isDrag = 0;
 });
-// quantity
-const increaseEl = $(".quantity__btn--increase");
-const decreaseEl = $(".quantity__btn--decrease");
-const quantityInputEl = $(".quantity__input");
-
-increaseEl.addEventListener("click", () => {
-    let value = Number(quantityInputEl.value) + 1;
-    if (value > 999) value = 1;
-    quantityInputEl.value = value;
-});
-decreaseEl.addEventListener("click", () => {
-    let value = Number(quantityInputEl.value) - 1;
-    if (value < 1) value = 1;
-    quantityInputEl.value = value;
-});
-quantityInputEl.addEventListener("input", () => {
-    quantityInputEl.value = quantityInputEl.value.replace(/\D/g, "");
-});
 
 // tabs
 const navItemEls = $$(".tabs__nav-item ");

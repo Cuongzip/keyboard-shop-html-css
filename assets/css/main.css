@@ -19,6 +19,7 @@
     font-style: italic;
     font-display: swap;
 }
+
 :root {
     --primary-color: rgba(5, 7, 15, 1);
     --primary-hover: rgba(5, 7, 15, 0.7);
@@ -41,6 +42,7 @@
     --header-height: 65px;
     font-family: "Inter", system-ui, sans-serif;
     font-size: 62.5%;
+
     interpolate-size: allow-keywords;
 }
 
@@ -229,8 +231,8 @@ b {
     }
 }
 .main {
-    margin-top: calc(var(--header-height));
-    margin-bottom: 80px;
+    padding-top: calc(var(--header-height));
+    padding-bottom: 80px;
 }
 /* animation for summary */
 

@@ -1,0 +1,23 @@
+.quantity {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.quantity:has(input:focus) {
+    border-color: var(--accent-color);
+}
+.quantity__btn {
+    padding: 10px 20px;
+    font-size: 1.8rem;
+}
+.quantity__btn:hover {
+    background-color: var(--surface-color);
+}
+.quantity__input {
+    width: 65px;
+    text-align: center;
+}

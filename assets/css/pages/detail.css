@@ -138,25 +138,6 @@
     font-size: 2.6rem;
 }
 
-.quantity {
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-}
-.quantity:has(input:focus) {
-    border-color: var(--accent-color);
-}
-.quantity__btn {
-    padding: 10px 20px;
-    font-size: 1.8rem;
-}
-.quantity__input {
-    width: 80px;
-    height: 100%;
-    text-align: center;
-}
-
 .product__options {
     display: flex;
     gap: 15px;
